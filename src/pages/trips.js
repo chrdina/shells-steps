@@ -6,8 +6,8 @@ class Trips extends React.Component {
     return (
       <div>
         <h1>Trips</h1>
-        <Tile text='Trip to America' />
-        <Tile text='Trip to Europe' />
+        <Tile type='trip' text='Trip to America' />
+        <Tile type='trip' text='Trip to Europe' />
       </div>
     );
   }

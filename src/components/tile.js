@@ -4,7 +4,9 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 class Tile extends React.Component {
   render() {
 
-    const tripUrl = '/trip/' + this.props.text;
+    // set url based on the type of tile this is
+    const tripUrl = `/${this.props.type}/${this.props.text}`;
+
     return (
       <div>
         <Link to={tripUrl}>
@@ -16,6 +18,7 @@ class Tile extends React.Component {
       </div>
     );
   }
+
 }
 
 export default Tile;

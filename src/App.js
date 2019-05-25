@@ -5,6 +5,8 @@ import Index from './pages/index'
 import Countries from './pages/countries.js';
 import Trips from './pages/trips';
 import Trip from './components/trip';
+import Country from './components/country';
+
 
 
 function App() {
@@ -29,6 +31,7 @@ function App() {
           <Route path="/trips/" component={Trips} />
           <Route path="/countries/" component={Countries} />
           <Route path="/trip/:id" component={Trip} />
+          <Route path="/country/:id" component={Country} />
         </Switch>
       </div>
     </Router>
