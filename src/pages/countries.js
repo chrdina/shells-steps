@@ -6,7 +6,7 @@ class Countries extends React.Component {
     return (
       <div>
         <h1>Countries</h1>
-        <Tile type='country' text='Test Tile' />
+        <Tile type='country' text='Test Country' />
       </div>
     );
   }
