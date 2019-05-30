@@ -1,15 +1,13 @@
 import React from 'react';
 
-class Trip extends React.Component {
+function Trip(props) {
 
-  render() {
-    const { params } = this.props.match
-    return (
-      <div>
-        <h1>Trip ID is: {params.id}</h1>
-      </div>
-    );
-  }
+  const { params } = props.match
+  return (
+    <React.Fragment>
+      <h1>Trip ID is: {params.id}</h1>
+    </React.Fragment>
+  );
 
 }
 

@@ -1,15 +1,13 @@
 import React from 'react';
 
-class Country extends React.Component {
+function Country(props) {
 
-  render() {
-    const { params } = this.props.match
-    return (
-      <React.Fragment>
-        <h1>Country ID is: {params.id}</h1>
-      </React.Fragment>
-    );
-  }
+  const { params } = props.match
+  return (
+    <React.Fragment>
+      <h1>Country ID is: {params.id}</h1>
+    </React.Fragment>
+  );
 
 }
 
