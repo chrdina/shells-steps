@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
-import Index from './pages/index'
+import Index from './pages/index';
 import Countries from './pages/countries.js';
 import Trips from './pages/trips';
 import Trip from './pages/trip';
