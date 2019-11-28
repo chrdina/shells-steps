@@ -3,8 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "contentful": "^7.6.0",
     "git-open": "^2.1.0",
     "global": "^4.3.2",
+    "graphql": "^14.3.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-router": "^5.0.0",
