@@ -7,8 +7,6 @@ import Trips from './pages/trips';
 import Trip from './pages/trip';
 import Country from './pages/country';
 
-
-
 function App() {
   return (
     <Router>
