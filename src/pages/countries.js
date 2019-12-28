@@ -1,31 +1,38 @@
 import React from 'react';
 import Tile from '../components/tile';
 import client from '../contentfulProvider';
+import Country from './country';
 
 // console.log(countriesArray);
 
-function Countries() {
+class Countries extends React.Component {
+  state = { data: [] };
 
-  var content = [];
+  componentDidMount() {
+    client.getEntries({content_type: 'country'}).then(response =>
+      this.setState({data: response.items})
+    )
+  }
 
-  client.getEntries({content_type: 'country'}).then(entries => {
-    entries.items.forEach(entry => {
-      if(entry.fields) {
-        content.push(entry.fields);
-      }
-    })
-  })
+  render () {
 
-  console.log(content)
+    var countries = [];
 
-  return (
-    <div>
-      <h1>Countries</h1>
-      <ol>
+    if (this.state.data.length) {
+      console.log(this.state.data);
+      countries = this.state.data.fields;
+    }
 
-      </ol>
-    </div>
-  );
+    return (
+      <div>
+        <h1>Countries</h1>
+
+        <ol>
+
+        </ol>
+      </div>
+    );
+  }
+
 }
-
 export default Countries;
