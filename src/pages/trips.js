@@ -1,14 +1,38 @@
 import React from 'react';
 import Tile from '../components/tile';
+import client from '../contentfulProvider';
+import Trip from './trip';
 
-function Trips(props) {
-  return (
-    <div>
-      <h1>Trips</h1>
-      <Tile type='trip' text='Trip to America' />
-      <Tile type='trip' text='Trip to Europe' />
-    </div>
-  );
+class Trips extends React.Component {
+  state = { data: [] };
+
+  componentDidMount() {
+    client.getEntries({content_type: 'Trip'}).then(response =>
+      this.setState({data: response.items})
+    )
+  }
+
+  render () {
+
+    var trips = [];
+
+    if (this.state.data.length) {
+      console.log(this.state.data);
+      trips = this.state.data.map((trip, key) => trip.fields);
+      console.log(trips);
+    }
+
+    return (
+      <div>
+        <h1>Trips</h1>
+        <ol>
+          {trips != null && trips.map(
+            (trip) => <Tile type='trip' key={trip.tripName} text={trip.tripName} data={trip}/>
+          )}
+        </ol>
+      </div>
+    );
+  }
+
 }
-
-export default Trips
+export default Trips;
