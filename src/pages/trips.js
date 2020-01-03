@@ -17,7 +17,6 @@ class Trips extends React.Component {
     var trips = [];
 
     if (this.state.data.length) {
-      console.log(this.state.data);
       trips = this.state.data.map((trip, key) => trip.fields);
       console.log(trips);
     }
@@ -27,7 +26,7 @@ class Trips extends React.Component {
         <h1>Trips</h1>
         <ol>
           {trips != null && trips.map(
-            (trip) => <Tile type='trip' key={trip.tripName} text={trip.tripName} data={trip}/>
+            (trip) => <Tile key={trip.tripName} type='trip' text={trip.tripName} data={trip}/>
           )}
         </ol>
       </div>

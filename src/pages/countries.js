@@ -27,7 +27,7 @@ class Countries extends React.Component {
         <h1>Countries</h1>
         <ol>
           {countries != null && countries.map(
-            (country) => <Tile type='country' key={country.countryName} text={country.countryName} data={country}/>
+            (country) => <Tile key={country.countryName} type='country' text={country.countryName} imageSrc={(country.tilePicCountry != null && country.tilePicCountry.fields != null) && country.tilePicCountry.fields.file.url} data={country}/>
           )}
         </ol>
       </div>
