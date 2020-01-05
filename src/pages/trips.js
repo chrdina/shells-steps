@@ -26,7 +26,8 @@ class Trips extends React.Component {
         <h1>Trips</h1>
         <ol>
           {trips != null && trips.map(
-            (trip) => <Tile key={trip.tripName} type='trip' text={trip.tripName} data={trip}/>
+            (trip) => <Tile key={trip.tripName} type='trip' text={trip.tripName} imgSrc={(trip.tilePicTrip != null && trip.tilePicTrip.fields != null) ? trip.tilePicTrip.fields.file.url : undefined} 
+ data={trip}/>
           )}
         </ol>
       </div>
