@@ -14,8 +14,8 @@ function Tile(props) {
     <div>
       <Link to={toObject}>
         <div class='tile'>
-          <h2>{props.text}</h2>
-          <img src={props.imgSrc} width='200px' />
+          <img class='tile-image' src={props.imgSrc} />
+          <h2 class='tile-text'>{props.text}</h2>
         </div>
       </Link>
     </div>
