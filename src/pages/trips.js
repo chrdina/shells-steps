@@ -24,12 +24,16 @@ class Trips extends React.Component {
     return (
       <div>
         <h1>Trips</h1>
-        <ol>
+        <div class='tiles'>
           {trips != null && trips.map(
-            (trip) => <Tile key={trip.tripName} type='trip' text={trip.tripName} imgSrc={(trip.tilePicTrip != null && trip.tilePicTrip.fields != null) ? trip.tilePicTrip.fields.file.url : undefined} 
- data={trip}/>
+            (trip) =>
+            <Tile key={trip.tripName}
+              type='trip' text={trip.tripName}
+              imgSrc={(trip.tilePicTrip != null && trip.tilePicTrip.fields != null) ? trip.tilePicTrip.fields.file.url : undefined}
+              data={trip}
+            />
           )}
-        </ol>
+        </div>
       </div>
     );
   }

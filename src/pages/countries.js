@@ -25,7 +25,7 @@ class Countries extends React.Component {
     return (
       <div>
         <h1>Countries</h1>
-        <ol>
+        <div class='tiles'>
           {countries != null && countries.map(
             (country) => <Tile key={country.countryName}
                           type='country'
@@ -33,7 +33,7 @@ class Countries extends React.Component {
                           imgSrc={(country.tilePicCountry != null && country.tilePicCountry.fields != null) ? country.tilePicCountry.fields.file.url : undefined}
                           data={country}/>
           )}
-        </ol>
+        </div>
       </div>
     );
   }
