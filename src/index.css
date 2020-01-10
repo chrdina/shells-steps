@@ -14,23 +14,25 @@ code {
     monospace;
 }
 
-nav ul, a {
-  list-style-type: none;
+ul, a {
+  list-style: none;
   text-decoration: none;
-}
-nav li {
-  display: inline;
-  padding-right: 10px;
   margin: 0;
-}
-nav {
   padding: 0;
+}
+.nav li {
+  display: inline;
   margin: 0;
+}
+.nav {
+  display: flex;
+  justify-content: space-around;
+  padding-left: 30%;
+  padding-right: 30%;
+  padding-top: 30px;
+  padding-bottom: 20px;
 }
 
-ul, ol {
-  padding: 0;
-}
 
 
 /* Tile Design */
