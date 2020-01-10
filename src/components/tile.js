@@ -15,7 +15,7 @@ function Tile(props) {
       <Link to={toObject}>
         <div class='tile'>
           <img class='tile-image' src={props.imgSrc} />
-          <h2 class='tile-text'>{props.text}</h2>
+          <h2 class='tile-text'><span> {props.text} </span> </h2>
         </div>
       </Link>
     </div>

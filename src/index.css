@@ -43,14 +43,25 @@ ul, a {
 }
 
 .tile {
-  width: 100%;
-}
-
-.tile-image {
   position: relative;
   width: 100%;
 }
 
-.tile-text {
+.tile-image {
   width: 100%;
+}
+
+.tile-text {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+}
+
+.tile-text span {
+  color: white;
+  font: bold 18px/45px Helvetica, Sans-Serif;
+  background: rgb(0, 0, 0);
+  background: rgba(0, 0, 0, 0.7);
+  padding: 5px;
 }
