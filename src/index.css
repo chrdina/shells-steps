@@ -57,7 +57,7 @@ ul, a {
   margin: 20px;
   flex: 1;
   text-align: center;
-  color: white;
+  color: rgb(50,50,50);
   background: rgba(255, 255, 255, 0.7);
 
   /* Keep this for double border effect */
