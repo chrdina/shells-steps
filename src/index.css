@@ -39,12 +39,12 @@ ul, a {
 .tiles {
   display: grid;
   grid-gap: 15px;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
 }
 
 .tile {
   width: 100%;
-  height: 160px;
+  height: 200px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -53,7 +53,7 @@ ul, a {
 }
 
 .tile-text {
-  height: 20%;
+  height: auto;
   margin: 20px;
   flex: 1;
   text-align: center;
@@ -68,6 +68,6 @@ ul, a {
 
 .tile-text h2 {
   margin: 0;
-  padding: 0;
+  padding: 10px;
   font: bold 18px/25px Helvetica, Sans-Serif;
 }
