@@ -11,8 +11,8 @@ function App() {
   return (
     <Router>
       <div>
-        <nav>
-          <ul>
+
+          <ul class='nav'>
             <li>
               <Link to="/">Home</Link>
             </li>
@@ -22,8 +22,11 @@ function App() {
             <li>
               <Link to="/countries">Countries</Link>
             </li>
+            <li>
+              <Link to="/countries">Countries</Link>
+            </li>
           </ul>
-        </nav>
+
         <Switch>
           <Route path="/" exact component={Index} />
           <Route path="/trips/" component={Trips} />

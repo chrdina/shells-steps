@@ -3,8 +3,6 @@ import Tile from '../components/tile';
 import client from '../contentfulProvider';
 import Country from './country';
 
-// console.log(countriesArray);
-
 class Countries extends React.Component {
   state = { data: [] };
 
@@ -20,16 +18,22 @@ class Countries extends React.Component {
 
     if (this.state.data.length) {
       console.log(this.state.data);
-      countries = this.state.data.fields;
+      countries = this.state.data.map((country) => country.fields);
+      console.log(countries);
     }
 
     return (
       <div>
         <h1>Countries</h1>
-
-        <ol>
-
-        </ol>
+        <div class='tiles'>
+          {countries != null && countries.map(
+            (country) => <Tile key={country.countryName}
+                          type='country'
+                          text={country.countryName}
+                          imgSrc={(country.tilePicCountry != null && country.tilePicCountry.fields != null) ? country.tilePicCountry.fields.file.url : undefined}
+                          data={country}/>
+          )}
+        </div>
       </div>
     );
   }
