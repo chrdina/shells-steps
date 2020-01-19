@@ -28,10 +28,14 @@ ul, a {
   align-self: flex-start;
   justify-content: center;
   top: 0;
-  color: white;
+  color: rgb(20,150,255);
   padding-top: 20px;
   padding-bottom: 20px;
-  background-color: black;
+  background-color: #FFFFFF;
+}
+.nav a:active {
+  color: black;
+  font-weight: bold;
 }
 
 .nav li {
@@ -80,4 +84,14 @@ ul, a {
   margin: 0;
   padding: 10px;
   font: bold 18px/25px Helvetica, Sans-Serif;
+}
+
+
+.trip-hero-img {
+  width: 100%;
+  height: auto;
+}
+
+.trip-hero-img img {
+  width: 100%;
 }
