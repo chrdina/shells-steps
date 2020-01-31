@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactMarkdown from 'react-markdown';
 
 function Country(props) {
 
@@ -8,13 +9,17 @@ function Country(props) {
   console.log(data);
 
   return (
-    <React.Fragment>
-      <h1>Country: {params.id}</h1>
-      <h2>Locations: </h2> {data.countryLocations}
-      <h2>Highlights: </h2> {data.countryHighlights}
-    
-
-    </React.Fragment>
+    <>
+      <h1>{params.id}</h1>
+      <div class="trip-hero-img">
+        <img src={data.tilePicCountry.fields.file.url} />
+      </div>
+      <ReactMarkdown>{data.countryName}</ReactMarkdown>
+      <ReactMarkdown>{data.countryDate}</ReactMarkdown>
+      <ReactMarkdown>{data.countryLocations}</ReactMarkdown>
+      <ReactMarkdown>{data.countryHighlights}</ReactMarkdown>
+      <ReactMarkdown>{data.countryTips}</ReactMarkdown>
+    </>
   );
 
 }

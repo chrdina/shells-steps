@@ -28,7 +28,8 @@ class Trips extends React.Component {
           {trips != null && trips.map(
             (trip) =>
             <Tile key={trip.tripName}
-              type='trip' text={trip.tripName}
+              type='trip'
+              text={trip.tripName}
               imgSrc={(trip.tilePicTrip != null && trip.tilePicTrip.fields != null) ? trip.tilePicTrip.fields.file.url : undefined}
               data={trip}
             />
