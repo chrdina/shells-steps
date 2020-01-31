@@ -10,14 +10,7 @@ function Trip(props) {
 
   const data = props.location.data;
 
-  function markdown(input) {
-    return (
-      <ReactMarkdown>
-        {input}
-      </ReactMarkdown>
-    )
-  }
-
+  // Used only for debugging
   function mapPropsToPara(data) {
     const propsList = Object.entries(data).map(([key,value]) => {
       return (
@@ -27,19 +20,18 @@ function Trip(props) {
     return propsList;
   }
 
-  // const tripDataMapped = Object.entries(params)
   return (
     <div>
       <h1>{params.id}</h1>
       <div class="trip-hero-img">
         <img src={data.tilePicTrip.fields.file.url} />
       </div>
-      {markdown(data.tripName)}
-      {markdown(data.tripDate)}
-      {markdown(data.tripLocations)}
-      {markdown(data.highlights)}
-      {markdown(data.tripItinirary)}
-      {markdown(data.tripDetails)}
+      <ReactMarkdown>{(data.tripName)}</ReactMarkdown>
+      <ReactMarkdown>{(data.tripDate)}</ReactMarkdown>
+      <ReactMarkdown>{(data.tripLocations)}</ReactMarkdown>
+      <ReactMarkdown>{(data.highlights)}</ReactMarkdown>
+      <ReactMarkdown>{(data.tripItinirary)}</ReactMarkdown>
+      <ReactMarkdown>{(data.tripDetails)}</ReactMarkdown>
     </div>
   );
 
