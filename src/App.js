@@ -9,26 +9,25 @@ import Country from './pages/country';
 
 function App() {
   return (
-    <Router>
-      <div>
-
-          <ul class='nav'>
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/trips">Trips</Link>
-            </li>
-            <li>
-              <Link to="/countries">Countries</Link>
-            </li>
-            <li>
-              <Link to="/suggestions">Suggestions</Link>
-            </li>
-            <li>
-              <Link to="/map">Map</Link>
-            </li>
-          </ul>
+    <>
+      <Router>
+        <ul class='nav'>
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+          <li>
+            <Link to="/trips">Trips</Link>
+          </li>
+          <li>
+            <Link to="/countries">Countries</Link>
+          </li>
+          <li>
+            <Link to="/suggestions">Suggestions</Link>
+          </li>
+          <li>
+            <Link to="/map">Map</Link>
+          </li>
+        </ul>
 
         <Switch>
           <Route path="/" exact component={Index} />
@@ -37,8 +36,11 @@ function App() {
           <Route path="/countries/" component={Countries} />
           <Route path="/country/:id" component={Country} />
         </Switch>
-      </div>
-    </Router>
+
+      </Router>
+
+      <div class="footer"> </div>
+    </>
   );
 }
 

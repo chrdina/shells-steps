@@ -21,7 +21,7 @@ function Trip(props) {
   }
 
   return (
-    <div>
+    <>
       <h1>{params.id}</h1>
       <div class="trip-hero-img">
         <img src={data.tilePicTrip.fields.file.url} />
@@ -32,7 +32,7 @@ function Trip(props) {
       <ReactMarkdown>{(data.highlights)}</ReactMarkdown>
       <ReactMarkdown>{(data.tripItinirary)}</ReactMarkdown>
       <ReactMarkdown>{(data.tripDetails)}</ReactMarkdown>
-    </div>
+    </>
   );
 
 }

@@ -95,3 +95,9 @@ ul, a {
 .trip-hero-img img {
   height: 100%
 }
+
+
+.footer {
+  height: 10vh;
+  display: flex;
+}
