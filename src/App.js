@@ -23,7 +23,10 @@ function App() {
               <Link to="/countries">Countries</Link>
             </li>
             <li>
-              <Link to="/countries">Countries</Link>
+              <Link to="/suggestions">Suggestions</Link>
+            </li>
+            <li>
+              <Link to="/map">Map</Link>
             </li>
           </ul>
 
