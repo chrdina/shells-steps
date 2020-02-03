@@ -26,12 +26,12 @@ function Trip(props) {
       <div class="trip-hero-img">
         <img src={data.tilePicTrip.fields.file.url} />
       </div>
-      <ReactMarkdown>{(data.tripName)}</ReactMarkdown>
-      <ReactMarkdown>{(data.tripDate)}</ReactMarkdown>
-      <ReactMarkdown>{(data.tripLocations)}</ReactMarkdown>
-      <ReactMarkdown>{(data.highlights)}</ReactMarkdown>
-      <ReactMarkdown>{(data.tripItinirary)}</ReactMarkdown>
-      <ReactMarkdown>{(data.tripDetails)}</ReactMarkdown>
+      <ReactMarkdown>{data.tripName}</ReactMarkdown>
+      <ReactMarkdown>{data.tripDate}</ReactMarkdown>
+      <ReactMarkdown>{data.tripLocations}</ReactMarkdown>
+      <ReactMarkdown>{data.highlights}</ReactMarkdown>
+      <ReactMarkdown>{data.tripItinirary}</ReactMarkdown>
+      <ReactMarkdown>{data.tripDetails}</ReactMarkdown>
     </>
   );
 
