@@ -12,7 +12,7 @@ function Country(props) {
     <>
       <h1>{params.id}</h1>
       <div class="trip-hero-img">
-        <img src={data.tilePicCountry.fields.file.url} />
+        <img src={`${data.tilePicCountry.fields.file.url}?fm=jpg&fl=progressive`} />
       </div>
       <ReactMarkdown>{data.countryName}</ReactMarkdown>
       <ReactMarkdown>{data.countryDate}</ReactMarkdown>

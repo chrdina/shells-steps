@@ -24,7 +24,7 @@ function Trip(props) {
     <>
       <h1>{params.id}</h1>
       <div class="trip-hero-img">
-        <img src={data.tilePicTrip.fields.file.url} />
+        <img src={`${data.tilePicTrip.fields.file.url}?fm=jpg&fl=progressive`}/>
       </div>
       <ReactMarkdown>{data.tripName}</ReactMarkdown>
       <ReactMarkdown>{data.tripDate}</ReactMarkdown>

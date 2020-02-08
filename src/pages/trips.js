@@ -16,10 +16,10 @@ class Trips extends React.Component {
 
     var trips = [];
 
-    if (this.state.data.length) {
-      trips = this.state.data.map((trip, key) => trip.fields);
-      console.log(trips);
-    }
+
+    trips = this.state.data.map((trip, key) => trip.fields);
+    console.log(trips);
+
 
     return (
       <div>

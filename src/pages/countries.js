@@ -16,11 +16,9 @@ class Countries extends React.Component {
 
     var countries = [];
 
-    if (this.state.data.length) {
-      console.log(this.state.data);
-      countries = this.state.data.map((country) => country.fields);
-      console.log(countries);
-    }
+    console.log(this.state.data);
+    countries = this.state.data.map((country) => country.fields);
+    console.log(countries);
 
     return (
       <div>
