@@ -22,6 +22,9 @@ ul, a {
   color: inherit;
 }
 
+
+/* Navbar */
+
 .nav {
   display: flex;
   position: sticky;
@@ -51,6 +54,8 @@ ul, a {
 }
 
 
+/* Homepage */
+
 .hero-image-main {
   width: 100%;
   height: 100vh;
@@ -61,6 +66,32 @@ ul, a {
   display: flex;
   background-color: rgb(80,80,80);
   background-size: cover;
+}
+
+
+/* Headers */
+
+.header {
+  height: max-content;
+  width: 100%;
+  text-align: center;
+  font: bold 40px/100px Helvetica, Sans-Serif;
+  padding-bottom: 50px;
+}
+
+.hero-area {
+  display: flex;
+  height: 50vh;
+}
+.hero-area-text {
+  flex: 1;
+}
+.hero-area-img {
+  flex: 3;
+}
+.hero-area-img img {
+  height: 100%;
+  width: 100%;
 }
 
 
@@ -104,8 +135,20 @@ ul, a {
   font: bold 18px/25px Helvetica, Sans-Serif;
 }
 
+
+/* Trip Content */
+
+.content-grid {
+  display: flex;
+}
+
+.col {
+  flex: 1;
+  width: 50%;
+  padding: 15px;
+}
+
 .BrainhubCarousel {
-  height: 50vh;
 }
 
 .BrainhubCarousel img {
@@ -118,6 +161,7 @@ ul, a {
   align-items: center;
   justify-content: center;
 }
+
 
 
 .footer {
