@@ -1,5 +1,7 @@
 import React from 'react';
 import ReactMarkdown from 'react-markdown';
+import Carousel from '@brainhubeu/react-carousel';
+import '@brainhubeu/react-carousel/lib/style.css';
 
 function Trip(props) {
 
@@ -13,11 +15,15 @@ function Trip(props) {
   return (
     <>
       <h1>{params.id}</h1>
-      <div class="trip-hero-img">
-        {data.tripPhotos && data.tripPhotos.map(
-          (image) => <img src={`${image.fields.file.url}?fm=jpg&fl=progressive`} />
-        )}
-      </div>
+
+        <Carousel arrows infinite centered>
+          {data.tripPhotos && data.tripPhotos.map(
+            (image, key) => <img src={`${image.fields.file.url}?fm=jpg&fl=progressive&h=500&w=700`} key={key} />
+          )}
+        </Carousel>
+
+
+
       <ReactMarkdown>{data.tripName}</ReactMarkdown>
       <ReactMarkdown>{data.tripDate}</ReactMarkdown>
       <ReactMarkdown>{data.tripLocations}</ReactMarkdown>
