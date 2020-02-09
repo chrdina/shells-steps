@@ -40,7 +40,7 @@ ul, a {
 }
 
 .nav-active {
-  color: rgb(20,150,255);
+  color: #4386BA;
 }
 
 .nav li {
@@ -50,7 +50,7 @@ ul, a {
   padding-right: 15px;
 }
 .nav a:hover {
-  color: rgb(20,150,255);
+  color: #4386BA;
 }
 
 
@@ -85,6 +85,8 @@ ul, a {
 }
 .hero-area-text {
   flex: 1;
+  color: #FFFFFF;
+  background-color: #272727;
 }
 .hero-area-img {
   flex: 3;
