@@ -14,16 +14,14 @@ function Trip(props) {
 
   return (
     <>
-      <div class="header">{params.id} <hr /></div>
-
       <div class="hero-area">
         <div class="hero-area-text">
-          <ReactMarkdown>{data.tripName}</ReactMarkdown>
+          <h2><ReactMarkdown>{data.tripName}</ReactMarkdown></h2>
           <ReactMarkdown>{data.tripDate}</ReactMarkdown>
           <ReactMarkdown>{data.tripLocations}</ReactMarkdown>
         </div>
-        <div class="hero-area-img">
-          <img src={`${data.tilePicTrip.fields.file.url}?fm=jpg&fl=progressive`} />
+        <div class="hero-area-img" style={{backgroundImage: `url(${data.tilePicTrip.fields.file.url}?fm=jpg&fl=progressive)`}}>
+          
         </div>
       </div>
 
