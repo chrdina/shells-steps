@@ -1,3 +1,11 @@
+/* Variables */
+
+:root {
+  --theme-blue: #4386BA;
+  --theme-black: #272727;
+}
+
+
 body {
   margin: 0;
   margin-left: 10vw;
@@ -40,7 +48,7 @@ ul, a {
 }
 
 .nav-active {
-  color: #4386BA;
+  color: var(--theme-blue);
 }
 
 .nav li {
@@ -50,7 +58,7 @@ ul, a {
   padding-right: 15px;
 }
 .nav a:hover {
-  color: #4386BA;
+  color: var(--theme-blue);
 }
 
 
@@ -64,7 +72,7 @@ ul, a {
   left: 0;
   z-index: -1;
   display: flex;
-  background-color: rgb(80,80,80);
+  background-color: var(--theme-black);
   background-size: cover;
 }
 
@@ -75,18 +83,21 @@ ul, a {
   height: max-content;
   width: 100%;
   text-align: center;
-  font: bold 40px/100px Helvetica, Sans-Serif;
-  padding-bottom: 50px;
+  color: var(--theme-black);
+  font: bold 40px/70px Helvetica, Sans-Serif;
 }
 
 .hero-area {
   display: flex;
-  height: 50vh;
+  height: 60vh;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 .hero-area-text {
   flex: 1;
+  padding: 20px 20px 20px 20px;
   color: #FFFFFF;
-  background-color: #272727;
+  background-color: var(--theme-black);
 }
 .hero-area-img {
   flex: 3;
