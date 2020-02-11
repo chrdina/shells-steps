@@ -7,32 +7,25 @@ class Trips extends React.Component {
   state = { data: [] };
 
   componentDidMount() {
-    client.getEntries({content_type: 'Trip'}).then(response =>
-      this.setState({data: response.items})
+    client.getEntries({ content_type: 'Trip' }).then(response =>
+      this.setState({ data: response.items })
     )
   }
 
-  render () {
-
-    var trips = [];
-
-    if (this.state.data.length) {
-      trips = this.state.data.map((trip, key) => trip.fields);
-      console.log(trips);
-    }
+  render() {
 
     return (
       <div>
         <h1>Trips</h1>
         <div class='tiles'>
-          {trips != null && trips.map(
-            (trip) =>
-            <Tile key={trip.tripName}
-              type='trip'
-              text={trip.tripName}
-              imgSrc={(trip.tilePicTrip != null && trip.tilePicTrip.fields != null) ? trip.tilePicTrip.fields.file.url : undefined}
-              data={trip}
-            />
+          {this.state.data.length && this.state.data.map(
+            (trip) => console.info('trip', trip) ||
+              <Tile key={trip.sys.id}
+                to={`/trip/${trip.sys.id}`}
+                text={trip.fields.tripName}
+                imgSrc={(trip.fields.tilePicTrip && trip.fields.tilePicTrip.fields != null) ? trip.fields.tilePicTrip.fields.file.url : undefined}
+                data={trip}
+              />
           )}
         </div>
       </div>

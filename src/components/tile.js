@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 function Tile(props) {
 
   const toObject = {
-    pathname: `/${props.type}/${props.text}`,
+    pathname: props.to,
     data: props.data
   };
 
@@ -13,7 +13,7 @@ function Tile(props) {
   return (
     <div>
       <Link to={toObject}>
-        <div class='tile' style={{backgroundImage: `url(${props.imgSrc})`}}>
+        <div class='tile' style={{ backgroundImage: `url(${props.imgSrc})` }}>
           <div class='tile-text'>
             <h2 >{props.text} </h2>
           </div>
