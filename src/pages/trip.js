@@ -47,8 +47,7 @@ function Trip(props) {
           <ReactMarkdown>{tripDetails.fields.tripLocations}</ReactMarkdown>
         </div>
 
-        {tripDetails.fields.tilePicTrip && <div class="hero-area-img">
-          <img src={`${tripDetails.fields.tilePicTrip.fields.file.url}?fm=jpg&fl=progressive`} alt="" />
+        {tripDetails.fields.tilePicTrip && <div class="hero-area-img" style={{backgroundImage: `url(${tripDetails.fields.tilePicTrip.fields.file.url}?fm=jpg&fl=progressive)`}}>
         </div>}
       </div>
 
