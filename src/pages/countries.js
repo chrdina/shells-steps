@@ -7,8 +7,8 @@ class Countries extends React.Component {
   state = { data: [] };
 
   componentDidMount() {
-    client.getEntries({ content_type: 'country' }).then(response =>
-      this.setState({ data: response.items })
+    client.getEntries({content_type: 'country', order: 'fields.countryName'}).then(response =>
+      this.setState({data: response.items})
     )
   }
 

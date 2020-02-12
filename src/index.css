@@ -1,5 +1,15 @@
+/* Variables */
+
+:root {
+  --theme-blue: #4386BA;
+  --theme-black: #272727;
+}
+
+
 body {
   margin: 0;
+  margin-left: 10vw;
+  margin-right: 10vw;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
@@ -20,6 +30,9 @@ ul, a {
   color: inherit;
 }
 
+
+/* Navbar */
+
 .nav {
   display: flex;
   position: sticky;
@@ -30,18 +43,26 @@ ul, a {
   padding-top: 20px;
   padding-bottom: 20px;
   background-color: #FFFFFF;
+  z-index: 2;
+  /* Link to gradient: https://colorzilla.com/gradient-editor/#ffffff+5,ffffff+96&0.02+0,1+13,1+50,1+88,0.02+100 */
 }
-.nav a:active {
-  color: rgb(20,150,255);
-  font-weight: bold;
+
+.nav-active {
+  color: var(--theme-blue);
 }
 
 .nav li {
   display: inline;
   margin: 0;
-  padding-right: 30px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.nav a:hover {
+  color: var(--theme-blue);
 }
 
+
+/* Homepage */
 
 .hero-image-main {
   width: 100%;
@@ -51,8 +72,39 @@ ul, a {
   left: 0;
   z-index: -1;
   display: flex;
-  background-color: rgb(80,80,80);
+  background-color: var(--theme-black);
   background-size: cover;
+}
+
+
+/* Headers */
+
+.header {
+  height: max-content;
+  width: 100%;
+  text-align: center;
+  color: var(--theme-black);
+  font: bold 40px/70px Helvetica, Sans-Serif;
+}
+
+.hero-area {
+  display: flex;
+  height: 60vh;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.hero-area-text {
+  flex: 1;
+  padding: 20px 20px 20px 20px;
+  color: #FFFFFF;
+  background-color: var(--theme-black);
+}
+.hero-area-img {
+  flex: 3;
+}
+.hero-area-img img {
+  height: 100%;
+  width: 100%;
 }
 
 
@@ -71,7 +123,6 @@ ul, a {
   justify-content: center;
   align-items: center;
   text-align: center;
-  background-color: grey;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -98,14 +149,32 @@ ul, a {
 }
 
 
-.trip-hero-img {
+/* Trip Content */
+
+.content-grid {
   display: flex;
-  height: 60vh;
 }
 
-.trip-hero-img img {
-  height: 100%
+.col {
+  flex: 1;
+  width: 50%;
+  padding: 15px;
 }
+
+.BrainhubCarousel {
+}
+
+.BrainhubCarousel img {
+  height: 100%;
+}
+
+.trip-hero-img {
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 
 
 .footer {

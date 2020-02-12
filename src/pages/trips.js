@@ -7,12 +7,12 @@ class Trips extends React.Component {
   state = { data: [] };
 
   componentDidMount() {
-    client.getEntries({ content_type: 'Trip' }).then(response =>
-      this.setState({ data: response.items })
+    client.getEntries({content_type: 'Trip', order: '-fields.tripDate'}).then(response =>
+      this.setState({data: response.items})
     )
   }
 
-  render() {
+  render () {
 
     return (
       <div>

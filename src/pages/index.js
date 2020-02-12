@@ -7,8 +7,8 @@ class Index extends React.Component {
   heroImageURL = "";
 
   componentDidMount() {
-    client.getAsset('1nCcWOdKT2Rth4PQFL2d4m').then(asset =>
-      this.setState({data: asset.fields.file.url})
+    client.getAsset('1nCcWOdKT2Rth4PQFL2d4m').then((asset) =>
+      this.setState({data: `${asset.fields.file.url}?fm=jpg&fl=progressive`})
     )
   }
 
@@ -21,7 +21,7 @@ class Index extends React.Component {
 
     return (
       <>
-        <h1>Where's Shell</h1>
+
         <div class="hero-image-main" style={{backgroundImage: `url(${this.heroImageURL})`}}>
 
         </div>

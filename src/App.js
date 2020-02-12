@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch, Link, NavLink } from "react-router-dom";
 import Index from './pages/index';
 import Countries from './pages/countries.js';
 import Trips from './pages/trips';
@@ -13,24 +13,24 @@ function App() {
       <Router>
         <ul class='nav'>
           <li>
-            <Link to="/">Home</Link>
+            <NavLink to="/index" activeClassName="nav-active">Home</NavLink>
           </li>
           <li>
-            <Link to="/trips">Trips</Link>
+            <NavLink to="/trips" activeClassName="nav-active">Trips</NavLink>
           </li>
           <li>
-            <Link to="/countries">Countries</Link>
+            <NavLink to="/countries" activeClassName="nav-active">Countries</NavLink>
           </li>
           <li>
-            <Link to="/suggestions">Suggestions</Link>
+            <NavLink to="/suggestions" activeClassName="nav-active">Suggestions</NavLink>
           </li>
           <li>
-            <Link to="/map">Map</Link>
+            <NavLink to="/map" activeClassName="nav-active">Map</NavLink>
           </li>
         </ul>
 
         <Switch>
-          <Route path="/" exact component={Index} />
+          <Route path="/index" exact component={Index} />
           <Route path="/trips/" component={Trips} />
           <Route path="/trip/:id" component={Trip} />
           <Route path="/countries/" component={Countries} />
