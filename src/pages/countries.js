@@ -7,31 +7,25 @@ class Countries extends React.Component {
   state = { data: [] };
 
   componentDidMount() {
-    client.getEntries({content_type: 'country'}).then(response =>
-      this.setState({data: response.items})
+    client.getEntries({ content_type: 'country' }).then(response =>
+      this.setState({ data: response.items })
     )
   }
 
-  render () {
-
-    var countries = [];
-
-    if (this.state.data.length) {
-      console.log(this.state.data);
-      countries = this.state.data.map((country) => country.fields);
-      console.log(countries);
-    }
+  render() {
 
     return (
       <div>
         <h1>Countries</h1>
         <div class='tiles'>
-          {countries != null && countries.map(
-            (country) => <Tile key={country.countryName}
-                          type='country'
-                          text={country.countryName}
-                          imgSrc={(country.tilePicCountry != null && country.tilePicCountry.fields != null) ? country.tilePicCountry.fields.file.url : undefined}
-                          data={country}/>
+          {this.state.data.length && this.state.data.map(
+            (country) => console.info('country', country) ||
+              <Tile key={country.sys.id}
+                to={`/country/${country.sys.id}`}
+                text={country.fields.countryName}
+                imgSrc={(country.fields.tilePicCountry && country.fields.tilePicCountry.fields != null) ? country.fields.tilePicCountry.fields.file.url : undefined}
+                data={country}
+              />
           )}
         </div>
       </div>

@@ -10,16 +10,6 @@ function Trip(props) {
   console.log("Trip Props: ");
   console.log(props.location);
 
-  // // Used only for debugging
-  // function mapPropsToPara(data) {
-  //   const propsList = Object.entries(data).map(([key,value]) => {
-  //     return (
-  //       <p>{key}: {value.toString()}</p>
-  //     )
-  //   });
-  //   return propsList;
-  // }
-
   // Think of this as kind of a component did mount...
   useEffect(() => {
     const handleDataFetch = async () => {
