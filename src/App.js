@@ -13,7 +13,7 @@ function App() {
       <Router>
         <ul class='nav'>
           <li>
-            <NavLink to="/index" activeClassName="nav-active">Home</NavLink>
+            <NavLink to="/" exact={true} activeClassName="nav-active">Home</NavLink>
           </li>
           <li>
             <NavLink to="/trips" activeClassName="nav-active">Trips</NavLink>
@@ -30,7 +30,7 @@ function App() {
         </ul>
 
         <Switch>
-          <Route path="/index" exact component={Index} />
+          <Route path="/" exact component={Index} />
           <Route path="/trips/" component={Trips} />
           <Route path="/trip/:id" component={Trip} />
           <Route path="/countries/" component={Countries} />
