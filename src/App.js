@@ -9,8 +9,6 @@ import Country from './pages/country';
 
 function App() {
 
-  console.log(window.location.pathname);
-
   return (
     <>
       <Router>
@@ -34,10 +32,10 @@ function App() {
 
         <Switch>
           <Route path="/" exact component={Index} />
-          <Route path="/trips/" component={Trips} />
-          <Route path="/trip/:id" component={Trip} />
-          <Route path="/countries/" component={Countries} />
-          <Route path="/country/:id" component={Country} />
+          <Route path="/trips/" exact component={Trips} />
+          <Route path="/trips/:id" component={Trip} />
+          <Route path="/countries/" exact component={Countries} />
+          <Route path="/countries/:id" component={Country} />
         </Switch>
 
       </Router>
