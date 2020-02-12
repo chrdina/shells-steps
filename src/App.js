@@ -8,6 +8,9 @@ import Trip from './pages/trip';
 import Country from './pages/country';
 
 function App() {
+
+  console.log(window.location.pathname);
+
   return (
     <>
       <Router>

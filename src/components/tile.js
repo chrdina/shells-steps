@@ -8,8 +8,6 @@ function Tile(props) {
     data: props.data
   };
 
-  console.log(props.text + ': ' + props.imgSrc)
-
   return (
     <div>
       <Link to={toObject}>
