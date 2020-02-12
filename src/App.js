@@ -8,12 +8,13 @@ import Trip from './pages/trip';
 import Country from './pages/country';
 
 function App() {
+
   return (
     <>
       <Router>
         <ul class='nav'>
           <li>
-            <NavLink to="/index" activeClassName="nav-active">Home</NavLink>
+            <NavLink to="/" exact={true} activeClassName="nav-active">Home</NavLink>
           </li>
           <li>
             <NavLink to="/trips" activeClassName="nav-active">Trips</NavLink>
@@ -30,11 +31,11 @@ function App() {
         </ul>
 
         <Switch>
-          <Route path="/index" exact component={Index} />
-          <Route path="/trips/" component={Trips} />
-          <Route path="/trip/:id" component={Trip} />
-          <Route path="/countries/" component={Countries} />
-          <Route path="/country/:id" component={Country} />
+          <Route path="/" exact component={Index} />
+          <Route path="/trips/" exact component={Trips} />
+          <Route path="/trips/:id" component={Trip} />
+          <Route path="/countries/" exact component={Countries} />
+          <Route path="/countries/:id" component={Country} />
         </Switch>
 
       </Router>

@@ -18,15 +18,16 @@ class Countries extends React.Component {
       <div>
         <h1>Countries</h1>
         <div class='tiles'>
-          {this.state.data.length && this.state.data.map(
+          {this.state.data.length ? this.state.data.map(
             (country) => console.info('country', country) ||
               <Tile key={country.sys.id}
-                to={`/country/${country.sys.id}`}
+                to={`/countries/${country.sys.id}`}
                 text={country.fields.countryName}
                 imgSrc={(country.fields.tilePicCountry && country.fields.tilePicCountry.fields != null) ? country.fields.tilePicCountry.fields.file.url : undefined}
                 data={country}
               />
-          )}
+          ) :
+            <>Loading...</>}
         </div>
       </div>
     );
