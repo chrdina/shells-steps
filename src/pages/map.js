@@ -1,11 +1,17 @@
 import React from 'react';
 
-function Index() {
+function Map() {
   return (
-    <div>
-      <h1>Index</h1>
-    </div>
+    <>
+      <h1>Where have I been?????</h1>
+
+      <iframe
+        src="https://www.google.com.au/maps/d/embed?mid=14Xxl8D0RNCmZcCREEImvSxx7QpE"
+        width="640"
+        height="480">
+      </iframe>
+    </>
   );
 }
 
-export default Index;
+export default Map;

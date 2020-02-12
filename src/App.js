@@ -6,6 +6,7 @@ import Countries from './pages/countries.js';
 import Trips from './pages/trips';
 import Trip from './pages/trip';
 import Country from './pages/country';
+import Map from './pages/map';
 
 function App() {
 
@@ -30,12 +31,14 @@ function App() {
           </li>
         </ul>
 
+
         <Switch>
           <Route path="/" exact component={Index} />
           <Route path="/trips/" exact component={Trips} />
           <Route path="/trips/:id" component={Trip} />
           <Route path="/countries/" exact component={Countries} />
           <Route path="/countries/:id" component={Country} />
+          <Route path="/map" component={Map} />
         </Switch>
 
       </Router>
