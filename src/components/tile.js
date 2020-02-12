@@ -4,11 +4,9 @@ import { Link } from "react-router-dom";
 function Tile(props) {
 
   const toObject = {
-    pathname: `/${props.type}/${props.text}`,
+    pathname: props.to,
     data: props.data
   };
-
-  console.log(props.text + ': ' + props.imgSrc)
 
   return (
     <div>
