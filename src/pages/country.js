@@ -38,14 +38,14 @@ function Country(props) {
   return (
     <>
       <h1>{countryDetails.fields.countryName}</h1>
-      {countryDetails.fields.tilePicCountry && <div class="country-hero-img">
+      {countryDetails.fields.tilePicCountry && <div class="trip-hero-img">
         <img src={countryDetails.fields.tilePicCountry.fields.file.url} alt="" />
       </div>}
-      <ReactMarkdown>{countryDetails.countryName}</ReactMarkdown>
-      <ReactMarkdown>{countryDetails.countryDate}</ReactMarkdown>
-      <ReactMarkdown>{countryDetails.countryLocations}</ReactMarkdown>
-      <ReactMarkdown>{countryDetails.countryHighlights}</ReactMarkdown>
-      <ReactMarkdown>{countryDetails.countryTips}</ReactMarkdown>
+      <ReactMarkdown>{countryDetails.fields.countryName}</ReactMarkdown>
+      <ReactMarkdown>{countryDetails.fields.countryDate}</ReactMarkdown>
+      <ReactMarkdown>{countryDetails.fields.countryLocations}</ReactMarkdown>
+      <ReactMarkdown>{countryDetails.fields.countryHighlights}</ReactMarkdown>
+      <ReactMarkdown>{countryDetails.fields.countryTips}</ReactMarkdown>
     </>
   );
 
