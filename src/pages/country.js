@@ -32,13 +32,13 @@ function Country(props) {
 
   // Haven't got the data yet, so hang tight
   if (isLoading) {
-    return <>"Loading..."</>
+    return <>Loading...</>
   }
 
   return (
     <>
       <h1>{countryDetails.fields.countryName}</h1>
-      {countryDetails.fields.tilePicCountry && <div class="trip-hero-img">
+      {countryDetails.fields.tilePicCountry && <div class="hero-area-img">
         <img src={`${countryDetails.fields.tilePicCountry.fields.file.url}?fm=jpg&fl=progressive`} alt="" />
       </div>}
       <ReactMarkdown>{countryDetails.fields.countryName}</ReactMarkdown>

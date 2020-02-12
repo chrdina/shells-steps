@@ -33,7 +33,7 @@ function Trip(props) {
 
   // Haven't got the data yet, so hang tight
   if (isLoading) {
-    return <>"Loading..."</>
+    return <>Loading...</>
   }
 
   return (
@@ -46,7 +46,7 @@ function Trip(props) {
           <ReactMarkdown>{tripDetails.fields.tripDate}</ReactMarkdown>
           <ReactMarkdown>{tripDetails.fields.tripLocations}</ReactMarkdown>
         </div>
-        
+
         {tripDetails.fields.tilePicTrip && <div class="hero-area-img">
           <img src={`${tripDetails.fields.tilePicTrip.fields.file.url}?fm=jpg&fl=progressive`} alt="" />
         </div>}
