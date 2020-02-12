@@ -21,7 +21,7 @@ function Trip(props) {
           <ReactMarkdown>{data.tripLocations}</ReactMarkdown>
         </div>
         <div class="hero-area-img" style={{backgroundImage: `url(${data.tilePicTrip.fields.file.url}?fm=jpg&fl=progressive)`}}>
-          
+
         </div>
       </div>
 
@@ -32,9 +32,13 @@ function Trip(props) {
           <ReactMarkdown>{data.tripDetails}</ReactMarkdown>
         </div>
         <div class="col">
-          <Carousel arrows infinite>
+          <Carousel
+            arrows
+            infinite
+            slidesPerPage = {1}
+          >
             {data.tripPhotos && data.tripPhotos.map(
-              (image, key) => <img src={`${image.fields.file.url}?fm=jpg&fl=progressive&h=400&w=600`} key={key} />
+              (image, key) => <img src={`${image.fields.file.url}?fm=jpg&fl=progressive&h=600&w=700&fit=fill`} key={key} />
             )}
           </Carousel>
         </div>

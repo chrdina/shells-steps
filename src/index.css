@@ -166,10 +166,11 @@ ul, a {
 }
 
 .BrainhubCarousel {
+
 }
 
 .BrainhubCarousel img {
-  height: 100%;
+  width: 100%;
 }
 
 .trip-hero-img {
