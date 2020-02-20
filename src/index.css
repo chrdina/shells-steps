@@ -143,7 +143,7 @@ code {
 .hero-text {
   flex: 1;
   max-width: 50%;
-  padding: 20px 20px 20px 20px;
+  padding: 20px 30px 20px 30px;
   color: #FFFFFF;
   background-color: var(--theme-black);
   font-family: "Montserrat", sans-serif;

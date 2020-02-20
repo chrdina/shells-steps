@@ -59,7 +59,7 @@ function Country(props) {
             <ReactMarkdown>{countryDetails.fields.countryLocations}</ReactMarkdown>
           </div>
         </div>
-        {countryDetails.fields.tilePicCountry && <div className="hero-image" style={{backgroundImage: `url(${countryDetails.fields.tilePicCountry.fields.file.url}?fm=jpg&fl=progressive&w=600&h=500)`}}>
+        {countryDetails.fields.tilePicCountry && <div className="hero-image" style={{backgroundImage: `url(${countryDetails.fields.tilePicCountry.fields.file.url}?fm=jpg&fl=progressive)`}}>
         </div>}
       </div>
       <div className="content">
