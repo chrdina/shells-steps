@@ -32,14 +32,16 @@ function App() {
             </li>
           </ul>
         </div>
-        <Switch>
-          <Route path="/" exact component={Index} />
-          <Route path="/trips/" exact component={Trips} />
-          <Route path="/trips/:id" component={Trip} />
-          <Route path="/countries/" exact component={Countries} />
-          <Route path="/countries/:id" component={Country} />
-          <Route path="/map" component={Map} />
-        </Switch>
+        <div className="content-main">
+          <Switch>
+            <Route path="/" exact component={Index} />
+            <Route path="/trips/" exact component={Trips} />
+            <Route path="/trips/:id" component={Trip} />
+            <Route path="/countries/" exact component={Countries} />
+            <Route path="/countries/:id" component={Country} />
+            <Route path="/map" component={Map} />
+          </Switch>
+        </div>
 
       </Router>
 
