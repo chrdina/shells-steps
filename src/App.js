@@ -13,25 +13,25 @@ function App() {
   return (
     <>
       <Router>
-        <ul class='nav'>
-          <li>
-            <NavLink to="/" exact={true} activeClassName="nav-active">Home</NavLink>
-          </li>
-          <li>
-            <NavLink to="/trips" activeClassName="nav-active">Trips</NavLink>
-          </li>
-          <li>
-            <NavLink to="/countries" activeClassName="nav-active">Countries</NavLink>
-          </li>
-          <li>
-            <NavLink to="/suggestions" activeClassName="nav-active">Suggestions</NavLink>
-          </li>
-          <li>
-            <NavLink to="/map" activeClassName="nav-active">Map</NavLink>
-          </li>
-        </ul>
-
-
+        <div className="nav">
+          <ul>
+            <li>
+              <NavLink to="/" exact={true} activeClassName="nav-active">Home</NavLink>
+            </li>
+            <li>
+              <NavLink to="/trips" activeClassName="nav-active">Trips</NavLink>
+            </li>
+            <li>
+              <NavLink to="/countries" activeClassName="nav-active">Countries</NavLink>
+            </li>
+            <li>
+              <NavLink to="/suggestions" activeClassName="nav-active">Suggestions</NavLink>
+            </li>
+            <li>
+              <NavLink to="/map" activeClassName="nav-active">Map</NavLink>
+            </li>
+          </ul>
+        </div>
         <Switch>
           <Route path="/" exact component={Index} />
           <Route path="/trips/" exact component={Trips} />
@@ -43,7 +43,7 @@ function App() {
 
       </Router>
 
-      <div class="footer"> </div>
+      <div className="footer"> </div>
     </>
   );
 }

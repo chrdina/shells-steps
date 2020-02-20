@@ -17,7 +17,7 @@ class Trips extends React.Component {
     return (
       <div>
         <h1>Trips</h1>
-        <div class='tiles'>
+        <div className='tiles'>
           {this.state.data.length ? this.state.data.map(
             (trip) => console.info('trip', trip) ||
               <Tile key={trip.sys.id}
