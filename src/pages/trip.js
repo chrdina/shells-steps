@@ -40,24 +40,24 @@ function Trip(props) {
     <>
       <div className="header">{tripDetails.fields.tripName} <hr /></div>
 
-      <div className="hero-area">
-        <div className="hero-area-text">
+      <div className="hero-containter">
+        <div className="hero-text">
           <ReactMarkdown>{tripDetails.fields.tripName}</ReactMarkdown>
           <ReactMarkdown>{tripDetails.fields.tripDate}</ReactMarkdown>
           <ReactMarkdown>{tripDetails.fields.tripLocations}</ReactMarkdown>
         </div>
 
-        {tripDetails.fields.tilePicTrip && <div className="hero-area-img" style={{backgroundImage: `url(${tripDetails.fields.tilePicTrip.fields.file.url}?fm=jpg&fl=progressive)`}}>
+        {tripDetails.fields.tilePicTrip && <div className="hero-image" style={{backgroundImage: `url(${tripDetails.fields.tilePicTrip.fields.file.url}?fm=jpg&fl=progressive)`}}>
         </div>}
       </div>
 
       <div className="content-grid">
-        <div className="col">
+        <div className="col-left">
           <ReactMarkdown>{tripDetails.fields.highlights}</ReactMarkdown>
           <ReactMarkdown>{tripDetails.fields.tripItinirary}</ReactMarkdown>
           <ReactMarkdown>{tripDetails.fields.tripDetails}</ReactMarkdown>
         </div>
-        <div className="col">
+        <div className="col-right">
           <Carousel arrows centered dots>
             {tripDetails.fields.tripPhotos && tripDetails.fields.tripPhotos.map(
               (image, key) => <img src={`${image.fields.file.url}?fm=jpg&fl=progressive&h=400&w=600`} key={key} />

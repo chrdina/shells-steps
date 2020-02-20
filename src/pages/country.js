@@ -37,13 +37,13 @@ function Country(props) {
 
   return (
     <>
-      <div className="hero-area">
-        <div className="hero-area-text">
+      <div className="hero-containter">
+        <div className="hero-text">
           <ReactMarkdown>{countryDetails.fields.countryName}</ReactMarkdown>
           <ReactMarkdown>{countryDetails.fields.countryDate}</ReactMarkdown>
           <ReactMarkdown>{countryDetails.fields.countryLocations}</ReactMarkdown>
         </div>
-        {countryDetails.fields.tilePicCountry && <div className="hero-area-img" style={{backgroundImage: `url(${countryDetails.fields.tilePicCountry.fields.file.url}?fm=jpg&fl=progressive&w=600&h=500)`}}>
+        {countryDetails.fields.tilePicCountry && <div className="hero-image" style={{backgroundImage: `url(${countryDetails.fields.tilePicCountry.fields.file.url}?fm=jpg&fl=progressive&w=600&h=500)`}}>
         </div>}
       </div>
 
