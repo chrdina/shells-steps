@@ -58,7 +58,7 @@ function Trip(props) {
           <ReactMarkdown>{tripDetails.fields.tripDetails}</ReactMarkdown>
         </div>
         <div className="col">
-          <Carousel arrows center>
+          <Carousel arrows centered dots>
             {tripDetails.fields.tripPhotos && tripDetails.fields.tripPhotos.map(
               (image, key) => <img src={`${image.fields.file.url}?fm=jpg&fl=progressive&h=400&w=600`} key={key} />
             )}
