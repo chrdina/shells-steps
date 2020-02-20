@@ -17,7 +17,7 @@ class Countries extends React.Component {
     return (
       <div>
         <h1>Countries</h1>
-        <div class='tiles'>
+        <div className='tiles'>
           {this.state.data.length ? this.state.data.map(
             (country) => console.info('country', country) ||
               <Tile key={country.sys.id}

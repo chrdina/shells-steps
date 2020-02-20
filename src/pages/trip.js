@@ -38,27 +38,26 @@ function Trip(props) {
 
   return (
     <>
-      <div class="header">{tripDetails.fields.tripName} <hr /></div>
 
-      <div class="hero-area">
-        <div class="hero-area-text">
-          <ReactMarkdown>{tripDetails.fields.tripName}</ReactMarkdown>
+      <div className="hero-containter">
+        <div className="hero-text">
+          <h1><ReactMarkdown>{tripDetails.fields.tripName}</ReactMarkdown></h1>
           <ReactMarkdown>{tripDetails.fields.tripDate}</ReactMarkdown>
           <ReactMarkdown>{tripDetails.fields.tripLocations}</ReactMarkdown>
         </div>
 
-        {tripDetails.fields.tilePicTrip && <div class="hero-area-img" style={{backgroundImage: `url(${tripDetails.fields.tilePicTrip.fields.file.url}?fm=jpg&fl=progressive)`}}>
+        {tripDetails.fields.tilePicTrip && <div className="hero-image" style={{backgroundImage: `url(${tripDetails.fields.tilePicTrip.fields.file.url}?fm=jpg&fl=progressive)`}}>
         </div>}
       </div>
 
-      <div class="content-grid">
-        <div class="col">
+      <div className="content-grid">
+        <div className="col-left">
           <ReactMarkdown>{tripDetails.fields.highlights}</ReactMarkdown>
           <ReactMarkdown>{tripDetails.fields.tripItinirary}</ReactMarkdown>
           <ReactMarkdown>{tripDetails.fields.tripDetails}</ReactMarkdown>
         </div>
-        <div class="col">
-          <Carousel arrows infinite>
+        <div className="col-right">
+          <Carousel arrows centered>
             {tripDetails.fields.tripPhotos && tripDetails.fields.tripPhotos.map(
               (image, key) => <img src={`${image.fields.file.url}?fm=jpg&fl=progressive&h=400&w=600`} key={key} />
             )}

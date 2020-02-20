@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import client from '../contentfulProvider';
 import ReactMarkdown from 'react-markdown';
+import Tile from '../components/tile';
 
 function Country(props) {
 
@@ -35,20 +36,43 @@ function Country(props) {
     return <>Loading...</>
   }
 
+  const tripsInCountry = countryDetails.fields.tripsInThisCountry;
+
+  const tripTiles = tripsInCountry.length ? tripsInCountry.map(
+    (trip) => console.info('trip', trip) ||
+      <Tile key={trip.sys.id}
+        to={`/trips/${trip.sys.id}`}
+        text={trip.fields.tripName}
+        imgSrc={(trip.fields.tilePicTrip && trip.fields.tilePicTrip.fields != null) ? trip.fields.tilePicTrip.fields.file.url : undefined}
+        data={trip}
+      />
+  ):
+    <>Loading...</>
+
   return (
     <>
-      <div class="hero-area">
-        <div class="hero-area-text">
-          <ReactMarkdown>{countryDetails.fields.countryName}</ReactMarkdown>
-          <ReactMarkdown>{countryDetails.fields.countryDate}</ReactMarkdown>
-          <ReactMarkdown>{countryDetails.fields.countryLocations}</ReactMarkdown>
+      <div className="header">{countryDetails.fields.countryName} <hr /></div>
+      <div className="hero-containter">
+        <div className="hero-text">
+          <h2><ReactMarkdown>{countryDetails.fields.countryName}</ReactMarkdown></h2>
+          <div className="long-list">
+            <ReactMarkdown>{countryDetails.fields.countryLocations}</ReactMarkdown>
+          </div>
         </div>
-        {countryDetails.fields.tilePicCountry && <div class="hero-area-img" style={{backgroundImage: `url(${countryDetails.fields.tilePicCountry.fields.file.url}?fm=jpg&fl=progressive&w=600&h=500)`}}>
+        {countryDetails.fields.tilePicCountry && <div className="hero-image" style={{backgroundImage: `url(${countryDetails.fields.tilePicCountry.fields.file.url}?fm=jpg&fl=progressive)`}}>
         </div>}
       </div>
-      
-      <ReactMarkdown>{countryDetails.fields.countryHighlights}</ReactMarkdown>
-      <ReactMarkdown>{countryDetails.fields.countryTips}</ReactMarkdown>
+      <div className="content">
+        <ReactMarkdown>{countryDetails.fields.countryHighlights}</ReactMarkdown>
+        <ReactMarkdown>{countryDetails.fields.countryTips}</ReactMarkdown>
+      </div>
+      <hr />
+      <div className="content">
+        <h2> Trips in {countryDetails.fields.countryName} </h2>
+        <div className="tiles">
+          {tripTiles}
+        </div>
+      </div>
     </>
   );
 
