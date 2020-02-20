@@ -41,7 +41,7 @@ function Trip(props) {
 
       <div className="hero-containter">
         <div className="hero-text">
-          <h2><ReactMarkdown>{tripDetails.fields.tripName}</ReactMarkdown></h2>
+          <h1><ReactMarkdown>{tripDetails.fields.tripName}</ReactMarkdown></h1>
           <ReactMarkdown>{tripDetails.fields.tripDate}</ReactMarkdown>
           <ReactMarkdown>{tripDetails.fields.tripLocations}</ReactMarkdown>
         </div>
@@ -57,7 +57,7 @@ function Trip(props) {
           <ReactMarkdown>{tripDetails.fields.tripDetails}</ReactMarkdown>
         </div>
         <div className="col-right">
-          <Carousel arrows centered dots>
+          <Carousel arrows centered>
             {tripDetails.fields.tripPhotos && tripDetails.fields.tripPhotos.map(
               (image, key) => <img src={`${image.fields.file.url}?fm=jpg&fl=progressive&h=400&w=600`} key={key} />
             )}
