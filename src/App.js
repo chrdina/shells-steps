@@ -25,9 +25,6 @@ function App() {
               <NavLink to="/countries" activeClassName="nav-active">Countries</NavLink>
             </li>
             <li>
-              <NavLink to="/suggestions" activeClassName="nav-active">Suggestions</NavLink>
-            </li>
-            <li>
               <NavLink to="/map" activeClassName="nav-active">Map</NavLink>
             </li>
           </ul>
