@@ -38,11 +38,10 @@ function Trip(props) {
 
   return (
     <>
-      <div className="header">{tripDetails.fields.tripName} <hr /></div>
 
       <div className="hero-containter">
         <div className="hero-text">
-          <ReactMarkdown>{tripDetails.fields.tripName}</ReactMarkdown>
+          <h2><ReactMarkdown>{tripDetails.fields.tripName}</ReactMarkdown></h2>
           <ReactMarkdown>{tripDetails.fields.tripDate}</ReactMarkdown>
           <ReactMarkdown>{tripDetails.fields.tripLocations}</ReactMarkdown>
         </div>

@@ -37,6 +37,7 @@ function Country(props) {
 
   return (
     <>
+      <div className="header">{countryDetails.fields.countryName} <hr /></div>
       <div className="hero-containter">
         <div className="hero-text">
           <ReactMarkdown>{countryDetails.fields.countryName}</ReactMarkdown>
