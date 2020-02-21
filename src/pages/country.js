@@ -36,8 +36,10 @@ function Country(props) {
     return <>Loading...</>
   }
 
+  // Get all trips in this country
   const tripsInCountry = countryDetails.fields.tripsInThisCountry;
 
+  // Generate trip tiles and store in variable
   const tripTiles = tripsInCountry.length ? tripsInCountry.map(
     (trip) => console.info('trip', trip) ||
       <Tile key={trip.sys.id}
@@ -46,8 +48,7 @@ function Country(props) {
         imgSrc={(trip.fields.tilePicTrip && trip.fields.tilePicTrip.fields != null) ? trip.fields.tilePicTrip.fields.file.url : undefined}
         data={trip}
       />
-  ):
-    <>Loading...</>
+  ): <>Loading...</>
 
   return (
     <>
