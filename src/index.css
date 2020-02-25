@@ -5,10 +5,12 @@
 :root {
   --theme-blue: #4386BA;
   --theme-black: #272727;
+  --nav-height: 60px;
 }
 
 
 body {
+  height: 100%;
   margin: 0;
   padding: 0;
   font-family: "Open Sans", sans-serif;
@@ -20,6 +22,7 @@ code {
 }
 
 .content-main {
+  height: 100%;
   margin-left: 15vw;
   margin-right: 15vw;
 }
@@ -27,6 +30,8 @@ code {
 /* Navbar */
 
 .nav {
+  height: var(--nav-height);
+  box-sizing: border-box;
   display: flex;
   position: sticky;
   /* align-self: flex-start; */
@@ -198,7 +203,7 @@ code {
 
 .content {
   padding: 40px 40px 40px 40px;
-  background-color: rgb(240,240,240);
+  background-color: rgb(250,250,250);
 }
 
 .content-details {
@@ -210,6 +215,23 @@ code {
   width: 100%;
 }
 
+.map {
+  width: 100vw;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin-top: 60px;
+  padding-bottom: var(--nav-height);
+  box-sizing: border-box;
+  border-style: none;
+}
+
+.map > iframe {
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+}
 
 .footer {
   height: 10vh;
