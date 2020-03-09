@@ -52,27 +52,29 @@ function Country(props) {
 
   return (
     <>
-      <div className="header">{countryDetails.fields.countryName} <hr /></div>
-      <div className="hero-containter">
-        <div className="hero-text">
+      {countryDetails.fields.tilePicCountry && <div className="country-hero" style={{backgroundImage: `url(${countryDetails.fields.tilePicCountry.fields.file.url}?fm=jpg&fl=progressive)`}}>
+        <div className="country-hero-text">
           <h1>{countryDetails.fields.countryName}</h1>
-          <div className="long-list">
-            <ReactMarkdown>{countryDetails.fields.countryLocations}</ReactMarkdown>
+        </div>
+      </div>}
+
+      <div className="content-container">
+        <div className="content-section">
+          <ReactMarkdown>{countryDetails.fields.countryHighlights}</ReactMarkdown>
+          <ReactMarkdown>{countryDetails.fields.countryTips}</ReactMarkdown>
+        </div>
+        <div className="content-section">
+          <h2>Places visited</h2>
+          <ReactMarkdown>{countryDetails.fields.countryLocations}</ReactMarkdown>
+        </div>
+        <hr />
+        <div className="content-section">
+          <h2> Trips in {countryDetails.fields.countryName} </h2>
+          <div className="tiles">
+            {tripTiles}
           </div>
         </div>
-        {countryDetails.fields.tilePicCountry && <div className="hero-image" style={{backgroundImage: `url(${countryDetails.fields.tilePicCountry.fields.file.url}?fm=jpg&fl=progressive)`}}>
-        </div>}
-      </div>
-      <div className="content">
-        <ReactMarkdown>{countryDetails.fields.countryHighlights}</ReactMarkdown>
-        <ReactMarkdown>{countryDetails.fields.countryTips}</ReactMarkdown>
-      </div>
-      <hr />
-      <div className="content">
-        <h2> Trips in {countryDetails.fields.countryName} </h2>
-        <div className="tiles">
-          {tripTiles}
-        </div>
+
       </div>
     </>
   );
