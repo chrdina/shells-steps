@@ -26,19 +26,20 @@ h1, h2, h3 {
   font-family: "Montserrat", sans-serif;
 }
 h1 {
-
+  font-size: 42px;
 }
 h2 {
   padding-top: 10px;
+  font-size: 20px;
   color: var(--theme-blue);
 }
 h3 {
   padding-top: 10px;
+  font-size: 16px;
   color: var(--theme-night-blue);
 }
 p {
   font-family: "Open Sans", sans-serif;
-  font-size: 16px;
 }
 li {
   line-height: 1.5em;
@@ -139,9 +140,13 @@ li {
   display: flex;
   align-items: center;
   text-align: center;
+  background-color: rgba(0,0,0,0.2);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+}
+.tile:hover {
+  background-blend-mode: overlay;
 }
 
 .tile-text {
@@ -149,21 +154,21 @@ li {
   margin: 20px;
   flex: 1;
   text-align: center;
-  color: rgb(50,50,50);
   background: rgba(255, 255, 255, 0.7);
 
-  /****** Keep this for double border effect ********/
+  /** Keep this for double border effect ***/
   background-clip: content-box;
   border: solid rgba(255, 255, 255, 0.7) 4px;
-  padding: 10px 10px 10px 10px;
+  padding: 10px;
+  font-weight: 700;
 }
 
 .tile-text h2 {
   margin: 0;
   padding: 10px;
-  font: bold 18px/25px "Open Sans", Sans-Serif;
-  font-weight: 700;
+  /* font: bold 18px/25px "Open Sans", Sans-Serif; */
   color: var(--theme-charcoal);
+  line-height: 25px;
 }
 
 
