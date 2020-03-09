@@ -8,6 +8,7 @@
     "git-open": "^2.1.0",
     "global": "^4.3.2",
     "graphql": "^14.3.1",
+    "normalize.css": "^8.0.1",
     "react": "^16.8.6",
     "react-carousel": "^4.3.0",
     "react-contentful": "^1.4.5",

@@ -41,9 +41,9 @@ function Trip(props) {
 
       <div className="hero-containter">
         <div className="hero-text">
-          <h1><ReactMarkdown>{tripDetails.fields.tripName}</ReactMarkdown></h1>
-          <ReactMarkdown>{tripDetails.fields.tripDate}</ReactMarkdown>
-          <ReactMarkdown>{tripDetails.fields.tripLocations}</ReactMarkdown>
+          <h1>{tripDetails.fields.tripName}</h1>
+          <p>{tripDetails.fields.tripDate}</p>
+          <p>{tripDetails.fields.tripLocations}</p>
         </div>
 
         {tripDetails.fields.tilePicTrip && <div className="hero-image" style={{backgroundImage: `url(${tripDetails.fields.tilePicTrip.fields.file.url}?fm=jpg&fl=progressive)`}}>

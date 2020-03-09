@@ -29,7 +29,7 @@ function App() {
             </li>
           </ul>
         </div>
-        <div className="content-main">
+        <div className="container-main">
           <Switch>
             <Route path="/" exact component={Index} />
             <Route path="/trips/" exact component={Trips} />

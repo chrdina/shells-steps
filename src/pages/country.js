@@ -55,7 +55,7 @@ function Country(props) {
       <div className="header">{countryDetails.fields.countryName} <hr /></div>
       <div className="hero-containter">
         <div className="hero-text">
-          <h2><ReactMarkdown>{countryDetails.fields.countryName}</ReactMarkdown></h2>
+          <h1>{countryDetails.fields.countryName}</h1>
           <div className="long-list">
             <ReactMarkdown>{countryDetails.fields.countryLocations}</ReactMarkdown>
           </div>
