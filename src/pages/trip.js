@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCoffee } from '@fortawesome/free-solid-svg-icons';
 import client from '../contentfulProvider';
 import ReactMarkdown from 'react-markdown';
 import Carousel from '@brainhubeu/react-carousel';
@@ -57,7 +59,12 @@ function Trip(props) {
               <ReactMarkdown>{tripDetails.fields.tripItinirary}</ReactMarkdown>
             </div>
             <div className="col-right">
-              <Carousel arrows centered>
+              <Carousel
+                centered
+                arrowLeft={<FontAwesomeIcon icon={faCoffee} name="arrow-left" />}
+                arrowRight={<FontAwesomeIcon className="icon-example" name="arrow-right" />}
+                addArrowClickHandler
+              >
                 {tripDetails.fields.tripPhotos && tripDetails.fields.tripPhotos.map(
                   (image, key) => <img src={`${image.fields.file.url}?fm=jpg&fl=progressive&h=400&w=600`} key={key} />
                 )}

@@ -40,6 +40,7 @@ h3 {
 }
 p {
   font-family: "Open Sans", sans-serif;
+  line-height: 1.5em;
 }
 li {
   line-height: 1.5em;
@@ -59,6 +60,9 @@ li {
 .content-section {
   margin-top: 40px;
 }
+.content-section img {
+  width:70%;
+}
 
 
 /******  Navigation Style ********/
@@ -68,27 +72,17 @@ li {
   box-sizing: border-box;
   display: flex;
   position: sticky;
-  box-shadow: 0 2px 2px -2px rgba(0,0,0,.2);
+  box-shadow: 0 2px 2px -2px var(--theme-charcoal);
   justify-content: center;
   top: 0;
   padding-top: 20px;
   padding-bottom: 20px;
   z-index: 2;
   font-family: "Montserrat", sans-serif;
-  background-color: rgb(255,255,255);
+  background-color: #FFFFFF;
 }
 .nav-active {
   color: var(--theme-blue);
-}
-.nav-active a:after {
-  content: '';
-  position: absolute;
-  left: 0;
-  bottom: 1px;
-  width: 100%;
-  border-width: 0 0 1px;
-  border-style: solid;
-
 }
 .nav ul, a {
   list-style: none;
@@ -108,7 +102,7 @@ li {
 }
 
 
-/****** Homepage ********/
+/****** Homepage Style ********/
 
 .hero-image-main {
   width: 100%;
@@ -134,12 +128,13 @@ li {
 }
 
 
-/***** Tile Design ********/
+/***** Tile Styles ********/
 
 .tiles {
   display: grid;
   grid-gap: 15px;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  overflow-y: visible;
 }
 
 .tile {
@@ -260,14 +255,8 @@ li {
   box-sizing: border-box;
 }
 
-.long-list {
-  height: 20%;
-  overflow-y: scroll;
 
-}
-.long-list li {
-  list-style: none;
-}
+/***** Carousel Style ********/
 
 .BrainhubCarousel {
   width: 100%;
@@ -289,6 +278,9 @@ li {
 .trip-content-details img {
   width: 100%;
 }
+
+
+
 
 .map {
   width: 100vw;
