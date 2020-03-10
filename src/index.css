@@ -1,49 +1,91 @@
+@import-normalize;
 @import url('https://fonts.googleapis.com/css?family=Montserrat|Open+Sans&display=swap');
 
-/* Variables */
+/******  Variables *********/
 
 :root {
-  --theme-blue: #4386BA;
+  --theme-blue: #033B80;
+  --theme-night-blue: #02234E;
   --theme-black: #272727;
+  --theme-charcoal: #323232;
+  --nav-height: 60px;
+  --font-heading: "Montserrat", sans-serif;
+  --font-body: "Open Sans", sans-serif;
 }
 
+
+/******  General Styles ********/
 
 body {
+  height: 100%;
   margin: 0;
   padding: 0;
-  font-family: "Open Sans", sans-serif;
+  font-family: var(--font-body);
+  font-size: 16px;
+  color: var(--theme-charcoal);
+}
+h1, h2, h3 {
+  font-family: var(--font-heading);
+}
+h1 {
+  font-size: 42px;
+}
+h2 {
+  padding-top: 10px;
+  font-size: 20px;
+  color: var(--theme-blue);
+}
+h3 {
+  padding-top: 10px;
+  font-size: 16px;
+  color: var(--theme-night-blue);
+}
+p {
+  font-family: var(--font-body);
+  line-height: 1.5em;
+}
+li {
+  line-height: 1.5em;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+
+.container-main {
+  height: 100%;
 }
 
-.content-main {
+.content-container {
   margin-left: 15vw;
   margin-right: 15vw;
+  padding: 40px 0 40px 0;
 }
 
-/* Navbar */
+.content-section {
+  margin-top: 40px;
+}
+.content-section .blog img {
+  width:70%;
+}
+
+
+/******  Navigation Style ********/
 
 .nav {
+  height: var(--nav-height);
+  box-sizing: border-box;
   display: flex;
   position: sticky;
-  /* align-self: flex-start; */
+  box-shadow: 0 2px 2px -2px var(--theme-charcoal);
   justify-content: center;
   top: 0;
-  color: rgb(80,80,80);
   padding-top: 20px;
   padding-bottom: 20px;
-  background-color: #FFFFFF;
   z-index: 2;
-  /* Link to gradient: https://colorzilla.com/gradient-editor/#ffffff+5,ffffff+96&0.02+0,1+13,1+50,1+88,0.02+100 */
+  font-family: var(--font-heading);
+  background-color: #FFFFFF;
 }
-
 .nav-active {
   color: var(--theme-blue);
 }
-
 .nav ul, a {
   list-style: none;
   text-decoration: none;
@@ -51,7 +93,6 @@ code {
   padding: 0;
   color: inherit;
 }
-
 .nav li {
   display: inline;
   margin: 0;
@@ -63,7 +104,7 @@ code {
 }
 
 
-/* Homepage */
+/****** Homepage Style ********/
 
 .hero-image-main {
   width: 100%;
@@ -78,35 +119,38 @@ code {
 }
 
 
-/* Headers */
+/****** Headers ********/
 
 .header {
   height: max-content;
   width: 100%;
   text-align: center;
   color: var(--theme-black);
-  font: bold 40px/70px "Open Sans", Sans-Serif;
 }
 
 
-/* Tile Design */
+/***** Tile Styles ********/
 
 .tiles {
   display: grid;
   grid-gap: 15px;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  overflow-y: visible;
 }
 
 .tile {
   width: 100%;
   height: 200px;
   display: flex;
-  /* justify-content: center; */
   align-items: center;
   text-align: center;
+  background-color: rgba(0,0,0,0.2);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+}
+.tile:hover {
+  background-blend-mode: overlay;
 }
 
 .tile-text {
@@ -114,40 +158,79 @@ code {
   margin: 20px;
   flex: 1;
   text-align: center;
-  color: rgb(50,50,50);
   background: rgba(255, 255, 255, 0.7);
 
-  /* Keep this for double border effect */
+  /** Keep this for double border effect ***/
   background-clip: content-box;
   border: solid rgba(255, 255, 255, 0.7) 4px;
-  padding: 10px 10px 10px 10px;
+  padding: 10px;
+  font-weight: 700;
 }
 
 .tile-text h2 {
   margin: 0;
   padding: 10px;
-  font: bold 18px/25px "Open Sans", Sans-Serif;
-  font-weight: 700;
+  /* font: bold 18px/25px "Open Sans", Sans-Serif; */
+  color: var(--theme-charcoal);
+  line-height: 25px;
 }
 
 
-/* Trip */
+/****** Country Style ********/
 
-.hero-containter {
+.country-hero {
+  display: flex;
+  width: 100%;
+  height: 85vh;
+  min-height: 500px;
+  margin-bottom: 20px;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(255,255,255,0.2);
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  /* background-blend-mode: lighten; */
+  opacity: 0.8;
+}
+
+.country-hero-text {
+  color: #FFFFFF;
+  font-size: 72px;
+  line-height: 3em;
+  padding-left: 40px;
+  padding-right: 40px;
+  text-transform: uppercase;
+  /* background-color: var(--theme-charcoal); */
+  font-family: var(--font-heading);
+  text-shadow: 2px 1px 6px var(--theme-charcoal);
+}
+
+.country-content {
+  margin-left: 15vw;
+  margin-right: 15vw;
+  padding: 40px 0 40px 0;
+}
+
+
+/****** Trip Style ********/
+
+.trip-hero {
   display: flex;
   width: 100%;
   height: 70vh;
   min-height: 500px;
   padding-top: 20px;
-  padding-bottom: 20px;
+  margin-bottom: 20px;
+
 }
-.hero-text {
+.trip-hero-text {
   flex: 1;
-  max-width: 50%;
   padding: 20px 30px 20px 30px;
   color: #FFFFFF;
   background-color: var(--theme-black);
-  font-family: "Montserrat", sans-serif;
+  font-family: var(--font-heading);
 }
 
 .hero-image {
@@ -163,39 +246,60 @@ code {
 .col-left {
   flex: 1;
   width: 50%;
+  margin-right: 20px;
   box-sizing: border-box;
-  padding: 15px;
 }
 
 .col-right {
-  flex: 1;
+  flex: 2;
   width: 50%;
   box-sizing: border-box;
-  padding: 15px;
 }
 
-.long-list {
-  height: 20%;
-  overflow-y: scroll;
 
-}
-.long-list li {
-  list-style: none;
-}
+/***** Carousel Style ********/
 
 .BrainhubCarousel {
   width: 100%;
+}
+
+.BrainhubCarousel img{
+  min-height: 100%
 }
 
 .BrainhubCarouselItem {
   overflow: hidden;
 }
 
-.content {
-  margin-top: 40px;
-  margin-bottom: 40px;
+.trip-content-details {
+  padding: 40px 20px 40px 20px;
+  width: 70%;
 }
 
+.trip-content-details img {
+  width: 100%;
+}
+
+
+
+
+.map {
+  width: 100vw;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin-top: 60px;
+  padding-bottom: var(--nav-height);
+  box-sizing: border-box;
+  border-style: none;
+}
+
+.map > iframe {
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+}
 
 .footer {
   height: 10vh;

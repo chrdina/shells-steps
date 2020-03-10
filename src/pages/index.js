@@ -7,7 +7,7 @@ class Index extends React.Component {
   heroImageURL = "";
 
   componentDidMount() {
-    client.getAsset('1nCcWOdKT2Rth4PQFL2d4m').then((asset) =>
+    client.getAsset('5cSBFkBEFUWmwsUsEWqg4K').then((asset) =>
       this.setState({data: `${asset.fields.file.url}?fm=jpg&fl=progressive`})
     )
   }

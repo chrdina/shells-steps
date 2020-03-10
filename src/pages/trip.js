@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import client from '../contentfulProvider';
 import ReactMarkdown from 'react-markdown';
-import Carousel from '@brainhubeu/react-carousel';
+import Carousel, { Dots } from '@brainhubeu/react-carousel';
 import '@brainhubeu/react-carousel/lib/style.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
+
 
 function Trip(props) {
   // this is just a way of getting state inside functions which... don't have state (does not work on classes)
@@ -39,29 +42,42 @@ function Trip(props) {
   return (
     <>
 
-      <div className="hero-containter">
-        <div className="hero-text">
-          <h1><ReactMarkdown>{tripDetails.fields.tripName}</ReactMarkdown></h1>
-          <ReactMarkdown>{tripDetails.fields.tripDate}</ReactMarkdown>
-          <ReactMarkdown>{tripDetails.fields.tripLocations}</ReactMarkdown>
+      <div className="trip-hero">
+        <div className="trip-hero-text">
+          <h1>{tripDetails.fields.tripName}</h1>
+          <p>{tripDetails.fields.tripDate}</p>
+          <p>{tripDetails.fields.tripLocations}</p>
         </div>
 
         {tripDetails.fields.tilePicTrip && <div className="hero-image" style={{backgroundImage: `url(${tripDetails.fields.tilePicTrip.fields.file.url}?fm=jpg&fl=progressive)`}}>
         </div>}
       </div>
-
-      <div className="content-grid">
-        <div className="col-left">
-          <ReactMarkdown>{tripDetails.fields.highlights}</ReactMarkdown>
-          <ReactMarkdown>{tripDetails.fields.tripItinirary}</ReactMarkdown>
-          <ReactMarkdown>{tripDetails.fields.tripDetails}</ReactMarkdown>
+      <div className="content-container">
+        <div className="content-section">
+          <div className="content-grid">
+            <div className="col-left">
+              <ReactMarkdown>{tripDetails.fields.highlights}</ReactMarkdown>
+              <ReactMarkdown>{tripDetails.fields.tripItinirary}</ReactMarkdown>
+            </div>
+            <div className="col-right">
+              <Carousel
+                centered
+                arrowLeft={<FontAwesomeIcon className="carousel-arrow-left" icon={faChevronLeft} size="3x"/>}
+                arrowRight={<FontAwesomeIcon className="carousel-arrow-right" icon={faChevronRight} size="3x"/>}
+                addArrowClickHandler
+              >
+                {tripDetails.fields.tripPhotos && tripDetails.fields.tripPhotos.map(
+                  (image, key) => <img src={`${image.fields.file.url}?fm=jpg&fl=progressive&h=400&w=600`} key={key} />
+                )}
+              </Carousel>
+            </div>
+          </div>
         </div>
-        <div className="col-right">
-          <Carousel arrows centered>
-            {tripDetails.fields.tripPhotos && tripDetails.fields.tripPhotos.map(
-              (image, key) => <img src={`${image.fields.file.url}?fm=jpg&fl=progressive&h=400&w=600`} key={key} />
-            )}
-          </Carousel>
+
+        <div className="content-section">
+          <div className="blog">
+            <ReactMarkdown>{tripDetails.fields.tripDetails}</ReactMarkdown>
+          </div>
         </div>
       </div>
     </>

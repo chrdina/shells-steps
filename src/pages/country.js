@@ -36,8 +36,10 @@ function Country(props) {
     return <>Loading...</>
   }
 
+  // Get all trips in this country
   const tripsInCountry = countryDetails.fields.tripsInThisCountry;
 
+  // Generate trip tiles and store in variable
   const tripTiles = tripsInCountry.length ? tripsInCountry.map(
     (trip) => console.info('trip', trip) ||
       <Tile key={trip.sys.id}
@@ -46,32 +48,33 @@ function Country(props) {
         imgSrc={(trip.fields.tilePicTrip && trip.fields.tilePicTrip.fields != null) ? trip.fields.tilePicTrip.fields.file.url : undefined}
         data={trip}
       />
-  ):
-    <>Loading...</>
+  ): <>Loading...</>
 
   return (
     <>
-      <div className="header">{countryDetails.fields.countryName} <hr /></div>
-      <div className="hero-containter">
-        <div className="hero-text">
-          <h2><ReactMarkdown>{countryDetails.fields.countryName}</ReactMarkdown></h2>
-          <div className="long-list">
-            <ReactMarkdown>{countryDetails.fields.countryLocations}</ReactMarkdown>
+      {countryDetails.fields.tilePicCountry && <div className="country-hero" style={{backgroundImage: `url(${countryDetails.fields.tilePicCountry.fields.file.url}?fm=jpg&fl=progressive)`}}>
+        <div className="country-hero-text">
+          {countryDetails.fields.countryName}
+        </div>
+      </div>}
+
+      <div className="content-container">
+        <div className="content-section">
+          <ReactMarkdown>{countryDetails.fields.countryHighlights}</ReactMarkdown>
+          <ReactMarkdown>{countryDetails.fields.countryTips}</ReactMarkdown>
+        </div>
+        <div className="content-section">
+          <h2>Places visited</h2>
+          <ReactMarkdown>{countryDetails.fields.countryLocations}</ReactMarkdown>
+        </div>
+        <hr />
+        <div className="content-section">
+          <h2> Trips in {countryDetails.fields.countryName} </h2>
+          <div className="tiles">
+            {tripTiles}
           </div>
         </div>
-        {countryDetails.fields.tilePicCountry && <div className="hero-image" style={{backgroundImage: `url(${countryDetails.fields.tilePicCountry.fields.file.url}?fm=jpg&fl=progressive)`}}>
-        </div>}
-      </div>
-      <div className="content">
-        <ReactMarkdown>{countryDetails.fields.countryHighlights}</ReactMarkdown>
-        <ReactMarkdown>{countryDetails.fields.countryTips}</ReactMarkdown>
-      </div>
-      <hr />
-      <div className="content">
-        <h2> Trips in {countryDetails.fields.countryName} </h2>
-        <div className="tiles">
-          {tripTiles}
-        </div>
+
       </div>
     </>
   );

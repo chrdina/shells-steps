@@ -15,7 +15,7 @@ class Countries extends React.Component {
   render() {
 
     return (
-      <div>
+      <div className="content-container">
         <h1>Countries</h1>
         <div className='tiles'>
           {this.state.data.length ? this.state.data.map(
