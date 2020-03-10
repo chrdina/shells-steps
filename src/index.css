@@ -119,8 +119,18 @@ li {
   bottom: 0;
   z-index: -1;
   display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
   background-color: var(--theme-black);
   background-size: cover;
+}
+.hero-image-main h1 {
+  padding-bottom: 350px;
+  font-size: 150px;
+  font-weight: lighter;
+  letter-spacing: -5px;
+  color: white;
 }
 
 

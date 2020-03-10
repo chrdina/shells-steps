@@ -23,7 +23,7 @@ class Index extends React.Component {
       <>
 
         <div className="hero-image-main" style={{backgroundImage: `url(${this.heroImageURL})`}}>
-
+          <h1>Where's Shell</h1>
         </div>
       </>
     );
