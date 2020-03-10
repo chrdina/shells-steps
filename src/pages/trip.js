@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCoffee } from '@fortawesome/free-solid-svg-icons';
 import client from '../contentfulProvider';
 import ReactMarkdown from 'react-markdown';
-import Carousel from '@brainhubeu/react-carousel';
+import Carousel, { Dots } from '@brainhubeu/react-carousel';
 import '@brainhubeu/react-carousel/lib/style.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
+
 
 function Trip(props) {
   // this is just a way of getting state inside functions which... don't have state (does not work on classes)
@@ -61,8 +62,8 @@ function Trip(props) {
             <div className="col-right">
               <Carousel
                 centered
-                arrowLeft={<FontAwesomeIcon icon={faCoffee} name="arrow-left" />}
-                arrowRight={<FontAwesomeIcon icon={faCoffee} name="arrow-right" />}
+                arrowLeft={<FontAwesomeIcon className="carousel-arrow-left" icon={faChevronLeft} size="3x"/>}
+                arrowRight={<FontAwesomeIcon className="carousel-arrow-right" icon={faChevronRight} size="3x"/>}
                 addArrowClickHandler
               >
                 {tripDetails.fields.tripPhotos && tripDetails.fields.tripPhotos.map(
