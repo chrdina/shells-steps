@@ -12,9 +12,9 @@ function Tile(props) {
     <div>
       <Link to={toObject}>
         <div className='tile' style={{backgroundImage: `url(${props.imgSrc}?fm=jpg&w=600&fl=progressive)`}}>
-          <div className='tile-text'>
-            <h2>{props.text}</h2>
-          </div>
+        <div className='tile-text'>
+          <h2>{props.text}</h2>
+        </div>
         </div>
       </Link>
     </div>
