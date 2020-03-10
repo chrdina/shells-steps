@@ -4,7 +4,8 @@ import ReactMarkdown from 'react-markdown';
 import Carousel, { Dots } from '@brainhubeu/react-carousel';
 import '@brainhubeu/react-carousel/lib/style.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
+import { faChevronLeft, faChevronRight, faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons';
+import getDate from '../dateFormatter';
 
 
 function Trip(props) {
@@ -45,8 +46,8 @@ function Trip(props) {
       <div className="trip-hero">
         <div className="trip-hero-text">
           <h1>{tripDetails.fields.tripName}</h1>
-          <p>{tripDetails.fields.tripDate}</p>
-          <p>{tripDetails.fields.tripLocations}</p>
+          <p>{getDate(tripDetails.fields.tripDate, "long")}</p>
+          <p><FontAwesomeIcon icon={faMapMarkerAlt} className="icon"/>{tripDetails.fields.tripLocations}</p>
         </div>
 
         {tripDetails.fields.tilePicTrip && <div className="hero-image" style={{backgroundImage: `url(${tripDetails.fields.tilePicTrip.fields.file.url}?fm=jpg&fl=progressive)`}}>
