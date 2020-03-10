@@ -62,7 +62,7 @@ function Trip(props) {
               <Carousel
                 centered
                 arrowLeft={<FontAwesomeIcon icon={faCoffee} name="arrow-left" />}
-                arrowRight={<FontAwesomeIcon className="icon-example" name="arrow-right" />}
+                arrowRight={<FontAwesomeIcon icon={faCoffee} name="arrow-right" />}
                 addArrowClickHandler
               >
                 {tripDetails.fields.tripPhotos && tripDetails.fields.tripPhotos.map(
@@ -74,7 +74,9 @@ function Trip(props) {
         </div>
 
         <div className="content-section">
-          <ReactMarkdown>{tripDetails.fields.tripDetails}</ReactMarkdown>
+          <div className="blog">
+            <ReactMarkdown>{tripDetails.fields.tripDetails}</ReactMarkdown>
+          </div>
         </div>
       </div>
     </>
