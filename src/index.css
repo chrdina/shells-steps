@@ -9,6 +9,8 @@
   --theme-black: #272727;
   --theme-charcoal: #323232;
   --nav-height: 60px;
+  --font-heading: "Montserrat", sans-serif;
+  --font-body: "Open Sans", sans-serif;
 }
 
 
@@ -18,12 +20,12 @@ body {
   height: 100%;
   margin: 0;
   padding: 0;
-  font-family: "Open Sans", sans-serif;
+  font-family: var(--font-body);
   font-size: 16px;
   color: var(--theme-charcoal);
 }
 h1, h2, h3 {
-  font-family: "Montserrat", sans-serif;
+  font-family: var(--font-heading);
 }
 h1 {
   font-size: 42px;
@@ -39,7 +41,7 @@ h3 {
   color: var(--theme-night-blue);
 }
 p {
-  font-family: "Open Sans", sans-serif;
+  font-family: var(--font-body);
   line-height: 1.5em;
 }
 li {
@@ -78,7 +80,7 @@ li {
   padding-top: 20px;
   padding-bottom: 20px;
   z-index: 2;
-  font-family: "Montserrat", sans-serif;
+  font-family: var(--font-heading);
   background-color: #FFFFFF;
 }
 .nav-active {
@@ -124,7 +126,6 @@ li {
   width: 100%;
   text-align: center;
   color: var(--theme-black);
-  font: bold 40px/70px "Open Sans", Sans-Serif;
 }
 
 
@@ -202,7 +203,7 @@ li {
   padding-right: 40px;
   text-transform: uppercase;
   /* background-color: var(--theme-charcoal); */
-  font-family: "Montserrat", sans-serif;
+  font-family: var(--font-heading);
   text-shadow: 2px 1px 6px var(--theme-charcoal);
 }
 
@@ -229,7 +230,7 @@ li {
   padding: 20px 30px 20px 30px;
   color: #FFFFFF;
   background-color: var(--theme-black);
-  font-family: "Montserrat", sans-serif;
+  font-family: var(--font-heading);
 }
 
 .hero-image {
