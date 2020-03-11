@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import client from '../contentfulProvider';
 import ReactMarkdown from 'react-markdown';
-import Carousel, { Dots } from '@brainhubeu/react-carousel';
-import '@brainhubeu/react-carousel/lib/style.css';
+import CustomCarousel from '../components/carousel';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faChevronLeft, faChevronRight, faMapMarkerAlt, faCalendarAlt } from '@fortawesome/free-solid-svg-icons';
+import { faMapMarkerAlt, faCalendarAlt } from '@fortawesome/free-solid-svg-icons';
 import getDate from '../dateFormatter';
 
 
@@ -61,16 +60,7 @@ function Trip(props) {
               <ReactMarkdown>{tripDetails.fields.tripItinirary}</ReactMarkdown>
             </div>
             <div className="col-right">
-              <Carousel
-                centered
-                arrowLeft={<FontAwesomeIcon className="carousel-arrow-left" icon={faChevronLeft} size="3x"/>}
-                arrowRight={<FontAwesomeIcon className="carousel-arrow-right" icon={faChevronRight} size="3x"/>}
-                addArrowClickHandler
-              >
-                {tripDetails.fields.tripPhotos && tripDetails.fields.tripPhotos.map(
-                  (image, key) => <img src={`${image.fields.file.url}?fm=jpg&fl=progressive&h=400&w=600`} key={key} />
-                )}
-              </Carousel>
+              <CustomCarousel items={tripDetails.fields.tripPhotos} />
             </div>
           </div>
         </div>
