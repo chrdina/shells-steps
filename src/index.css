@@ -186,7 +186,6 @@ li {
 .tile-text h2 {
   margin: 0;
   padding: 10px;
-  /* font: bold 18px/25px "Open Sans", Sans-Serif; */
   color: var(--theme-charcoal);
   line-height: 25px;
 }
@@ -271,7 +270,11 @@ li {
 .col-right {
   flex: 2;
   width: 50%;
+  height: 100%;
+  margin-left: 50px;
   box-sizing: border-box;
+  background-color: #666666;
+  background-color: var(--theme-charcoal);
 }
 
 
@@ -290,11 +293,16 @@ li {
 }
 
 .thumbnail{
-  height: 20px;
+  height: 30px;
 }
 
-.carousel-arrow-left {
-  color: var(--theme-charcoal);
+.carousel-arrow {
+  /* color: var(--theme-charcoal); */
+  height: 400px;
+  padding-left: 40px;
+  padding-right: 40px;
+  color: white;
+  background-color: var(--theme-charcoal);
 }
 
 
