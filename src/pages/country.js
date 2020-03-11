@@ -67,7 +67,7 @@ function Country(props) {
           <h2>Places visited</h2>
           <ReactMarkdown>{countryDetails.fields.countryLocations}</ReactMarkdown>
         </div>
-        <hr />
+
         <div className="content-section">
           <h2> Trips in {countryDetails.fields.countryName} </h2>
           <div className="tiles">

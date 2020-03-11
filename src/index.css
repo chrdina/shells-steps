@@ -36,7 +36,7 @@ h2 {
   color: var(--theme-blue);
 }
 h3 {
-  padding-top: 10px;
+  padding-top: 20px;
   font-size: 16px;
   color: var(--theme-night-blue);
 }
@@ -61,11 +61,15 @@ li {
 
 .content-section {
   margin-top: 40px;
+  margin-bottom: 40px;
 }
 .content-section .blog img {
   width:70%;
 }
 
+.icon {
+  padding-right: 20px;
+}
 
 /******  Navigation Style ********/
 
@@ -108,14 +112,25 @@ li {
 
 .hero-image-main {
   width: 100%;
-  height: 100vh;
+  /* height: 100vh; */
   position: absolute;
-  top: 0;
+  top: var(--nav-height);
   left: 0;
+  bottom: 0;
   z-index: -1;
   display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
   background-color: var(--theme-black);
   background-size: cover;
+}
+.hero-image-main h1 {
+  padding-bottom: 350px;
+  font-size: 150px;
+  font-weight: lighter;
+  letter-spacing: -5px;
+  color: white;
 }
 
 
@@ -134,13 +149,14 @@ li {
 .tiles {
   display: grid;
   grid-gap: 15px;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   overflow-y: visible;
 }
 
 .tile {
   width: 100%;
-  height: 200px;
+  height: 25vh;
+  min-height: 200px;
   display: flex;
   align-items: center;
   text-align: center;
@@ -219,9 +235,8 @@ li {
 .trip-hero {
   display: flex;
   width: 100%;
-  height: 70vh;
+  height: 85vh;
   min-height: 500px;
-  padding-top: 20px;
   margin-bottom: 20px;
 
 }
@@ -231,6 +246,9 @@ li {
   color: #FFFFFF;
   background-color: var(--theme-black);
   font-family: var(--font-heading);
+}
+.trip-hero-text p {
+  padding-top: 10px;
 }
 
 .hero-image {
@@ -270,6 +288,15 @@ li {
 .BrainhubCarouselItem {
   overflow: hidden;
 }
+
+.thumbnail{
+  height: 20px;
+}
+
+.carousel-arrow-left {
+  color: var(--theme-charcoal);
+}
+
 
 .trip-content-details {
   padding: 40px 20px 40px 20px;
