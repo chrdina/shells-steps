@@ -74,7 +74,9 @@ function Country(props) {
             {tripTiles}
           </div>
         </div>
-
+      </div>
+      <div id="footer">
+        <a href="/countries">Back to Countries</a>
       </div>
     </>
   );

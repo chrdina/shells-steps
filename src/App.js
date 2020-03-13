@@ -8,12 +8,24 @@ import Trip from './pages/trip';
 import Country from './pages/country';
 import Map from './pages/map';
 
+// Font awesome icon setup
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { faGlobeAmericas, faCoffee, faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
+library.add(faGlobeAmericas, faCoffee, faChevronLeft, faChevronRight);   // add icons to library
+
+
 function App() {
 
   return (
     <>
       <Router>
         <div className="nav">
+          <Link to="/">
+            <div id="logo">
+              <FontAwesomeIcon icon="globe-americas" className="icon"/>Where's Shell
+            </div>
+          </Link>
           <ul>
             <li>
               <NavLink to="/" exact={true} activeClassName="nav-active">Home</NavLink>
@@ -39,10 +51,7 @@ function App() {
             <Route path="/map" component={Map} />
           </Switch>
         </div>
-
       </Router>
-
-      <div className="footer"> </div>
     </>
   );
 }

@@ -44,7 +44,9 @@ function Trip(props) {
 
       <div className="trip-hero">
         <div className="trip-hero-text">
-          <h1>{tripDetails.fields.tripName}</h1>
+          <div className="trip-hero-text__title">
+            <h1>{tripDetails.fields.tripName}</h1>
+          </div>
           <p><FontAwesomeIcon icon={faCalendarAlt} className="icon"/>{getDate(tripDetails.fields.tripDate, "long")}</p>
           <p><FontAwesomeIcon icon={faMapMarkerAlt} className="icon"/>{tripDetails.fields.tripLocations}</p>
         </div>
@@ -70,6 +72,10 @@ function Trip(props) {
             <ReactMarkdown>{tripDetails.fields.tripDetails}</ReactMarkdown>
           </div>
         </div>
+      </div>
+
+      <div id="footer">
+        <a href="/trips">Back to Trips</a>
       </div>
     </>
   );

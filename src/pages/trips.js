@@ -16,7 +16,7 @@ class Trips extends React.Component {
 
     return (
       <div className="content-container">
-        <h2>Trips</h2>
+        <h1>Trips</h1>
         <div className='tiles'>
           {this.state.data.length ? this.state.data.map(
             (trip) => console.info('trip', trip) ||
