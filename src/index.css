@@ -192,9 +192,10 @@ hr.style-1 {
 }
 
 #logo {
+
   position: absolute;
-  left: 25px;
-  top: 0;
+  left: 40px;
+  top: 20px;
   margin-top: 10px;
   font-weight: 800;
   font-size: 20px;
