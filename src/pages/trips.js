@@ -1,7 +1,6 @@
 import React from 'react';
 import Tile from '../components/tile';
 import client from '../contentfulProvider';
-import Trip from './trip';
 
 class Trips extends React.Component {
   state = { data: [] };

@@ -52,7 +52,7 @@ function Trip(props) {
           <p className="hero-text"><FontAwesomeIcon icon={faCalendarAlt} className="icon"/>{getDate(tripDetails.fields.tripDate, "long")}</p>
           <hr className="style-1"/>
           <p className="hero-text"><FontAwesomeIcon icon={faMapMarkerAlt} className="icon"/>{tripDetails.fields.tripLocations}</p>
-          <p className="hero-text">
+
             <ul className="inline-light-blue">
               {
                 tripDetails.fields.countriesVisitedInTrip.map((country, key) => (
@@ -64,7 +64,7 @@ function Trip(props) {
                 ))
               }
             </ul>
-          </p>
+          
         </div>
 
         {tripDetails.fields.tilePicTrip && <div className="hero-image" style={{backgroundImage: `url(${tripDetails.fields.tilePicTrip.fields.file.url}?fm=jpg&fl=progressive)`}}>

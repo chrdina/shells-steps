@@ -1,7 +1,6 @@
 import React from 'react';
 import Tile from '../components/tile';
 import client from '../contentfulProvider';
-import Country from './country';
 
 class Countries extends React.Component {
   state = { data: [] };
