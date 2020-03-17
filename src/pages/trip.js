@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import client from '../contentfulProvider';
 import ReactMarkdown from 'react-markdown';
 import CustomCarousel from '../components/carousel';
@@ -39,16 +40,27 @@ function Trip(props) {
     return <>Loading...</>
   }
 
+
   return (
     <>
 
       <div className="trip-hero">
         <div className="trip-hero-text">
           <div className="trip-hero-text__title">
-            <h1>{tripDetails.fields.tripName}</h1>
+            <h1 className="trip-title">{tripDetails.fields.tripName}</h1>
           </div>
-          <p><FontAwesomeIcon icon={faCalendarAlt} className="icon"/>{getDate(tripDetails.fields.tripDate, "long")}</p>
-          <p><FontAwesomeIcon icon={faMapMarkerAlt} className="icon"/>{tripDetails.fields.tripLocations}</p>
+          <p className="hero-text"><FontAwesomeIcon icon={faCalendarAlt} className="icon"/>{getDate(tripDetails.fields.tripDate, "long")}</p>
+          <hr className="style-1"/>
+          <p className="hero-text"><FontAwesomeIcon icon={faMapMarkerAlt} className="icon"/>{tripDetails.fields.tripLocations}</p>
+          <p className="hero-text">
+          {
+            tripDetails.fields.countriesVisitedInTrip.map((country, key) => (
+              <Link to={`/countries/${country.sys.id}`} className="country-link" key={key}>
+                {country.fields.countryName}
+              </Link>
+            ))
+          }
+          </p>
         </div>
 
         {tripDetails.fields.tilePicTrip && <div className="hero-image" style={{backgroundImage: `url(${tripDetails.fields.tilePicTrip.fields.file.url}?fm=jpg&fl=progressive)`}}>
