@@ -5,10 +5,14 @@
 
 :root {
   --theme-blue: #033B80;
+  /* --theme-light-blue: #4486B8; */
+  --theme-light-blue: #50C4FB;
   --theme-night-blue: #02234E;
-  --theme-black: #272727;
+  --theme-light-grey: #DDDDDD;
+  --theme-dark-grey: #666666;
   --theme-charcoal: #323232;
-  --nav-height: 60px;
+  --theme-black: #272727;
+  --nav-height: 80px;
   --font-heading: "Montserrat", sans-serif;
   --font-body: "Open Sans", sans-serif;
 }
@@ -23,40 +27,117 @@ body {
   font-family: var(--font-body);
   font-size: 16px;
   color: var(--theme-charcoal);
+  background-color: #fcfcfc;
 }
+
 h1, h2, h3 {
   font-family: var(--font-heading);
+  margin: 0;
 }
+
 h1 {
   font-size: 42px;
+  padding: 30px 10px 30px 0;
 }
+h1.trip-title {
+  padding: 0;
+
+}
+
 h2 {
   padding-top: 10px;
-  font-size: 20px;
+  font-size: 30px;
   color: var(--theme-blue);
 }
+
 h3 {
   padding-top: 20px;
   font-size: 16px;
   color: var(--theme-night-blue);
 }
+
 p {
   font-family: var(--font-body);
   line-height: 1.5em;
 }
+p.hero-text {
+  color: var(--theme-light-grey);
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+p.video-button {
+  padding: 20px;
+  text-align: center;
+  color: var(--theme-charcoal);
+  background-color: var(--theme-light-blue);
+}
+
+ul {
+  padding: 0;
+  padding-left: 20px;
+}
+ul.inline-light-blue {
+  padding: 0;
+  color: var(--theme-light-blue);
+  list-style: none;
+}
+
 li {
   line-height: 1.5em;
+  padding-bottom: 10px;
+}
+li.hero-inline-list_item {
+  display: inline;
+}
+li.hero-inline-list_item:after {
+  content: "   |   ";
+}
+li.hero-inline-list_item:last-child:after {
+  content: "";
 }
 
 
-.container-main {
-  height: 100%;
+a {
+  text-decoration: none;
+  text-underline-position: under;
 }
+a:link, a:visited {
+  color: inherit;
+}
+a:hover {
+  color: var(--theme-blue);
+}
+a:active!important {
+  color: var(--theme-blue);
+  text-decoration: underline;
+}
+a.country-link {
+  text-decoration: underline;
+}
+
+hr.style-1 {
+    border: 0;
+    height: 0;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+.line {
+  width: 100%;
+  flex: 1;
+  border-bottom: 1px;
+  border-width: thin;
+}
+
+
+
+/***** Base Layout Styles *******/
 
 .content-container {
   margin-left: 15vw;
   margin-right: 15vw;
-  padding: 40px 0 40px 0;
+  padding: 0;
 }
 
 .content-section {
@@ -67,9 +148,24 @@ li {
   width:70%;
 }
 
+.content-section-header {
+  display: flex;
+  width: 100%;
+}
+
+.content-section-header__text {
+  flex: 1
+}
+
 .icon {
   padding-right: 20px;
 }
+
+.icon-after {
+  padding-left: 10px;
+}
+
+
 
 /******  Navigation Style ********/
 
@@ -78,19 +174,19 @@ li {
   box-sizing: border-box;
   display: flex;
   position: sticky;
-  box-shadow: 0 2px 2px -2px var(--theme-charcoal);
-  justify-content: center;
   top: 0;
-  padding-top: 20px;
-  padding-bottom: 20px;
   z-index: 2;
+  justify-content: center;
+  align-items: center;
   font-family: var(--font-heading);
   background-color: #FFFFFF;
+  box-shadow: 0 2px 2px -2px var(--theme-charcoal);
+  color: var(--theme-dark-grey);
 }
 .nav-active {
-  color: var(--theme-blue);
+  color: var(--theme-blue) !important;
 }
-.nav ul, a {
+.nav ul a {
   list-style: none;
   text-decoration: none;
   margin: 0;
@@ -107,40 +203,40 @@ li {
   color: var(--theme-blue);
 }
 
+#logo {
+
+  position: absolute;
+  left: 40px;
+  top: 20px;
+  margin-top: 10px;
+  font-weight: 800;
+  font-size: 20px;
+}
+
+#logo .icon {
+  color: var(--theme-blue);
+}
+
 
 /****** Homepage Style ********/
 
 .hero-image-main {
   width: 100%;
-  /* height: 100vh; */
   position: absolute;
   top: var(--nav-height);
   left: 0;
   bottom: 0;
-  z-index: -1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   text-align: center;
-  background-color: var(--theme-black);
   background-size: cover;
 }
-.hero-image-main h1 {
-  padding-bottom: 350px;
-  font-size: 150px;
-  font-weight: lighter;
-  letter-spacing: -5px;
-  color: white;
-}
-
-
-/****** Headers ********/
-
-.header {
-  height: max-content;
-  width: 100%;
-  text-align: center;
-  color: var(--theme-black);
+.title {
+  position: relative;
+  top: 20%;
+  font-family: var(--font-heading);
+  font-size: 130px;
+  font-weight: 100;
+  text-shadow: 4px 7px 6px grey;
+  color: var(--theme-charcoal);
 }
 
 
@@ -148,7 +244,7 @@ li {
 
 .tiles {
   display: grid;
-  grid-gap: 15px;
+  grid-gap: 30px;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   overflow-y: visible;
 }
@@ -178,15 +274,15 @@ li {
 
   /** Keep this for double border effect ***/
   background-clip: content-box;
-  border: solid rgba(255, 255, 255, 0.7) 4px;
+  border: solid rgba(255, 255, 255, 0.7) 2px;
   padding: 10px;
-  font-weight: 700;
+
 }
 
 .tile-text h2 {
   margin: 0;
   padding: 10px;
-  /* font: bold 18px/25px "Open Sans", Sans-Serif; */
+  font-size: 20px;
   color: var(--theme-charcoal);
   line-height: 25px;
 }
@@ -220,7 +316,7 @@ li {
   text-transform: uppercase;
   /* background-color: var(--theme-charcoal); */
   font-family: var(--font-heading);
-  text-shadow: 2px 1px 6px var(--theme-charcoal);
+  text-shadow: 2px 2px 3px black;
 }
 
 .country-content {
@@ -233,7 +329,8 @@ li {
 /****** Trip Style ********/
 
 .trip-hero {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 3fr;
   width: 100%;
   height: 85vh;
   min-height: 500px;
@@ -242,13 +339,22 @@ li {
 }
 .trip-hero-text {
   flex: 1;
-  padding: 20px 30px 20px 30px;
+  padding: 50px 40px 30px 40px;
   color: #FFFFFF;
   background-color: var(--theme-black);
   font-family: var(--font-heading);
 }
-.trip-hero-text p {
-  padding-top: 10px;
+/* .trip-hero-text__title {
+  height: 150px;
+  display: flex;
+  margin: -20px -30px 0 -30px;
+  padding-left: 30px;
+  padding-top: 35px;
+  background-color: black;
+} */
+
+.country-link {
+  color: inherit;
 }
 
 .hero-image {
@@ -271,7 +377,11 @@ li {
 .col-right {
   flex: 2;
   width: 50%;
+  height: 100%;
+  margin-left: 50px;
   box-sizing: border-box;
+  background-color: #666666;
+  background-color: var(--theme-charcoal);
 }
 
 
@@ -290,11 +400,16 @@ li {
 }
 
 .thumbnail{
-  height: 20px;
+  height: 30px;
 }
 
-.carousel-arrow-left {
-  color: var(--theme-charcoal);
+.carousel-arrow {
+  /* color: var(--theme-charcoal); */
+  height: 400px;
+  padding-left: 40px;
+  padding-right: 40px;
+  color: white;
+  background-color: var(--theme-charcoal);
 }
 
 
@@ -328,7 +443,10 @@ li {
   box-sizing: border-box;
 }
 
-.footer {
-  height: 10vh;
+#footer {
+  position: sticky;
+  bottom: 0;
   display: flex;
+  padding-bottom: 20px;
+  margin-left: 20px;
 }

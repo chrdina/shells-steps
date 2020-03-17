@@ -4,26 +4,19 @@ import client from '../contentfulProvider';
 class Index extends React.Component {
 
   state = { data: "" };
-  heroImageURL = "";
 
   componentDidMount() {
     client.getAsset('5cSBFkBEFUWmwsUsEWqg4K').then((asset) =>
-      this.setState({data: `${asset.fields.file.url}?fm=jpg&fl=progressive`})
+      this.setState({data: `${asset.fields.file.url}?fm=jpg&fl=progressive&q=50`})
     )
   }
 
   render () {
 
-    if (this.state.data) {
-      console.log(this.state.data);
-      this.heroImageURL = this.state.data;
-    }
-
     return (
       <>
-
-        <div className="hero-image-main" style={{backgroundImage: `url(${this.heroImageURL})`}}>
-          <h1>Where's Shell</h1>
+        <div className="hero-image-main" style={{backgroundImage: `url(${this.state.data})`}}>
+          <div className="title">Where's Shell</div>
         </div>
       </>
     );
