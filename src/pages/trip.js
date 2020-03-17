@@ -53,13 +53,17 @@ function Trip(props) {
           <hr className="style-1"/>
           <p className="hero-text"><FontAwesomeIcon icon={faMapMarkerAlt} className="icon"/>{tripDetails.fields.tripLocations}</p>
           <p className="hero-text">
-          {
-            tripDetails.fields.countriesVisitedInTrip.map((country, key) => (
-              <Link to={`/countries/${country.sys.id}`} className="country-link" key={key}>
-                {country.fields.countryName}
-              </Link>
-            ))
-          }
+            <ul className="inline-light-blue">
+              {
+                tripDetails.fields.countriesVisitedInTrip.map((country, key) => (
+                  <li className="hero-inline-list_item">
+                    <Link to={`/countries/${country.sys.id}`} className="country-link" key={key}>
+                      {country.fields.countryName}
+                    </Link>
+                  </li>
+                ))
+              }
+            </ul>
           </p>
         </div>
 
