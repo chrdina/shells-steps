@@ -56,8 +56,8 @@ function Trip(props) {
             <ul className="inline-light-blue">
               {
                 tripDetails.fields.countriesVisitedInTrip.map((country, key) => (
-                  <li className="hero-inline-list_item">
-                    <Link to={`/countries/${country.sys.id}`} className="country-link" key={key}>
+                  <li className="hero-inline-list_item" key={key}>
+                    <Link to={`/countries/${country.sys.id}`} className="country-link">
                       {country.fields.countryName}
                     </Link>
                   </li>
@@ -85,7 +85,7 @@ function Trip(props) {
 
         <div className="content-section">
           <div className="blog">
-            <ReactMarkdown>{tripDetails.fields.tripDetails}</ReactMarkdown>
+            <ReactMarkdown>{(tripDetails.fields.tripDetails).replace(/.JPG/gi,".JPG?fl=progressive")}</ReactMarkdown>
           </div>
         </div>
       </div>

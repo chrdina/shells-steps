@@ -5,7 +5,8 @@
 
 :root {
   --theme-blue: #033B80;
-  --theme-light-blue: #4486B8;
+  /* --theme-light-blue: #4486B8; */
+  --theme-light-blue: #50C4FB;
   --theme-night-blue: #02234E;
   --theme-black: #272727;
   --theme-charcoal: #323232;
@@ -81,7 +82,7 @@ li.hero-inline-list_item {
   display: inline;
 }
 li.hero-inline-list_item:after {
-  content: " | ";
+  content: "   |   ";
 }
 li.hero-inline-list_item:last-child:after {
   content: "";
@@ -103,7 +104,6 @@ a:active!important {
   text-decoration: underline;
 }
 a.country-link {
-  color: #4486B8;
   text-decoration: underline;
 }
 
