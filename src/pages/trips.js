@@ -17,7 +17,7 @@ class Trips extends React.Component {
 
   render () {
 
-    const testSelectedYear = 2018;
+    const testSelectedYear = false;
 
     return (
       <div className="content-container">
@@ -25,13 +25,15 @@ class Trips extends React.Component {
         <div className='tiles'>
           {this.state.data.length ? this.state.data.map(
             (trip) => console.info('trip', trip) ||
-              <Tile key={trip.sys.id}
-                to={`/trips/${trip.sys.id}`}
-                text={trip.fields.tripName}
-                imgSrc={(trip.fields.tilePicTrip && trip.fields.tilePicTrip.fields != null) ? trip.fields.tilePicTrip.fields.file.url : undefined}
-                data={trip}
-                filteredOut={testSelectedYear != trip.fields.tripDate.split("-")[0]}
-              />
+              <a name={trip.fields.tripName}>
+                <Tile key={trip.sys.id}
+                  to={`/trips/${trip.sys.id}`}
+                  text={trip.fields.tripName}
+                  imgSrc={(trip.fields.tilePicTrip && trip.fields.tilePicTrip.fields != null) ? trip.fields.tilePicTrip.fields.file.url : undefined}
+
+                  filteredOut={testSelectedYear && (testSelectedYear != trip.fields.tripDate.split("-")[0])}
+                />
+              </a>
           ):
             <>Loading...</>}
         </div>
