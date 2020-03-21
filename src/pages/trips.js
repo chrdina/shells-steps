@@ -3,7 +3,10 @@ import Tile from '../components/tile';
 import client from '../contentfulProvider';
 
 class Trips extends React.Component {
-  state = { data: [] };
+  state = {
+    data: [],
+    yearSelected: ""
+  };
 
   componentDidMount() {
     client.getEntries({content_type: 'Trip', order: '-fields.tripDate'}).then(response =>
@@ -11,7 +14,10 @@ class Trips extends React.Component {
     )
   }
 
+
   render () {
+
+    const testSelectedYear = 2018;
 
     return (
       <div className="content-container">
@@ -24,7 +30,7 @@ class Trips extends React.Component {
                 text={trip.fields.tripName}
                 imgSrc={(trip.fields.tilePicTrip && trip.fields.tilePicTrip.fields != null) ? trip.fields.tilePicTrip.fields.file.url : undefined}
                 data={trip}
-                filteredOut
+                filteredOut={testSelectedYear != trip.fields.tripDate.split("-")[0]}
               />
           ):
             <>Loading...</>}

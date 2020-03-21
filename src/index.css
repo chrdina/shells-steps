@@ -266,7 +266,8 @@ hr.style-1 {
 }
 
 .filtered {
-  -webkit-filter: grayscale(1);
+  -webkit-filter: blur(5px);
+  /* -webkit-filter: grayscale(1); */
 }
 
 .tile-text {
