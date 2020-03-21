@@ -20,24 +20,28 @@ class Trips extends React.Component {
     const testSelectedYear = false;
 
     return (
-      <div className="content-container">
-        <h1>Trips</h1>
-        <a href="#Japan Winter Trip">Snap to Japan</a>
-        <div className='tiles'>
-          {this.state.data.length ? this.state.data.map(
-            (trip) => console.info('trip', trip) ||
-              <Tile key={trip.sys.id}
-                to={`/trips/${trip.sys.id}`}
-                text={trip.fields.tripName}
-                imgSrc={(trip.fields.tilePicTrip && trip.fields.tilePicTrip.fields != null) ? trip.fields.tilePicTrip.fields.file.url : undefined}
+      <>
+        <div className="content-container">
+          <h1>Trips</h1>
+          <a href="#Japan Winter Trip">Snap to Japan</a>
+          <div className='tiles'>
+            {this.state.data.length ? this.state.data.map(
+              (trip) => console.info('trip', trip) ||
+                <Tile key={trip.sys.id}
+                  to={`/trips/${trip.sys.id}`}
+                  text={trip.fields.tripName}
+                  imgSrc={(trip.fields.tilePicTrip && trip.fields.tilePicTrip.fields != null) ? trip.fields.tilePicTrip.fields.file.url : undefined}
 
-                filteredOut={testSelectedYear && (testSelectedYear != trip.fields.tripDate.split("-")[0])}
-              />
+                  filteredOut={testSelectedYear && (testSelectedYear != trip.fields.tripDate.split("-")[0])}
+                />
 
-          ):
-            <>Loading...</>}
+            ):
+              <>Loading...</>}
+          </div>
         </div>
-      </div>
+
+        <div id="footer"><a href="#">Back to top</a></div>
+      </>
     );
   }
 
