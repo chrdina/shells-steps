@@ -24,6 +24,7 @@ class Trips extends React.Component {
                 text={trip.fields.tripName}
                 imgSrc={(trip.fields.tilePicTrip && trip.fields.tilePicTrip.fields != null) ? trip.fields.tilePicTrip.fields.file.url : undefined}
                 data={trip}
+                filteredOut
               />
           ):
             <>Loading...</>}

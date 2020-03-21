@@ -265,6 +265,10 @@ hr.style-1 {
   background-blend-mode: overlay;
 }
 
+.filtered {
+  -webkit-filter: grayscale(1);
+}
+
 .tile-text {
   height: auto;
   margin: 20px;
@@ -448,5 +452,5 @@ hr.style-1 {
   bottom: 0;
   display: flex;
   padding-bottom: 20px;
-  margin-left: 20px;
+  margin-left: 40px;
 }
