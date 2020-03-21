@@ -165,6 +165,12 @@ hr.style-1 {
   padding-left: 10px;
 }
 
+:target::before {
+  content: "";
+  display: block;
+  height: 80px; /* fixed header height*/
+  margin: -80px 0 0; /* negative fixed header height */
+}
 
 
 /******  Navigation Style ********/
@@ -175,7 +181,7 @@ hr.style-1 {
   display: flex;
   position: sticky;
   top: 0;
-  z-index: 2;
+  /* z-index: 2; */
   justify-content: center;
   align-items: center;
   font-family: var(--font-heading);

@@ -22,18 +22,18 @@ class Trips extends React.Component {
     return (
       <div className="content-container">
         <h1>Trips</h1>
+        <a href="#Japan Winter Trip">Snap to Japan</a>
         <div className='tiles'>
           {this.state.data.length ? this.state.data.map(
             (trip) => console.info('trip', trip) ||
-              <a name={trip.fields.tripName}>
-                <Tile key={trip.sys.id}
-                  to={`/trips/${trip.sys.id}`}
-                  text={trip.fields.tripName}
-                  imgSrc={(trip.fields.tilePicTrip && trip.fields.tilePicTrip.fields != null) ? trip.fields.tilePicTrip.fields.file.url : undefined}
+              <Tile key={trip.sys.id}
+                to={`/trips/${trip.sys.id}`}
+                text={trip.fields.tripName}
+                imgSrc={(trip.fields.tilePicTrip && trip.fields.tilePicTrip.fields != null) ? trip.fields.tilePicTrip.fields.file.url : undefined}
 
-                  filteredOut={testSelectedYear && (testSelectedYear != trip.fields.tripDate.split("-")[0])}
-                />
-              </a>
+                filteredOut={testSelectedYear && (testSelectedYear != trip.fields.tripDate.split("-")[0])}
+              />
+
           ):
             <>Loading...</>}
         </div>

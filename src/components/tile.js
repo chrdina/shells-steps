@@ -10,7 +10,7 @@ function Tile(props) {
 
   return (
     <div>
-      <Link to={toObject}>
+      <Link id={props.text} to={toObject}>
         <div className={`tile ${props.filteredOut && "filtered"}`} style={{backgroundImage: `url(${props.imgSrc}?fm=jpg&w=600&fl=progressive)`}}>
           <div className='tile-text'>
             <h2>{props.text}</h2>
