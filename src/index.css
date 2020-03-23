@@ -209,6 +209,15 @@ hr.style-1 {
   color: var(--theme-blue);
 }
 
+
+#side-nav-left {
+  display: flex;
+  position: fixed;
+  top: var(--nav-height);
+  left: 0;
+}
+
+
 #logo {
 
   position: absolute;
@@ -250,15 +259,18 @@ hr.style-1 {
 
 .tiles {
   display: grid;
+  width: 100%;
   grid-gap: 30px;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  overflow-y: visible;
+  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+  /* overflow-y: visible; */
 }
 
 .tile {
   width: 100%;
-  height: 25vh;
-  min-height: 200px;
+  /* max-width: 40vw; */
+  /* height: 25vh; */
+  height: 250px;
+  max-height: 250px;
   display: flex;
   align-items: center;
   text-align: center;
