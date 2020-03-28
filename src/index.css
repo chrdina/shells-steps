@@ -16,7 +16,7 @@
   --font-heading: "Montserrat", sans-serif;
   --font-body: "Open Sans", sans-serif;
 
-  --side-margins: 15vw;
+  --side-margins: 10vw;
   --nav-height: 80px;
 }
 
@@ -42,15 +42,17 @@ h1 {
   font-size: 42px;
   padding: 30px 10px 30px 0;
 }
+
 h1.trip-title {
   padding: 0;
 
 }
 
 h2 {
-  padding-top: 10px;
+  padding-top: 30px;
   font-size: 30px;
   color: var(--color-blue);
+  text-transform: uppercase;
 }
 
 h3 {
@@ -78,6 +80,7 @@ p.video-button {
 ul {
   padding: 0;
   padding-left: 20px;
+  list-style: circle;
 }
 ul.no-style {
   padding: 0;
@@ -148,6 +151,18 @@ hr.style-1 {
   padding: 0;
 }
 
+.page-header {
+  display: flex;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  justify-content: center;
+}
+.page-header h1 {
+  font-size: 30px;
+  text-decoration: underline;
+  text-underline-position: under;
+}
+
 .content-section {
   margin-top: 40px;
   margin-bottom: 40px;
@@ -197,6 +212,9 @@ hr.style-1 {
   box-shadow: 0 2px 2px -2px var(--color-charcoal);
   color: var(--color-dark-grey);
 }
+.menu {
+  visibility: visible;
+}
 .nav-active {
   color: var(--color-blue) !important;
 }
@@ -217,6 +235,14 @@ hr.style-1 {
   color: var(--color-blue);
 }
 
+.nav-hamburger {
+  position: absolute;
+  top: 0;
+  right: 40px;
+  display: flex;
+  visibility: hidden;
+}
+
 
 #side-nav-left {
   display: flex;
@@ -227,6 +253,7 @@ hr.style-1 {
   /* padding: 40px; */
   padding-top: 85px;
   justify-content: center;
+  visibility: hidden;
 }
 #side-nav-left a.active {
   font-weight:800;
@@ -265,15 +292,21 @@ hr.style-1 {
   text-align: center;
   background-size: cover;
 }
+.hero-image-main:after {
+  width: 100%;
+  height: 100%;
+  background-color: black;
+
+}
 .title {
   position: relative;
   top: 20%;
   font-family: var(--font-heading);
-  font-size: 130px;
-  font-weight: 100;
-  text-shadow: 4px 7px 6px grey;
-  color: var(--color-charcoal);
-  visibility: hidden;
+  font-size: 300px;
+  font-weight: 800;
+  /* text-shadow: 4px 7px 6px grey; */
+  color: white;
+  /* visibility: hidden; */
 }
 
 
@@ -321,7 +354,7 @@ hr.style-1 {
   background-clip: content-box;
   border: solid rgba(255, 255, 255, 0.7) 2px;
   padding: 10px;
-
+  /* visibility:hidden; */
 }
 
 .tile-text h2 {
@@ -476,7 +509,7 @@ hr.style-1 {
   position: absolute;
   top: 0;
   left: 0;
-  margin-top: 60px;
+  margin-top: var(--nav-height);
   padding-bottom: var(--nav-height);
   box-sizing: border-box;
   border-style: none;

@@ -29,16 +29,15 @@ class Trips extends React.Component {
 
   render () {
 
-    const testSelectedYear = false;
-
 
     return (
       <>
         <AnchorNav data={this.getAnchorData()}/>
 
         <div className="content-container">
-          <h1>Trips</h1>
-
+          <div className="page-header">
+            <h1>TRIPS</h1>
+          </div>
           <div className='tiles'>
             {this.state.data.length ? this.state.data.map(
               (trip) => console.info('trip', trip) ||
@@ -48,7 +47,7 @@ class Trips extends React.Component {
                   to={`/trips/${trip.sys.id}`}
                   text={trip.fields.tripName}
                   imgSrc={(trip.fields.tilePicTrip && trip.fields.tilePicTrip.fields != null) ? trip.fields.tilePicTrip.fields.file.url : undefined}
-                  filteredOut={testSelectedYear && (testSelectedYear != trip.fields.tripDate.split("-")[0])}
+                  filteredOut={false}
                 />
 
             ):

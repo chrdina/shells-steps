@@ -21,26 +21,34 @@ function App() {
     <>
       <Router>
         <div className="nav">
+
           <Link to="/">
             <div id="logo">
               <FontAwesomeIcon icon="globe-americas" className="icon"/>Where's Shell
             </div>
           </Link>
-          <ul>
-            <li>
-              <NavLink to="/" exact={true} activeClassName="nav-active">Home</NavLink>
-            </li>
-            <li>
-              <NavLink to="/trips" activeClassName="nav-active">Trips</NavLink>
-            </li>
-            <li>
-              <NavLink to="/countries" activeClassName="nav-active">Countries</NavLink>
-            </li>
-            <li>
-              <NavLink to="/map" activeClassName="nav-active">Map</NavLink>
-            </li>
-          </ul>
+
+          <div className="menu">
+
+            <ul>
+              <li>
+                <NavLink to="/" exact={true} activeClassName="nav-active">Home</NavLink>
+              </li>
+              <li>
+                <NavLink to="/trips" activeClassName="nav-active">Trips</NavLink>
+              </li>
+              <li>
+                <NavLink to="/countries" activeClassName="nav-active">Countries</NavLink>
+              </li>
+              <li>
+                <NavLink to="/map" activeClassName="nav-active">Map</NavLink>
+              </li>
+            </ul>
+
+          </div>
+
         </div>
+
         <div className="container-main">
           <Switch>
             <Route path="/" exact component={Index} />
