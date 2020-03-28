@@ -57,7 +57,7 @@ h2 {
 
 h3 {
   padding-top: 20px;
-  font-size: 16px;
+  font-size: 20px;
   color: var(--color-night-blue);
 }
 
@@ -80,7 +80,7 @@ p.video-button {
 ul {
   padding: 0;
   padding-left: 20px;
-  list-style: circle;
+  /* list-style: circle; */
 }
 ul.no-style {
   padding: 0;
@@ -302,7 +302,7 @@ hr.style-1 {
   position: relative;
   top: 20%;
   font-family: var(--font-heading);
-  font-size: 300px;
+  font-size: 100px;
   font-weight: 800;
   /* text-shadow: 4px 7px 6px grey; */
   color: white;
@@ -328,11 +328,11 @@ hr.style-1 {
   max-height: 250px;
   display: flex;
   align-items: center;
-  text-align: center;
   background-color: rgba(0,0,0,0.2);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+
 }
 .tile:hover {
   background-blend-mode: overlay;
@@ -344,25 +344,29 @@ hr.style-1 {
 }
 
 .tile-text {
-  height: auto;
-  margin: 20px;
-  flex: 1;
+  height: 100%;
+  width: 100%;
+  padding: 10px 10px 10px 10px;
+  /* margin: 20px; */
+  display: flex;
   text-align: center;
-  background: rgba(255, 255, 255, 0.7);
+  justify-content: center;
+  align-items: center;
+  /* background: rgba(255, 255, 255, 0.7); */
 
   /** Keep this for double border effect ***/
-  background-clip: content-box;
-  border: solid rgba(255, 255, 255, 0.7) 2px;
-  padding: 10px;
+  /* background-clip: content-box; */
+  border: solid rgba(255, 255, 255, 0.7) 1px;
+  /* padding: 10px; */
   /* visibility:hidden; */
 }
 
 .tile-text h2 {
   margin: 0;
   padding: 10px;
-  font-size: 20px;
-  color: var(--color-charcoal);
-  line-height: 25px;
+  font-size: 26px;
+  font-weight: 100;
+  color: white;
 }
 
 
