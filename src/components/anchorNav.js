@@ -8,6 +8,8 @@ function AnchorNav(props) {
   //     <li> <a href={`#${id}`}> {year} </a> </li>
   //   )}
   // </ul>
+
+
   function removeDuplicates(array, propName) {
     console.log("Removing duplicates for array: ");
     console.log(array);
@@ -19,7 +21,6 @@ function AnchorNav(props) {
       if (i+1 < array.length-1) {
         while (array[i][propName] == array[i+1][propName]) {
           i++;
-          console.log("iterate...");
         }
       }
       i++;
@@ -29,15 +30,21 @@ function AnchorNav(props) {
     return arrayOut;
   }
 
-  const testArray = props.data && removeDuplicates(props.data, "date");
+  console.log("listItem == " + window.location.href);
 
   return (
 
     <div id="side-nav-left">
-      Select date:
-      <ul>
+
+      <ul class="no-style">
         {props.data && removeDuplicates(props.data, "date").map((listItem) =>
-          <li> <a href={`#${listItem.name}`}> {listItem.date} </a> </li>
+          <li>
+            <a
+              href={`#${listItem.id}`}
+              className={`${window.location.href.indexOf(`#${listItem.id}`) != -1 ? "active" : "inactive"}`}>
+                {listItem.date}
+            </a>
+          </li>
         )}
       </ul>
     </div>

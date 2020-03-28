@@ -20,7 +20,7 @@ class Trips extends React.Component {
     console.log(this.state.data);
     return this.state.data.length && this.state.data.map((trip) =>
       ({
-        name: trip.fields.tripName,
+        id: trip.sys.id,
         date: trip.fields.tripDate.split("-")[0]
       })
     )
@@ -35,17 +35,19 @@ class Trips extends React.Component {
     return (
       <>
         <AnchorNav data={this.getAnchorData()}/>
+
         <div className="content-container">
           <h1>Trips</h1>
-          <a href="#Japan Winter Trip">Snap to Japan</a>
+
           <div className='tiles'>
             {this.state.data.length ? this.state.data.map(
               (trip) => console.info('trip', trip) ||
-                <Tile key={trip.sys.id}
+                <Tile
+                  key={trip.sys.id}
+                  id={trip.sys.id}
                   to={`/trips/${trip.sys.id}`}
                   text={trip.fields.tripName}
                   imgSrc={(trip.fields.tilePicTrip && trip.fields.tilePicTrip.fields != null) ? trip.fields.tilePicTrip.fields.file.url : undefined}
-
                   filteredOut={testSelectedYear && (testSelectedYear != trip.fields.tripDate.split("-")[0])}
                 />
 
