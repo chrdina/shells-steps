@@ -64,7 +64,6 @@ function Country(props) {
           <ReactMarkdown>{countryDetails.fields.countryTips}</ReactMarkdown>
         </div>
         <div className="content-section">
-          <h2>Places visited</h2>
           <ReactMarkdown>{countryDetails.fields.countryLocations}</ReactMarkdown>
         </div>
 

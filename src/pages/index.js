@@ -1,5 +1,6 @@
 import React from 'react';
 import client from '../contentfulProvider';
+import { Link } from "react-router-dom";
 
 class Index extends React.Component {
 
@@ -15,8 +16,12 @@ class Index extends React.Component {
 
     return (
       <>
-        <div className="hero-image-main" style={{backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5)), url(${this.state.data})`}}>
-          <div className="title">WHERE THE SHELL R U?!</div>
+        <div className="hero-image-main" style={{backgroundImage: `url(${this.state.data})`}}>
+          <div className="title-area">
+            <h1>Where's Shell</h1>
+            <p>My travel tales from around the world.</p>
+            <Link to="/trips/"><button className="title-cta">View my trips</button></Link>
+          </div>
         </div>
       </>
     );

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from "react-router-dom";
+import { HashLink as Link } from "react-router-hash-link";
 
 function AnchorNav(props) {
 
@@ -30,8 +30,6 @@ function AnchorNav(props) {
     return arrayOut;
   }
 
-  console.log("listItem == " + window.location.href);
-
   return (
 
     <div id="side-nav-left">
@@ -39,11 +37,13 @@ function AnchorNav(props) {
       <ul class="no-style">
         {props.data && removeDuplicates(props.data, "date").map((listItem) =>
           <li>
-            <a
-              href={`#${listItem.id}`}
-              className={`${window.location.href.indexOf(`#${listItem.id}`) != -1 ? "active" : "inactive"}`}>
-                {listItem.date}
-            </a>
+            <Link
+              to={`#${listItem.id}`}
+              className={`${window.location.href.indexOf(`#${listItem.id}`) != -1 ? "active" : "inactive"}`}
+              smooth
+            >
+              {listItem.date}
+            </Link>
           </li>
         )}
       </ul>

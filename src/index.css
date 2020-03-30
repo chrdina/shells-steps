@@ -21,6 +21,19 @@
 }
 
 
+/****** Animation keyframes *********/
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+
 /******  General Styles ********/
 
 body {
@@ -50,6 +63,7 @@ h1.trip-title {
 
 h2 {
   padding-top: 30px;
+  padding-bottom: 20px;
   font-size: 30px;
   color: var(--color-blue);
   text-transform: uppercase;
@@ -85,7 +99,11 @@ ul {
 }
 ul.no-style {
   padding: 0;
-  /* list-style: none; */
+  list-style: none;
+}
+ul.active-style {
+  padding: 0;
+  list-style: disc;
 }
 ul.no-style-light-blue {
   padding: 0;
@@ -97,6 +115,7 @@ ul.no-style-light-blue {
 li {
   line-height: 1.5em;
   padding-bottom: 10px;
+  padding-top: 10px;
 }
 li.hero-inline-list_item {
   display: inline;
@@ -211,8 +230,8 @@ hr.style-1 {
   align-items: center;
   font-family: var(--font-heading);
   background-color: #FFFFFF;
-  box-shadow: 0 2px 2px -2px var(--color-charcoal);
   color: var(--color-dark-grey);
+  border-bottom: 1px solid rgba(80,80,80,0.2);
 }
 .menu {
   visibility: visible;
@@ -251,10 +270,11 @@ hr.style-1 {
   position: fixed;
   top: var(--nav-height);
   left: 0;
-  top: 233px;
+  top: 245px;
   width: var(--side-margins);
   /* padding: 40px; */
   justify-content: center;
+  color: var(--color-dark-grey);
   /* visibility: hidden; */
 }
 #side-nav-left a.active {
@@ -264,8 +284,6 @@ hr.style-1 {
 #side-nav-left a:hover {
   color: var(--color-light-blue);
 }
-
-
 
 
 #logo {
@@ -286,13 +304,15 @@ hr.style-1 {
 /****** Homepage Style ********/
 
 .hero-image-main {
+  display: flex;
   width: 100%;
   position: absolute;
   top: var(--nav-height);
   left: 0;
   bottom: 0;
-  text-align: center;
+  justify-content: center;
   background-size: cover;
+  background-position: center;
 }
 .hero-image-main:after {
   width: 100%;
@@ -300,15 +320,49 @@ hr.style-1 {
   background-color: black;
 
 }
-.title {
-  position: relative;
-  top: 20%;
+.title-area {
+  display: block;
+  height: 250px;
+  width: 40%;
+  margin-top: 5%;
+  margin-bottom: 60px;
+  padding: 40px;
+  padding-bottom: 0;
+  text-align: center;
   font-family: var(--font-heading);
-  font-size: 100px;
-  font-weight: 800;
-  /* text-shadow: 4px 7px 6px grey; */
   color: white;
+  background-color: rgba(80,80,80,0.4);
+  border: 1px solid white;
   /* visibility: hidden; */
+}
+.title-area h1 {
+  font-size: 60px;
+  padding-bottom: 20px;
+  opacity: 0;
+  animation-name: fadeIn;
+  animation-duration: 3s;
+  animation-fill-mode: forwards;
+}
+.title-area p {
+  margin: 0;
+  opacity: 0;
+  font-size: 30px;
+  animation-name: fadeIn;
+  animation-delay: 2s;
+  animation-duration: 3s;
+  animation-fill-mode: forwards;
+}
+.title-cta {
+  height: 50px;
+  width: 200px;
+  margin-top: 60px;
+  color: black;
+  font-size: 16px;
+  background: white;
+}
+.title-cta:hover {
+  background-color: var(--color-light-blue);
+  cursor: pointer;
 }
 
 
@@ -317,6 +371,8 @@ hr.style-1 {
 .tiles {
   display: grid;
   width: 100%;
+  margin-top: 20px;
+  margin-bottom: 20px;
   grid-gap: 30px;
   grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
   /* overflow-y: visible; */
@@ -353,18 +409,11 @@ hr.style-1 {
   color: inherit;
   height: 100%;
   width: 100%;
-  padding: 10px 10px 10px 10px;
-  /* margin: 20px; */
   display: flex;
   text-align: center;
   justify-content: center;
   align-items: center;
-  /* background: rgba(255, 255, 255, 0.7); */
 
-  /** Keep this for double border effect ***/
-  /* background-clip: content-box; */
-  border: solid rgba(255, 255, 255, 0.7) 1px;
-  /* padding: 10px; */
   /* visibility:hidden; */
 }
 
