@@ -190,7 +190,7 @@ hr.style-1 {
   width: 70%;
 }
 .content-section .blog img {
-  max-height: 100vh;
+  max-height: calc(80vh);
   max-width: 100%;
 }
 
@@ -592,7 +592,6 @@ hr.style-1 {
   display: flex;
   padding-top: 10px;
   padding-bottom: 10px;
-  margin-left: 40px;
   align-items: center;
   justify-content: center;
   background-color: #ffffff;
