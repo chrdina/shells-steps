@@ -2,6 +2,7 @@ import React from 'react';
 import Tile from '../components/tile';
 import client from '../contentfulProvider';
 import AnchorNav from '../components/anchorNav';
+import { HashLink as Link } from "react-router-hash-link";
 
 class Trips extends React.Component {
   state = {
@@ -32,7 +33,7 @@ class Trips extends React.Component {
 
     return (
       <>
-        <AnchorNav data={this.getAnchorData()}/>
+        {this.state.data.length && <AnchorNav data={this.getAnchorData()}/>}
 
         <div className="content-container">
           <div className="page-header">
@@ -55,7 +56,7 @@ class Trips extends React.Component {
           </div>
         </div>
 
-        <div id="footer"><a href="#">Back to top</a></div>
+        <div id="footer"><Link smooth to="#">Back to top</Link></div>
       </>
     );
   }
