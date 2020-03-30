@@ -20,7 +20,7 @@ function App() {
   return (
     <>
       <Router basename='/'>
-        <div className="nav">
+        <div id="top" className="nav">
 
           <Link to="/">
             <div id="logo">
