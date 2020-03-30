@@ -15,8 +15,8 @@ class Index extends React.Component {
 
     return (
       <>
-        <div className="hero-image-main" style={{backgroundImage: `url(${this.state.data})`}}>
-          <div className="title">Where's Shell</div>
+        <div className="hero-image-main" style={{backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5)), url(${this.state.data})`}}>
+          <div className="title">WHERE THE SHELL R U?!</div>
         </div>
       </>
     );

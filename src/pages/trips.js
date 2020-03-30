@@ -1,9 +1,13 @@
 import React from 'react';
 import Tile from '../components/tile';
 import client from '../contentfulProvider';
+import AnchorNav from '../components/anchorNav';
 
 class Trips extends React.Component {
-  state = { data: [] };
+  state = {
+    data: [],
+    yearSelected: ""
+  };
 
   componentDidMount() {
     client.getEntries({content_type: 'Trip', order: '-fields.tripDate'}).then(response =>
@@ -11,24 +15,48 @@ class Trips extends React.Component {
     )
   }
 
+  getAnchorData() {
+    console.log("Anchor Data:");
+    console.log(this.state.data);
+    return this.state.data.length && this.state.data.map((trip) =>
+      ({
+        id: trip.sys.id,
+        date: trip.fields.tripDate.split("-")[0]
+      })
+    )
+  }
+
+
   render () {
 
+
     return (
-      <div className="content-container">
-        <h1>Trips</h1>
-        <div className='tiles'>
-          {this.state.data.length ? this.state.data.map(
-            (trip) => console.info('trip', trip) ||
-              <Tile key={trip.sys.id}
-                to={`/trips/${trip.sys.id}`}
-                text={trip.fields.tripName}
-                imgSrc={(trip.fields.tilePicTrip && trip.fields.tilePicTrip.fields != null) ? trip.fields.tilePicTrip.fields.file.url : undefined}
-                data={trip}
-              />
-          ):
-            <>Loading...</>}
+      <>
+        <AnchorNav data={this.getAnchorData()}/>
+
+        <div className="content-container">
+          <div className="page-header">
+            <h1>Trips</h1>
+          </div>
+          <div className='tiles'>
+            {this.state.data.length ? this.state.data.map(
+              (trip) => console.info('trip', trip) ||
+                <Tile
+                  key={trip.sys.id}
+                  id={trip.sys.id}
+                  to={`/trips/${trip.sys.id}`}
+                  text={trip.fields.tripName}
+                  imgSrc={(trip.fields.tilePicTrip && trip.fields.tilePicTrip.fields != null) ? trip.fields.tilePicTrip.fields.file.url : undefined}
+                  filteredOut={false}
+                />
+
+            ):
+              <>Loading...</>}
+          </div>
         </div>
-      </div>
+
+        <div id="footer"><a href="#">Back to top</a></div>
+      </>
     );
   }
 

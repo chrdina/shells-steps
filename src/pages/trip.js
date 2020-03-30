@@ -53,7 +53,7 @@ function Trip(props) {
           <p className="hero-text"><FontAwesomeIcon icon={faCalendarAlt} className="icon"/>{getDate(tripDetails.fields.tripDate, "long")}</p>
           <hr className="style-1"/>
           <p className="hero-text"><FontAwesomeIcon icon={faMapMarkerAlt} className="icon"/>{tripDetails.fields.tripLocations}</p>
-          <ul className="inline-light-blue">
+          <ul className="no-style-light-blue">
             {
               tripDetails.fields.countriesVisitedInTrip.map((country, key) => (
                 <li className="hero-inline-list_item" key={key}>
