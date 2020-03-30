@@ -75,6 +75,7 @@ p.video-button {
   text-align: center;
   color: var(--color-charcoal);
   background-color: var(--color-light-blue);
+  visibility: hidden;
 }
 
 ul {
