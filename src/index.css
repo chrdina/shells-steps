@@ -454,7 +454,7 @@ hr.style-1 {
   text-transform: uppercase;
   /* background-color: var(--color-charcoal); */
   font-family: var(--font-heading);
-  text-shadow: 2px 2px 3px black;
+  /* text-shadow: 2px 2px 3px black; */
 }
 
 .country-content {
