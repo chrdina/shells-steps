@@ -30,8 +30,6 @@ function AnchorNav(props) {
     return arrayOut;
   }
 
-  console.log("listItem == " + window.location.href);
-
   return (
 
     <div id="side-nav-left">
