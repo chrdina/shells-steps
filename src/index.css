@@ -117,6 +117,7 @@ a:link, a:visited {
 }
 a:hover {
   color: var(--color-blue);
+  transition-duration: 200ms;
 }
 a:active!important {
   color: var(--color-blue);
@@ -159,7 +160,7 @@ hr.style-1 {
 }
 .page-header h1 {
   font-size: 30px;
-  text-decoration: underline;
+  /* text-decoration: underline; */
   text-underline-position: under;
 }
 
@@ -249,11 +250,11 @@ hr.style-1 {
   position: fixed;
   top: var(--nav-height);
   left: 0;
+  top: 233px;
   width: var(--side-margins);
   /* padding: 40px; */
-  padding-top: 85px;
   justify-content: center;
-  visibility: hidden;
+  /* visibility: hidden; */
 }
 #side-nav-left a.active {
   font-weight:800;
@@ -316,26 +317,30 @@ hr.style-1 {
   display: grid;
   width: 100%;
   grid-gap: 30px;
-  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
   /* overflow-y: visible; */
 }
 
 .tile {
   width: 100%;
+  color: white;
   /* max-width: 40vw; */
   /* height: 25vh; */
   height: 250px;
   max-height: 250px;
   display: flex;
   align-items: center;
-  background-color: rgba(0,0,0,0.2);
+  background-color: rgba(0,0,0,0.3);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  background-blend-mode: overlay;
 
 }
 .tile:hover {
-  background-blend-mode: overlay;
+  background-color: rgba(0,0,0,0.2);
+  background-blend-mode: hue;
+  transition-duration: 200ms;
 }
 
 .filtered {
@@ -344,6 +349,7 @@ hr.style-1 {
 }
 
 .tile-text {
+  color: inherit;
   height: 100%;
   width: 100%;
   padding: 10px 10px 10px 10px;
@@ -366,7 +372,7 @@ hr.style-1 {
   padding: 10px;
   font-size: 26px;
   font-weight: 100;
-  color: white;
+  color: inherit;
 }
 
 
@@ -425,6 +431,9 @@ hr.style-1 {
   color: #FFFFFF;
   background-color: var(--color-black);
   font-family: var(--font-heading);
+}
+.trip-hero-text a:hover {
+  color: #FFFFFF;
 }
 /* .trip-hero-text__title {
   height: 150px;

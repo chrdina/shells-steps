@@ -36,7 +36,7 @@ class Trips extends React.Component {
 
         <div className="content-container">
           <div className="page-header">
-            <h1>TRIPS</h1>
+            <h1>Trips</h1>
           </div>
           <div className='tiles'>
             {this.state.data.length ? this.state.data.map(
