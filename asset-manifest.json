@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/wheres-shell/static/css/main.44e25293.chunk.css",
-    "main.js": "/wheres-shell/static/js/main.057e554e.chunk.js",
-    "main.js.map": "/wheres-shell/static/js/main.057e554e.chunk.js.map",
-    "runtime-main.js": "/wheres-shell/static/js/runtime-main.2db50fd5.js",
-    "runtime-main.js.map": "/wheres-shell/static/js/runtime-main.2db50fd5.js.map",
-    "static/css/2.15deb5ce.chunk.css": "/wheres-shell/static/css/2.15deb5ce.chunk.css",
-    "static/js/2.befe9aac.chunk.js": "/wheres-shell/static/js/2.befe9aac.chunk.js",
-    "static/js/2.befe9aac.chunk.js.map": "/wheres-shell/static/js/2.befe9aac.chunk.js.map",
+    "main.css": "/wheres-shell/static/css/main.57accede.chunk.css",
+    "main.js": "/wheres-shell/static/js/main.84e3bb04.chunk.js",
+    "main.js.map": "/wheres-shell/static/js/main.84e3bb04.chunk.js.map",
+    "runtime-main.js": "/wheres-shell/static/js/runtime-main.59e2e656.js",
+    "runtime-main.js.map": "/wheres-shell/static/js/runtime-main.59e2e656.js.map",
+    "static/css/2.9b46dffb.chunk.css": "/wheres-shell/static/css/2.9b46dffb.chunk.css",
+    "static/js/2.a7eb2466.chunk.js": "/wheres-shell/static/js/2.a7eb2466.chunk.js",
+    "static/js/2.a7eb2466.chunk.js.map": "/wheres-shell/static/js/2.a7eb2466.chunk.js.map",
     "index.html": "/wheres-shell/index.html",
-    "precache-manifest.3cf3eb4121b666380d0e246946d565dc.js": "/wheres-shell/precache-manifest.3cf3eb4121b666380d0e246946d565dc.js",
+    "precache-manifest.bb6b8881747dce5f9f2056f4c27d041e.js": "/wheres-shell/precache-manifest.bb6b8881747dce5f9f2056f4c27d041e.js",
     "service-worker.js": "/wheres-shell/service-worker.js",
-    "static/css/2.15deb5ce.chunk.css.map": "/wheres-shell/static/css/2.15deb5ce.chunk.css.map",
-    "static/css/main.44e25293.chunk.css.map": "/wheres-shell/static/css/main.44e25293.chunk.css.map",
-    "static/js/2.befe9aac.chunk.js.LICENSE": "/wheres-shell/static/js/2.befe9aac.chunk.js.LICENSE"
+    "static/css/2.9b46dffb.chunk.css.map": "/wheres-shell/static/css/2.9b46dffb.chunk.css.map",
+    "static/css/main.57accede.chunk.css.map": "/wheres-shell/static/css/main.57accede.chunk.css.map",
+    "static/js/2.a7eb2466.chunk.js.LICENSE.txt": "/wheres-shell/static/js/2.a7eb2466.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.2db50fd5.js",
-    "static/css/2.15deb5ce.chunk.css",
-    "static/js/2.befe9aac.chunk.js",
-    "static/css/main.44e25293.chunk.css",
-    "static/js/main.057e554e.chunk.js"
+    "static/js/runtime-main.59e2e656.js",
+    "static/css/2.9b46dffb.chunk.css",
+    "static/js/2.a7eb2466.chunk.js",
+    "static/css/main.57accede.chunk.css",
+    "static/js/main.84e3bb04.chunk.js"
   ]
 }
