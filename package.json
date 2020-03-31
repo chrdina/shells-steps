@@ -9,6 +9,7 @@
     "@fortawesome/free-solid-svg-icons": "^5.12.1",
     "@fortawesome/react-fontawesome": "^0.1.9",
     "contentful": "^7.6.0",
+    "fsevents": "^2.1.2",
     "gh-pages": "^2.2.0",
     "git-open": "^2.1.0",
     "global": "^4.3.2",
