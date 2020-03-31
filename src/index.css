@@ -404,6 +404,13 @@ hr.style-1 {
   background-blend-mode: overlay;
 
 }
+.below-fixed-header::before {
+  content: " ";
+  display: block;
+  height: var(--nav-height); /* fixed header height*/
+  margin: calc(0px - var(--nav-height)) 0 0; /* negative fixed header height */
+  visibility: hidden;
+}
 .tile:hover {
   background-color: rgba(0,0,0,0.2);
   background-blend-mode: hue;
