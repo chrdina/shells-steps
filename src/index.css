@@ -399,11 +399,11 @@ hr.style-1 {
   max-height: 250px;
   display: flex;
   align-items: center;
-  background-color: rgba(0,0,0,0.3);
+  background-color: rgba(0,0,0,0.4);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  background-blend-mode: overlay;
+  background-blend-mode: hue;
 
 }
 .below-fixed-header::before {
@@ -414,7 +414,7 @@ hr.style-1 {
   visibility: hidden;
 }
 .tile:hover {
-  background-color: rgba(0,0,0,0.2);
+  background-color: rgba(0,0,0,0.1);
   background-blend-mode: hue;
   transition-duration: 200ms;
 }
