@@ -1,5 +1,5 @@
 @import-normalize;
-@import url('https://fonts.googleapis.com/css?family=Montserrat|Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Open+Sans:wght@300;400;600;700;800&display=swap');
 
 /******  Variables *********/
 
@@ -41,9 +41,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: var(--font-body);
-  font-size: 16px;
   color: var(--color-charcoal);
-  background-color: #fcfcfc;
 }
 
 h1, h2, h3 {
@@ -72,7 +70,7 @@ h2 {
 h3 {
   padding-top: 20px;
   font-size: 20px;
-  color: var(--color-night-blue);
+  color: var(--color-blue);
 }
 
 p {
@@ -240,6 +238,7 @@ hr.style-1 {
 }
 .nav-active {
   color: var(--color-blue) !important;
+  font-weight: 700;
 }
 .nav ul a {
   list-style: none;
@@ -256,6 +255,7 @@ hr.style-1 {
 }
 .nav a:hover {
   color: var(--color-blue);
+  font-weight: 500;
 }
 
 .nav-hamburger {
@@ -280,7 +280,7 @@ hr.style-1 {
   /* visibility: hidden; */
 }
 #side-nav-left a.active {
-  font-weight:800;
+  font-weight:700;
   color: var(--color-light-blue);
 }
 #side-nav-left a:hover {
@@ -294,7 +294,7 @@ hr.style-1 {
   left: 40px;
   top: 20px;
   margin-top: 10px;
-  font-weight: 800;
+  font-weight: 500;
   font-size: 20px;
 }
 
@@ -438,7 +438,7 @@ hr.style-1 {
   margin: 0;
   padding: 10px;
   font-size: 26px;
-  font-weight: 100;
+  font-weight: 400;
   color: inherit;
 }
 
@@ -464,6 +464,7 @@ hr.style-1 {
 
 .country-hero-text {
   color: #FFFFFF;
+  opacity: 1;
   font-size: 72px;
   line-height: 3em;
   padding-left: 40px;
@@ -471,6 +472,7 @@ hr.style-1 {
   text-transform: uppercase;
   /* background-color: var(--color-charcoal); */
   font-family: var(--font-heading);
+  font-weight: 500;
   /* text-shadow: 2px 2px 3px black; */
 }
 
