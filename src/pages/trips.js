@@ -40,7 +40,7 @@ class Trips extends React.Component {
             <h1>Trips</h1>
           </div>
           <div className='tiles'>
-            {this.state.data.length ? this.state.data.map(
+            {this.state.data.length && this.state.data.map(
               (trip) => console.info('trip', trip) ||
                 <Tile
                   key={trip.sys.id}
@@ -50,9 +50,7 @@ class Trips extends React.Component {
                   imgSrc={(trip.fields.tilePicTrip && trip.fields.tilePicTrip.fields != null) ? trip.fields.tilePicTrip.fields.file.url : undefined}
                   filteredOut={false}
                 />
-
-            ):
-              <>Loading...</>}
+            )}
           </div>
         </div>
 

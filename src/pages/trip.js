@@ -37,7 +37,7 @@ function Trip(props) {
 
   // Haven't got the data yet, so hang tight
   if (isLoading) {
-    return <>Loading...</>
+    return <></>
   }
 
 

@@ -33,7 +33,7 @@ function Country(props) {
 
   // Haven't got the data yet, so hang tight
   if (isLoading) {
-    return <>Loading...</>
+    return <></>
   }
 
   // Get all trips in this country
@@ -48,7 +48,7 @@ function Country(props) {
         imgSrc={(trip.fields.tilePicTrip && trip.fields.tilePicTrip.fields != null) ? trip.fields.tilePicTrip.fields.file.url : undefined}
         data={trip}
       />
-  ): <>Loading...</>
+  ): <></>
 
   return (
     <>

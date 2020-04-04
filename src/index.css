@@ -95,7 +95,6 @@ p.video-button {
 ul {
   padding: 0;
   padding-left: 20px;
-  /* list-style: circle; */
 }
 ul.no-style {
   padding: 0;
@@ -180,7 +179,6 @@ hr.style-1 {
 }
 .page-header h1 {
   font-size: 30px;
-  /* text-decoration: underline; */
   text-underline-position: under;
 }
 
@@ -335,9 +333,6 @@ hr.style-1 {
   text-align: center;
   font-family: var(--font-heading);
   color: #1a1e0c;
-  /* background-color: rgba(80,80,80,0.4); */
-  /* border: 1px solid white; */
-  /* visibility: hidden; */
 }
 .title-area h1 {
   font-size: 60px;
@@ -387,14 +382,11 @@ hr.style-1 {
   margin-bottom: 20px;
   grid-gap: 30px;
   grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-  /* overflow-y: visible; */
 }
 
 .tile {
   width: 100%;
   color: white;
-  /* max-width: 40vw; */
-  /* height: 25vh; */
   height: 250px;
   max-height: 250px;
   display: flex;
@@ -421,7 +413,6 @@ hr.style-1 {
 
 .filtered {
   -webkit-filter: blur(5px);
-  /* -webkit-filter: grayscale(1); */
 }
 
 .tile-text {
@@ -470,10 +461,8 @@ hr.style-1 {
   padding-left: 40px;
   padding-right: 40px;
   text-transform: uppercase;
-  /* background-color: var(--color-charcoal); */
   font-family: var(--font-heading);
   font-weight: 500;
-  /* text-shadow: 2px 2px 3px black; */
 }
 
 .country-content {
@@ -504,14 +493,7 @@ hr.style-1 {
 .trip-hero-text a:hover {
   color: #FFFFFF;
 }
-/* .trip-hero-text__title {
-  height: 150px;
-  display: flex;
-  margin: -20px -30px 0 -30px;
-  padding-left: 30px;
-  padding-top: 35px;
-  background-color: black;
-} */
+
 
 .country-link {
   color: inherit;
@@ -564,7 +546,6 @@ hr.style-1 {
 }
 
 .carousel-arrow {
-  /* color: var(--color-charcoal); */
   height: 400px;
   padding-left: 40px;
   padding-right: 40px;
