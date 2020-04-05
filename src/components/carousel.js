@@ -21,18 +21,18 @@ class CustomCarousel extends React.Component {
 
   render() {
     return (
-      <div>
+      <div class="carousel">
         <Carousel
           value={this.state.value}
           onChange={this.onChange}
           centered
-          arrowLeft={<FontAwesomeIcon className="carousel-arrow" icon="chevron-left" size="2x"/>}
-          arrowRight={<FontAwesomeIcon className="carousel-arrow" icon="chevron-right" size="2x"/>}
+          arrowLeft={<FontAwesomeIcon className="carousel-arrow" icon="chevron-left"/>}
+          arrowRight={<FontAwesomeIcon className="carousel-arrow" icon="chevron-right"/>}
           addArrowClickHandler
 
         >
           {this.props.items && this.props.items.map(
-            (image, key) => (<img src={`${image.fields.file.url}?fm=jpg&fl=progressive&h=400&w=600`} key={key} />)
+            (image, key) => (<img src={`${image.fields.file.url}?fm=jpg&fl=progressive&q=30`} key={key} />)
           )}
         </Carousel>
       </div>

@@ -10,14 +10,17 @@
   --color-night-blue: #02234E;
   --color-light-grey: #DDDDDD;
   --color-dark-grey: #666666;
-  --color-charcoal: #323232;
-  --color-black: #272727;
+
+  /* --color-charcoal: #323232; */
+  --color-charcoal: #272727;
+  /* --color-black: #272727; */
 
   --font-heading: "Montserrat", sans-serif;
   --font-body: "Open Sans", sans-serif;
 
   --side-margins: 10vw;
   --nav-height: 80px;
+  --body-height: calc(100vh - 80px);
 }
 
 
@@ -380,7 +383,7 @@ hr.style-1 {
   width: 100%;
   margin-top: 20px;
   margin-bottom: 20px;
-  grid-gap: 30px;
+  grid-gap: 10px;
   grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
 }
 
@@ -456,7 +459,7 @@ hr.style-1 {
 
 .country-hero-text {
   color: #FFFFFF;
-  font-size: 72px;
+  font-size: 80px;
   line-height: 3em;
   padding-left: 40px;
   padding-right: 40px;
@@ -478,16 +481,16 @@ hr.style-1 {
   display: grid;
   grid-template-columns: 1fr 3fr;
   width: 100%;
-  height: 85vh;
+  height: var(--body-height);
   min-height: 500px;
-  margin-bottom: 20px;
+  margin-bottom: 80px;
 
 }
 .trip-hero-text {
   flex: 1;
   padding: 50px 40px 30px 40px;
   color: #FFFFFF;
-  background-color: var(--color-black);
+  background-color: var(--color-charcoal);
   font-family: var(--font-heading);
 }
 .trip-hero-text a:hover {
@@ -527,18 +530,19 @@ hr.style-1 {
 }
 
 
+
+
 /***** Carousel Style ********/
 
-.BrainhubCarousel {
+.carousel {
+  height: var(--body-height);
   width: 100%;
 }
 
-.BrainhubCarousel img{
-  min-height: 100%
-}
-
-.BrainhubCarouselItem {
-  overflow: hidden;
+.carousel img {
+  height: 70vh;
+  max-width: 100%;
+  width: auto;
 }
 
 .thumbnail{
@@ -546,11 +550,17 @@ hr.style-1 {
 }
 
 .carousel-arrow {
-  height: 400px;
-  padding-left: 40px;
-  padding-right: 40px;
+  font-size: 30px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
   color: white;
   background-color: var(--color-charcoal);
+}
+
+.carousel-arrow:hover {
+  cursor: pointer;
 }
 
 
