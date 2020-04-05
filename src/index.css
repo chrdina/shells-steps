@@ -10,14 +10,17 @@
   --color-night-blue: #02234E;
   --color-light-grey: #DDDDDD;
   --color-dark-grey: #666666;
-  --color-charcoal: #323232;
-  --color-black: #272727;
+
+  /* --color-charcoal: #323232; */
+  --color-charcoal: #272727;
+  /* --color-black: #272727; */
 
   --font-heading: "Montserrat", sans-serif;
   --font-body: "Open Sans", sans-serif;
 
   --side-margins: 10vw;
   --nav-height: 80px;
+  --body-height: calc(100vh - 80px);
 }
 
 
@@ -95,7 +98,6 @@ p.video-button {
 ul {
   padding: 0;
   padding-left: 20px;
-  /* list-style: circle; */
 }
 ul.no-style {
   padding: 0;
@@ -180,7 +182,6 @@ hr.style-1 {
 }
 .page-header h1 {
   font-size: 30px;
-  /* text-decoration: underline; */
   text-underline-position: under;
 }
 
@@ -335,9 +336,6 @@ hr.style-1 {
   text-align: center;
   font-family: var(--font-heading);
   color: #1a1e0c;
-  /* background-color: rgba(80,80,80,0.4); */
-  /* border: 1px solid white; */
-  /* visibility: hidden; */
 }
 .title-area h1 {
   font-size: 60px;
@@ -385,16 +383,13 @@ hr.style-1 {
   width: 100%;
   margin-top: 20px;
   margin-bottom: 20px;
-  grid-gap: 30px;
+  grid-gap: 10px;
   grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-  /* overflow-y: visible; */
 }
 
 .tile {
   width: 100%;
   color: white;
-  /* max-width: 40vw; */
-  /* height: 25vh; */
   height: 250px;
   max-height: 250px;
   display: flex;
@@ -421,7 +416,6 @@ hr.style-1 {
 
 .filtered {
   -webkit-filter: blur(5px);
-  /* -webkit-filter: grayscale(1); */
 }
 
 .tile-text {
@@ -465,15 +459,13 @@ hr.style-1 {
 
 .country-hero-text {
   color: #FFFFFF;
-  font-size: 72px;
+  font-size: 80px;
   line-height: 3em;
   padding-left: 40px;
   padding-right: 40px;
   text-transform: uppercase;
-  /* background-color: var(--color-charcoal); */
   font-family: var(--font-heading);
   font-weight: 500;
-  /* text-shadow: 2px 2px 3px black; */
 }
 
 .country-content {
@@ -489,29 +481,22 @@ hr.style-1 {
   display: grid;
   grid-template-columns: 1fr 3fr;
   width: 100%;
-  height: 85vh;
+  height: var(--body-height);
   min-height: 500px;
-  margin-bottom: 20px;
+  margin-bottom: 80px;
 
 }
 .trip-hero-text {
   flex: 1;
   padding: 50px 40px 30px 40px;
   color: #FFFFFF;
-  background-color: var(--color-black);
+  background-color: var(--color-charcoal);
   font-family: var(--font-heading);
 }
 .trip-hero-text a:hover {
   color: #FFFFFF;
 }
-/* .trip-hero-text__title {
-  height: 150px;
-  display: flex;
-  margin: -20px -30px 0 -30px;
-  padding-left: 30px;
-  padding-top: 35px;
-  background-color: black;
-} */
+
 
 .country-link {
   color: inherit;
@@ -545,18 +530,19 @@ hr.style-1 {
 }
 
 
+
+
 /***** Carousel Style ********/
 
-.BrainhubCarousel {
+.carousel {
+  height: var(--body-height);
   width: 100%;
 }
 
-.BrainhubCarousel img{
-  min-height: 100%
-}
-
-.BrainhubCarouselItem {
-  overflow: hidden;
+.carousel img {
+  height: 70vh;
+  max-width: 100%;
+  width: auto;
 }
 
 .thumbnail{
@@ -564,12 +550,17 @@ hr.style-1 {
 }
 
 .carousel-arrow {
-  /* color: var(--color-charcoal); */
-  height: 400px;
-  padding-left: 40px;
-  padding-right: 40px;
+  font-size: 30px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
   color: white;
   background-color: var(--color-charcoal);
+}
+
+.carousel-arrow:hover {
+  cursor: pointer;
 }
 
 

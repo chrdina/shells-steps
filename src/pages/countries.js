@@ -19,7 +19,7 @@ class Countries extends React.Component {
           <h1>Countries</h1>
         </div>
         <div className='tiles'>
-          {this.state.data.length ? this.state.data.map(
+          {this.state.data && this.state.data.map(
             (country) => console.info('country', country) ||
               <Tile
                 key={country.sys.id}
@@ -29,8 +29,7 @@ class Countries extends React.Component {
                 imgSrc={(country.fields.tilePicCountry && country.fields.tilePicCountry.fields != null) ? country.fields.tilePicCountry.fields.file.url : undefined}
                 data={country}
               />
-          ) :
-            <>Loading...</>}
+          )}
         </div>
       </div>
     );

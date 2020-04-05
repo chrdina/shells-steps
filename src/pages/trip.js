@@ -37,7 +37,7 @@ function Trip(props) {
 
   // Haven't got the data yet, so hang tight
   if (isLoading) {
-    return <>Loading...</>
+    return <></>
   }
 
 
@@ -73,16 +73,12 @@ function Trip(props) {
       </div>
 
       <div className="content-container">
+
+        <CustomCarousel items={tripDetails.fields.tripPhotos} />
+
         <div className="content-section">
-          <div className="content-grid">
-            <div className="col-left">
-              <ReactMarkdown>{tripDetails.fields.highlights}</ReactMarkdown>
-              <ReactMarkdown>{tripDetails.fields.tripItinirary}</ReactMarkdown>
-            </div>
-            <div className="col-right">
-              <CustomCarousel items={tripDetails.fields.tripPhotos} />
-            </div>
-          </div>
+          <ReactMarkdown>{tripDetails.fields.highlights}</ReactMarkdown>
+          <ReactMarkdown>{tripDetails.fields.tripItinirary}</ReactMarkdown>
         </div>
 
         <div className="content-section">
