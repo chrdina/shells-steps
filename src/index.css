@@ -176,9 +176,11 @@ hr.style-1 {
 
 .page-header {
   display: flex;
-  padding-top: 40px;
-  padding-bottom: 40px;
+  height: 100px;
+  padding-top: 20px;
+  content: max-content;
   justify-content: center;
+  align-items: center;
 }
 .page-header h1 {
   font-size: 30px;
@@ -273,9 +275,8 @@ hr.style-1 {
 #side-nav-left {
   display: flex;
   position: fixed;
-  top: var(--nav-height);
+  top: 190px;
   left: 0;
-  top: 245px;
   width: var(--side-margins);
   /* padding: 40px; */
   justify-content: center;
