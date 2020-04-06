@@ -1,16 +1,23 @@
 import React from 'react';
 import { HashLink as Link } from "react-router-hash-link";
 
-function AnchorNav(props) {
+function ShowSelectedDate(props) {
+  return <p>{props.date}</p>;
+}
 
-  // <ul>
-  //   {dates.map((year) =>
-  //     <li> <a href={`#${id}`}> {year} </a> </li>
-  //   )}
-  // </ul>
+class AnchorNav extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      selectedYear: ""
+    };
+  }
 
+  handleClick = (e) => {
+    this.setState({selectedYear: e.target.text});
+  }
 
-  function removeDuplicates(array, propName) {
+  removeDuplicates(array, propName) {
     console.log("Removing duplicates for array: ");
     console.log(array);
     var arrayOut = [];
@@ -31,26 +38,35 @@ function AnchorNav(props) {
   }
 
 
-  return (
+  render() {
 
-    <div id="side-nav-left">
+    const selectedYear = this.state.selectedYear;
 
-      <ul class="no-style">
-        {props.data && removeDuplicates(props.data, "date").map((listItem) =>
-          <li>
-            <Link
-              to={`#${listItem.id}`}
-              className={`${window.location.href.indexOf(`#${listItem.id}`) != -1 ? "active" : "inactive"}`}
-              smooth
-            >
-              {listItem.date}
-            </Link>
-          </li>
-        )}
-      </ul>
-    </div>
+    return (
 
-  );
+      <div id="side-nav-left">
+
+        <ShowSelectedDate date={selectedYear}/>
+
+        <ul class="no-style">
+          {this.props.data && this.removeDuplicates(this.props.data, "date").map((listItem) =>
+            <li>
+              <Link
+                to={`#${listItem.id}`}
+                onClick={this.handleClick}
+                value={listItem.id}
+                className={`${window.location.href.indexOf(`#${listItem.id}`) != -1 ? "active" : "inactive"}`}
+                smooth
+              >
+                {listItem.date}
+              </Link>
+            </li>
+          )}
+        </ul>
+      </div>
+
+    );
+  }
 
 }
 
