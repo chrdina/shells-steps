@@ -54,8 +54,7 @@ class AnchorNav extends React.Component {
               <Link
                 to={`#${listItem.id}`}
                 onClick={this.handleClick}
-                value={listItem.id}
-                className={`${window.location.href.indexOf(`#${listItem.id}`) != -1 ? "active" : "inactive"}`}
+                className={this.state.selectedYear == listItem.date ? "active" : "inactive"}
                 smooth
               >
                 {listItem.date}
