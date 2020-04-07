@@ -12,6 +12,7 @@ class AnchorNav extends React.Component {
   }
 
   getAnchorData() {
+    console.log("Getting anchor data");
     return this.props.data.map((trip) =>
       ({
         id: trip.sys.id,
@@ -45,7 +46,7 @@ class AnchorNav extends React.Component {
 
     const anchorData = this.getAnchorData();
     const selectedYear = this.props.selectedYear;
-    
+
 
     return (
 

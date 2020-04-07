@@ -24,28 +24,30 @@ class Trips extends React.Component {
 
   handleDateSelect(year) {
     console.log("Date was clicked");
-    this.setState({selectedYear: year});
-  }
-
-  updateSelectedTrips(date) {
-    console.log("Getting trips for " + date);
-    const tripsForDate = this.state.data.filter(trip => trip.fields.tripDate.split('-')[0] == date);
-    console.log(tripsForDate);
+    if (year === this.state.selectedYear) {
+      this.setState({selectedYear: ""});
+      this.setState({filterActive: false});
+    }
+    else {
+      this.setState({selectedYear: year});
+      this.setState({filterActive: true});
+    }
   }
 
 
   render () {
 
     const selectedYear = this.state.selectedYear;
+    const filterActive = this.state.filterActive;
     console.log("Selected Year: " + selectedYear);
 
     return (
       <>
 
-          {this.state.data && <AnchorNav
-            data={this.state.data}
-            selectedYear={selectedYear}
-            onDateSelect={this.handleDateSelect} /> }
+        {this.state.data && <AnchorNav
+          data={this.state.data}
+          selectedYear={selectedYear}
+          onDateSelect={this.handleDateSelect} /> }
 
 
         <div className="content-container">
@@ -61,7 +63,7 @@ class Trips extends React.Component {
                   to={`/trips/${trip.sys.id}`}
                   text={trip.fields.tripName}
                   imgSrc={(trip.fields.tilePicTrip && trip.fields.tilePicTrip.fields != null) ? trip.fields.tilePicTrip.fields.file.url : undefined}
-                  filteredOut={false}
+                  filteredOut={filterActive && selectedYear != trip.fields.tripDate.split('-')[0]}
                 />
             )}
           </div>
