@@ -303,7 +303,7 @@ hr.style-1 {
 
 #side-nav-left li:before {
   content: '';
-  background-color: var(--color-light-blue);
+  background-color: #000000;
   position: absolute;
   bottom: 0;
   top: 0;
