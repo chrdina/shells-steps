@@ -416,7 +416,7 @@ hr.style-1 {
 }
 
 .filtered {
-  -webkit-filter: blur(5px);
+  -webkit-filter: blur(3px);
 }
 
 .tile-text {

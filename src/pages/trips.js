@@ -5,10 +5,16 @@ import AnchorNav from '../components/anchorNav';
 import { HashLink as Link } from "react-router-hash-link";
 
 class Trips extends React.Component {
-  state = {
-    data: [],
-    yearSelected: ""
-  };
+  constructor(props) {
+    super(props);
+    this.handleDateSelect = this.handleDateSelect.bind(this);
+    this.state = {
+      data: [],
+      selectedYear: "",
+      filterActive: false
+    };
+  }
+
 
   componentDidMount() {
     client.getEntries({content_type: 'Trip', order: '-fields.tripDate'}).then(response =>
@@ -16,22 +22,33 @@ class Trips extends React.Component {
     )
   }
 
-  getAnchorData() {
-    return this.state.data.map((trip) =>
-      ({
-        id: trip.sys.id,
-        date: trip.fields.tripDate.split("-")[0]
-      })
-    )
+  handleDateSelect(year) {
+    if (year === this.state.selectedYear) {
+      this.setState({selectedYear: ""});
+      this.setState({filterActive: false});
+    }
+    else {
+      this.setState({selectedYear: year});
+      this.setState({filterActive: true});
+    }
   }
 
 
   render () {
 
+    const selectedYear = this.state.selectedYear;
+    const filterActive = this.state.filterActive;
 
     return (
       <>
-        {this.state.data && <AnchorNav data={this.getAnchorData()}/>}
+
+        {this.state.data &&
+          <AnchorNav
+            data={this.state.data}
+            selectedYear={selectedYear}
+            onDateSelect={this.handleDateSelect}
+            />
+        }
 
         <div className="content-container">
           <div className="page-header">
@@ -39,14 +56,14 @@ class Trips extends React.Component {
           </div>
           <div className='tiles'>
             {this.state.data && this.state.data.map(
-              (trip) => console.info('trip', trip) ||
+              (trip) =>
                 <Tile
                   key={trip.sys.id}
                   id={trip.sys.id}
                   to={`/trips/${trip.sys.id}`}
                   text={trip.fields.tripName}
-                  imgSrc={(trip.fields.tilePicTrip && trip.fields.tilePicTrip.fields != null) ? trip.fields.tilePicTrip.fields.file.url : undefined}
-                  filteredOut={false}
+                  imgSrc={(trip.fields.tilePicTrip && trip.fields.tilePicTrip.fields !== null) ? trip.fields.tilePicTrip.fields.file.url : undefined}
+                  filteredOut={filterActive && selectedYear !== trip.fields.tripDate.split('-')[0]}
                 />
             )}
           </div>
