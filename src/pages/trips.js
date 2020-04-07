@@ -5,11 +5,16 @@ import AnchorNav from '../components/anchorNav';
 import { HashLink as Link } from "react-router-hash-link";
 
 class Trips extends React.Component {
-  state = {
-    data: [],
-    selectedYear: [],
-    filterActive: false
-  };
+  constructor(props) {
+    super(props);
+    this.handleDateSelect = this.handleDateSelect.bind(this);
+    this.state = {
+      data: [],
+      selectedYear: "",
+      filterActive: false
+    };
+  }
+
 
   componentDidMount() {
     client.getEntries({content_type: 'Trip', order: '-fields.tripDate'}).then(response =>
@@ -17,9 +22,9 @@ class Trips extends React.Component {
     )
   }
 
-  handleClick = (e) => {
+  handleDateSelect(year) {
     console.log("Date was clicked");
-    this.setState({ filterActive: true })
+    this.setState({selectedYear: year});
   }
 
   updateSelectedTrips(date) {
@@ -28,23 +33,20 @@ class Trips extends React.Component {
     console.log(tripsForDate);
   }
 
-  getAnchorData() {
-    return this.state.data.map((trip) =>
-      ({
-        id: trip.sys.id,
-        date: trip.fields.tripDate.split("-")[0]
-      })
-    )
-  }
-
 
   render () {
 
+    const selectedYear = this.state.selectedYear;
+    console.log("Selected Year: " + selectedYear);
 
     return (
       <>
-        <a onClick={this.handleClick} value="2016">test date </a>
-        {this.state.data && <AnchorNav data={this.getAnchorData()}/>}
+
+          {this.state.data && <AnchorNav
+            data={this.state.data}
+            selectedYear={selectedYear}
+            onDateSelect={this.handleDateSelect} /> }
+
 
         <div className="content-container">
           <div className="page-header">
