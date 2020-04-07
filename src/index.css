@@ -283,11 +283,17 @@ hr.style-1 {
   color: var(--color-dark-grey);
   /* visibility: hidden; */
 }
+#side-nav-left ul {
+  text-align: center;
+  width: 100%;
+}
 #side-nav-left a.active {
-  font-weight:700;
+  font-weight:500;
+  font-size: larger;
   color: var(--color-light-blue);
 }
 #side-nav-left a:hover {
+  font-size: larger;
   color: var(--color-light-blue);
 }
 
