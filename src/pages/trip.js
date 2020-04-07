@@ -64,7 +64,7 @@ function Trip(props) {
               ))
             }
           </ul>
-          <a><p className="hero-text video-button">Watch video <FontAwesomeIcon icon={faPlayCircle} className="icon-after"/></p></a>
+          <p className="hero-text video-button">Watch video <FontAwesomeIcon icon={faPlayCircle} className="icon-after"/></p>
         </div>
 
         {tripDetails.fields.tilePicTrip && <div className="hero-image" style={{backgroundImage: `url(${tripDetails.fields.tilePicTrip.fields.file.url}?fm=jpg&fl=progressive)`}}>

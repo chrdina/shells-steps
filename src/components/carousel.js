@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import Carousel, { Dots } from '@brainhubeu/react-carousel';
+import React from 'react';
+import Carousel from '@brainhubeu/react-carousel';
 import '@brainhubeu/react-carousel/lib/style.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core'
@@ -32,7 +32,7 @@ class CustomCarousel extends React.Component {
 
         >
           {this.props.items && this.props.items.map(
-            (image, key) => (<img src={`${image.fields.file.url}?fm=jpg&fl=progressive&q=30`} key={key} />)
+            (image, key) => (<img src={`${image.fields.file.url}?fm=jpg&fl=progressive&q=30`} key={key} alt={image.fields.title} />)
           )}
         </Carousel>
       </div>

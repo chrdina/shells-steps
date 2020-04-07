@@ -12,7 +12,6 @@ class AnchorNav extends React.Component {
   }
 
   getAnchorData() {
-    console.log("Getting anchor data");
     return this.props.data.map((trip) =>
       ({
         id: trip.sys.id,
@@ -22,8 +21,6 @@ class AnchorNav extends React.Component {
   }
 
   removeDuplicates(array, propName) {
-    console.log("Removing duplicates for array: ");
-    console.log(array);
     var arrayOut = [];
     var i = 0;
 
@@ -36,8 +33,6 @@ class AnchorNav extends React.Component {
       }
       i++;
     }
-    console.log("New array: ");
-    console.log(arrayOut);
     return arrayOut;
   }
 
@@ -52,9 +47,9 @@ class AnchorNav extends React.Component {
 
       <div id="side-nav-left">
 
-        <ul class="no-style">
+        <ul className="no-style">
           {this.props.data && this.removeDuplicates(anchorData, "date").map((listItem) =>
-            <li>
+            <li key={listItem.id}>
               <Link
                 key={listItem.id}
                 to={`#${listItem.id}`}

@@ -23,7 +23,6 @@ class Trips extends React.Component {
   }
 
   handleDateSelect(year) {
-    console.log("Date was clicked");
     if (year === this.state.selectedYear) {
       this.setState({selectedYear: ""});
       this.setState({filterActive: false});
@@ -39,16 +38,17 @@ class Trips extends React.Component {
 
     const selectedYear = this.state.selectedYear;
     const filterActive = this.state.filterActive;
-    console.log("Selected Year: " + selectedYear);
 
     return (
       <>
 
-        {this.state.data && <AnchorNav
-          data={this.state.data}
-          selectedYear={selectedYear}
-          onDateSelect={this.handleDateSelect} /> }
-
+        {this.state.data &&
+          <AnchorNav
+            data={this.state.data}
+            selectedYear={selectedYear}
+            onDateSelect={this.handleDateSelect}
+            />
+        }
 
         <div className="content-container">
           <div className="page-header">
@@ -62,8 +62,8 @@ class Trips extends React.Component {
                   id={trip.sys.id}
                   to={`/trips/${trip.sys.id}`}
                   text={trip.fields.tripName}
-                  imgSrc={(trip.fields.tilePicTrip && trip.fields.tilePicTrip.fields != null) ? trip.fields.tilePicTrip.fields.file.url : undefined}
-                  filteredOut={filterActive && selectedYear != trip.fields.tripDate.split('-')[0]}
+                  imgSrc={(trip.fields.tilePicTrip && trip.fields.tilePicTrip.fields !== null) ? trip.fields.tilePicTrip.fields.file.url : undefined}
+                  filteredOut={filterActive && selectedYear !== trip.fields.tripDate.split('-')[0]}
                 />
             )}
           </div>
