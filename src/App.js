@@ -20,7 +20,8 @@ function App() {
   return (
     <>
       <Router basename='/'>
-        <div id="top" className="nav">
+        <div id="top"></div>
+        <div id="nav-top" >
 
           <Link to="/">
             <div id="logo">
@@ -47,7 +48,16 @@ function App() {
 
           </div>
 
+          <div className="nav-hamburger">
+            <svg viewBox="0 0 100 80" width="40" height="40">
+              <rect width="100" height="10"></rect>
+              <rect y="30" width="100" height="10"></rect>
+              <rect y="60" width="100" height="10"></rect>
+            </svg>
+          </div>
         </div>
+
+
 
         <div className="container-main">
           <Switch>

@@ -168,6 +168,12 @@ hr.style-1 {
 
 /***** Base Layout Styles *******/
 
+#top {
+  position:absolute;
+  top:0;
+  visibility: hidden;
+}
+
 .content-container {
   margin-left: var(--side-margins);
   margin-right: var(--side-margins);
@@ -190,7 +196,7 @@ hr.style-1 {
 .content-section {
   margin-top: 40px;
   margin-bottom: 40px;
-  width: 70%;
+  width: 60%;
 }
 .content-section .blog img {
   max-height: calc(80vh);
@@ -224,7 +230,7 @@ hr.style-1 {
 
 /******  Navigation Style ********/
 
-.nav {
+#nav-top {
   height: var(--nav-height);
   box-sizing: border-box;
   display: flex;
@@ -245,20 +251,20 @@ hr.style-1 {
   color: var(--color-blue) !important;
   font-weight: 600;
 }
-.nav ul a {
+#nav-top ul a {
   list-style: none;
   text-decoration: none;
   margin: 0;
   padding: 0;
   color: inherit;
 }
-.nav li {
+#nav-top li {
   display: inline;
   margin: 0;
   padding-left: 15px;
   padding-right: 15px;
 }
-.nav a:hover {
+#nav-top a:hover {
   color: var(--color-blue);
   font-weight: 500;
 }
@@ -640,13 +646,15 @@ hr.style-1 {
 }
 
 #footer {
-  position: sticky;
+  position: fixed;
   bottom: 0;
+  left: 0;
+  width: 100%;
   display: flex;
   padding-top: 10px;
   padding-bottom: 10px;
   align-items: center;
   justify-content: center;
   background-color: #ffffff;
-  visibility: hidden;
+  /* visibility: hidden; */
 }
