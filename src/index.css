@@ -23,6 +23,13 @@
   --body-height: calc(100vh - 80px);
 }
 
+/****** Media Queries *********/
+
+@media all and (max-width:820px) {
+  .nav-hamburger {visibility: visible !important;}
+  .menu {visibility: hidden !important;}
+}
+
 
 /****** Animation keyframes *********/
 
@@ -269,11 +276,14 @@ hr.style-1 {
   font-weight: 500;
 }
 
+
 .nav-hamburger {
   position: absolute;
-  top: 0;
+  top: 20px;
   right: 40px;
   display: flex;
+  width: 30px;
+  height: 30px;
   visibility: hidden;
 }
 
