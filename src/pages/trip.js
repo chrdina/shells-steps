@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { HashLink as Link } from "react-router-hash-link";
 import client from '../contentfulProvider';
 import ReactMarkdown from 'react-markdown';
 import CustomCarousel from '../components/carousel';
@@ -89,7 +89,7 @@ function Trip(props) {
       </div>
 
       <div id="footer">
-        <a href="/trips">Back to Trips</a>
+        <Link to="/trips">Back to Trips</Link>
       </div>
     </>
   );
