@@ -694,7 +694,7 @@ hr.style-1 {
 }
 .hero-text-title > * {
   margin-bottom: 4vh;
-  font-size: calc(30px + (50 - 20) * ((100vw - 300px) / (1600 - 300)));
+  font-size: calc(30px + (40 - 20) * ((100vw - 300px) / (1600 - 300)));
 }
 .hero-text-container a:hover {
   color: #FFFFFF;
@@ -705,6 +705,10 @@ hr.style-1 {
 
 .hero-text-container ul {
   margin-top: 5%;
+}
+
+.hero-text {
+  font-size: calc(18px + (20 - 18) * ((100vw - 300px) / (1600 - 300)));
 }
 
 .country-link {
