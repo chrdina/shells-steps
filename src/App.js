@@ -42,7 +42,8 @@ class App extends React.Component {
 
             <Link to="/">
               <div id="logo">
-                <FontAwesomeIcon icon="globe-americas" className="icon"/>Where's Shell
+                <FontAwesomeIcon icon="globe-americas" className="icon"/>
+
               </div>
             </Link>
 
@@ -70,8 +71,9 @@ class App extends React.Component {
               <span></span>
               <span></span>
               <span></span>
-              
+
             </div>
+
           </div>
 
           <div className={`collapsible-menu ${this.state.menuActive ? 'collapsible-menu-active' : null}` }>

@@ -23,34 +23,6 @@
   --body-height: calc(100vh - 80px);
 }
 
-/****** Media Queries *********/
-
-@media all and (max-width:820px) {
-  :root {
-    --side-margins: 0;
-  }
-  .hamburger {visibility: visible !important;}
-  .menu {visibility: hidden !important;}
-}
-
-@media all and (max-width:768px) {
-
-  .content-section {
-    margin-left: 10vw;
-    margin-right: 10vw;
-    width: 80% !important;
-  }
-  .tiles {
-    width: 100%;
-    /* margin-top: 20px; */
-    /* margin-bottom: 20px; */
-    grid-gap: 3px !important;
-    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-  }
-  .tile {
-    height: 25vh !important;
-  }
-}
 
 
 /****** Animation keyframes *********/
@@ -122,15 +94,15 @@ p {
 }
 p.hero-text {
   color: var(--color-light-grey);
-  margin-top: 30px;
-  margin-bottom: 30px;
+  /* margin-top: 30px;
+  margin-bottom: 30px; */
 }
 p.video-button {
+  display: none;
   padding: 20px;
   text-align: center;
   color: var(--color-charcoal);
   background-color: var(--color-light-blue);
-  visibility: hidden;
 }
 
 ul {
@@ -189,8 +161,10 @@ a.country-link {
 
 hr.style-1 {
     border: 0;
-    height: 0;
+    height: 0 !important;
+    max-height: 2px;
     margin-top: 30px;
+    width: 100%;
     margin-bottom: 30px;
     border-top: 1px solid rgba(0, 0, 0, 0.1);
     border-bottom: 1px solid rgba(255, 255, 255, 0.3);
@@ -268,6 +242,29 @@ hr.style-1 {
 
 /******  Navigation Style ********/
 
+
+#logo {
+  position: absolute;
+  left: 0;
+  top: 20px;
+  bottom: 20px;
+  width: 50px;
+  margin-left: 30px;
+  /* margin-right: 20px; */
+  font-weight: 500;
+  /* font-size: 20px; */
+  background: url(ws-logo.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+#logo .icon {
+  color: var(--color-blue);
+  visibility: hidden;
+}
+
+
 #nav-top {
   height: var(--nav-height);
   width: 100%;
@@ -311,16 +308,13 @@ hr.style-1 {
 
 .hamburger {
   position: absolute;
-  top: 20px;
-  right: 40px;
+  top: 25px;
+  bottom: 25px;
+  right: 10vw;
   display: flex;
   width: 30px;
-  height: 30px;
   visibility: hidden;
 }
-
-
-
 
 /* For Hamburger animation */
 
@@ -465,10 +459,18 @@ hr.style-1 {
   content: '';
   background-color: #000000;
   position: absolute;
-  bottom: 0;
+  bottom: 0px;
   top: 0;
   left: 4px;
   width: 2px;
+}
+
+#side-nav-left li:first-child:before {
+  top: 50%;
+}
+
+#side-nav-left li:last-child:before {
+  bottom: 50%;
 }
 
 #side-nav-left li:after {
@@ -496,19 +498,6 @@ hr.style-1 {
 }
 
 
-#logo {
-
-  position: absolute;
-  left: 40px;
-  top: 20px;
-  margin-top: 10px;
-  font-weight: 500;
-  font-size: 20px;
-}
-
-#logo .icon {
-  color: var(--color-blue);
-}
 
 
 /****** Homepage Style ********/
@@ -533,7 +522,7 @@ hr.style-1 {
 .title-area {
   display: block;
   height: 250px;
-  width: 40%;
+  width: 100%;
   margin-top: 2%;
   margin-bottom: 60px;
   padding: 40px;
@@ -543,7 +532,7 @@ hr.style-1 {
   color: #1a1e0c;
 }
 .title-area h1 {
-  font-size: 60px;
+  font-size: calc(30px + (60 - 30) * ((100vw - 300px) / (1600 - 300)));
   padding-bottom: 20px;
   opacity: 0;
   animation-name: fadeIn;
@@ -553,7 +542,7 @@ hr.style-1 {
 .title-area p {
   margin: 0;
   opacity: 0;
-  font-size: 30px;
+  font-size: calc(14px + (20 - 14) * ((100vw - 300px) / (1600 - 300)));
   animation-name: fadeIn;
   animation-delay: 2s;
   animation-duration: 3s;
@@ -571,11 +560,11 @@ hr.style-1 {
   animation-delay: 2s;
   animation-duration: 3s;
   animation-fill-mode: forwards;
-  box-shadow: none;
+  box-shadow: 0 1px 0;
   border: 1px solid var(--color-charcoal);
 }
 .title-cta:hover {
-  background-color: rgba(200,200,200,0.2);
+  background-color: rgba(200,200,200,0.5);
   cursor: pointer;
 
 }
@@ -663,11 +652,10 @@ hr.style-1 {
 }
 
 .country-hero-text {
+  display: flex;
   color: #FFFFFF;
-  font-size: 80px;
+  font-size: calc(40px + (80 - 40) * ((100vw - 300px) / (1600 - 300)));
   line-height: 3em;
-  padding-left: 40px;
-  padding-right: 40px;
   text-transform: uppercase;
   font-family: var(--font-heading);
   font-weight: 500;
@@ -683,25 +671,45 @@ hr.style-1 {
 /****** Trip Style ********/
 
 .trip-hero {
-  display: grid;
-  grid-template-columns: 1fr 3fr;
+  display: flex;
+  flex-direction: row;
   width: 100%;
   height: var(--body-height);
-  min-height: 500px;
-  margin-bottom: 80px;
+  max-height: 90vh;
+  margin-bottom: 6vh;
 
 }
-.trip-hero-text {
+.hero-text-container {
+  display: flex;
+  flex-direction: column;
   flex: 1;
-  padding: 50px 40px 30px 40px;
+  justify-content: flex-start;
+  /* max-width: 400px; */
+  /* min-height: 0; */
+  padding: 5%;
+  /* padding: 50px 40px 30px 40px; */
   color: #FFFFFF;
   background-color: var(--color-charcoal);
   font-family: var(--font-heading);
 }
-.trip-hero-text a:hover {
+.hero-text-title > * {
+  margin-bottom: 4vh;
+  font-size: calc(30px + (40 - 20) * ((100vw - 300px) / (1600 - 300)));
+}
+.hero-text-container a:hover {
   color: #FFFFFF;
 }
+.hero-text-container > * {
+  /* flex: 1 100%; */
+}
 
+.hero-text-container ul {
+  margin-top: 5%;
+}
+
+.hero-text {
+  font-size: calc(18px + (20 - 18) * ((100vw - 300px) / (1600 - 300)));
+}
 
 .country-link {
   color: inherit;
@@ -740,14 +748,17 @@ hr.style-1 {
 /***** Carousel Style ********/
 
 .carousel {
-  height: var(--body-height);
+  /* height: calc(var(--body-height) - 10vh); */
+  /* min-height: 200px; */
   width: 100%;
+  margin-top: 15vh;
+  margin-bottom: 15vh;
 }
 
 .carousel img {
-  height: 70vh;
+  height: auto;
+  max-height: 70vh;
   max-width: 100%;
-  width: auto;
 }
 
 .thumbnail{
@@ -811,4 +822,69 @@ hr.style-1 {
   justify-content: center;
   background-color: #ffffff;
   /* visibility: hidden; */
+}
+
+
+
+
+
+/****** Media Queries *********/
+
+@media all and (max-width:820px) {
+  :root {
+    --side-margins: 0;
+  }
+  .hamburger {visibility: visible;}
+  .menu {display:none;}
+}
+
+@media all and (max-width:768px) {
+
+  .trip-hero {
+    flex-direction: column;
+  }
+  .hero-text-container {
+    padding: 30px;
+    max-width: none;
+  }
+  .hero-text-container ul {
+    margin-top: 15px;
+  }
+  .hero-text-container hr {
+    display: none;
+  }
+  .hero-text-title h1 {
+    margin-bottom: 20px;;
+  }
+  .hero-text {
+    margin-top: 2px;
+    margin-bottom: 2px;
+  }
+
+
+
+  .content-section {
+    margin-left: 10vw;
+    margin-right: 10vw;
+    width: 80% !important;
+  }
+  .tiles {
+    width: 100%;
+    /* margin-top: 20px; */
+    /* margin-bottom: 20px; */
+    grid-gap: 3px !important;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  }
+  .tile {
+    height: 25vh !important;
+  }
+
+  .carousel {
+    margin-top: 0;
+    margin-bottom: 5vh;
+  }
+
+  #footer {
+    height: 50px;
+  }
 }
