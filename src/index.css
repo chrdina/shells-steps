@@ -505,7 +505,7 @@ hr.style-1 {
 .title-area {
   display: block;
   height: 250px;
-  width: 40%;
+  width: 100%;
   margin-top: 2%;
   margin-bottom: 60px;
   padding: 40px;
@@ -515,7 +515,7 @@ hr.style-1 {
   color: #1a1e0c;
 }
 .title-area h1 {
-  font-size: 60px;
+  font-size: calc(30px + (60 - 30) * ((100vw - 300px) / (1600 - 300)));
   padding-bottom: 20px;
   opacity: 0;
   animation-name: fadeIn;
@@ -525,7 +525,7 @@ hr.style-1 {
 .title-area p {
   margin: 0;
   opacity: 0;
-  font-size: 30px;
+  font-size: calc(14px + (20 - 14) * ((100vw - 300px) / (1600 - 300)));
   animation-name: fadeIn;
   animation-delay: 2s;
   animation-duration: 3s;
@@ -543,11 +543,11 @@ hr.style-1 {
   animation-delay: 2s;
   animation-duration: 3s;
   animation-fill-mode: forwards;
-  box-shadow: none;
+  box-shadow: 0 1px 0;
   border: 1px solid var(--color-charcoal);
 }
 .title-cta:hover {
-  background-color: rgba(200,200,200,0.2);
+  background-color: rgba(200,200,200,0.5);
   cursor: pointer;
 
 }
@@ -635,11 +635,10 @@ hr.style-1 {
 }
 
 .country-hero-text {
+  display: flex;
   color: #FFFFFF;
-  font-size: 80px;
+  font-size: calc(40px + (80 - 40) * ((100vw - 300px) / (1600 - 300)));
   line-height: 3em;
-  padding-left: 40px;
-  padding-right: 40px;
   text-transform: uppercase;
   font-family: var(--font-heading);
   font-weight: 500;
