@@ -47,7 +47,7 @@ function Trip(props) {
       <div className="trip-hero">
 
         <div className="hero-text-container">
-          <div className="hero-text-container__title">
+          <div className="hero-text-title">
             <h1 className="trip-title">{tripDetails.fields.tripName}</h1>
           </div>
           <p className="hero-text"><FontAwesomeIcon icon={faCalendarAlt} className="icon"/>{getDate(tripDetails.fields.tripDate, "long")}</p>
