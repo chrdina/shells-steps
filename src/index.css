@@ -240,6 +240,29 @@ hr.style-1 {
 
 /******  Navigation Style ********/
 
+
+#logo {
+  position: absolute;
+  left: 0;
+  top: 20px;
+  bottom: 20px;
+  width: 50px;
+  margin-left: 30px;
+  /* margin-right: 20px; */
+  font-weight: 500;
+  /* font-size: 20px; */
+  background: url(ws-logo.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+#logo .icon {
+  color: var(--color-blue);
+  visibility: hidden;
+}
+
+
 #nav-top {
   height: var(--nav-height);
   width: 100%;
@@ -283,16 +306,13 @@ hr.style-1 {
 
 .hamburger {
   position: absolute;
-  top: 20px;
-  right: 40px;
+  top: 25px;
+  bottom: 25px;
+  right: 10vw;
   display: flex;
   width: 30px;
-  height: 30px;
   visibility: hidden;
 }
-
-
-
 
 /* For Hamburger animation */
 
@@ -476,26 +496,6 @@ hr.style-1 {
 }
 
 
-#logo {
-  position: absolute;
-  left: 25px;
-  top: 10px;
-  bottom: 10px;
-  width: 100px;
-  margin-left: 20px;
-  margin-right: 20px;
-  font-weight: 500;
-  /* font-size: 20px; */
-  background: url(ws-logo.svg);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
-}
-
-#logo .icon {
-  color: var(--color-blue);
-  visibility: hidden;
-}
 
 
 /****** Homepage Style ********/
@@ -673,8 +673,8 @@ hr.style-1 {
   flex-direction: row;
   width: 100%;
   height: var(--body-height);
-  max-height: 80vh;
-  margin-bottom: 80px;
+  max-height: 90vh;
+  margin-bottom: 6vh;
 
 }
 .hero-text-container {
@@ -738,8 +738,11 @@ hr.style-1 {
 /***** Carousel Style ********/
 
 .carousel {
-  height: var(--body-height);
+  /* height: calc(var(--body-height) - 10vh); */
+  /* min-height: 200px; */
   width: 100%;
+  margin-top: 15vh;
+  margin-bottom: 15vh;
 }
 
 .carousel img {
@@ -856,5 +859,10 @@ hr.style-1 {
   }
   .tile {
     height: 25vh !important;
+  }
+
+  .carousel {
+    margin-top: 0;
+    margin-bottom: 5vh;
   }
 }
