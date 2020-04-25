@@ -883,4 +883,8 @@ hr.style-1 {
     margin-top: 0;
     margin-bottom: 5vh;
   }
+
+  #footer {
+    height: 50px;
+  }
 }
