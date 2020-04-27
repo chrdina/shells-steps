@@ -31,28 +31,28 @@ class App extends React.Component {
     return (
       <>
         <Router basename='/'>
+
           <div id="top"></div>
-          <div id="nav-top" >
+
+          <div className="navbar" >
 
             <Link id="logo" to="/"></Link>
 
             <div className="menu">
-
-                <ul>
-                  <li>
-                    <NavLink to="/" exact={true} activeClassName="nav-active">Home</NavLink>
-                  </li>
-                  <li>
-                    <NavLink to="/trips" activeClassName="nav-active">Trips</NavLink>
-                  </li>
-                  <li>
-                    <NavLink to="/countries" activeClassName="nav-active">Countries</NavLink>
-                  </li>
-                  <li>
-                    <NavLink to="/map" activeClassName="nav-active">Map</NavLink>
-                  </li>
-                </ul>
-
+              <ul>
+                <li>
+                  <NavLink to="/" exact={true} activeClassName="nav-active">Home</NavLink>
+                </li>
+                <li>
+                  <NavLink to="/trips" activeClassName="nav-active">Trips</NavLink>
+                </li>
+                <li>
+                  <NavLink to="/countries" activeClassName="nav-active">Countries</NavLink>
+                </li>
+                <li>
+                  <NavLink to="/map" activeClassName="nav-active">Map</NavLink>
+                </li>
+              </ul>
             </div>
 
             <div className={`hamburger ${this.state.menuActive ? 'open' : null}`} onClick={this.toggleMenu}>
@@ -60,7 +60,6 @@ class App extends React.Component {
               <span></span>
               <span></span>
               <span></span>
-
             </div>
 
           </div>

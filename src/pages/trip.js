@@ -46,14 +46,12 @@ function Trip(props) {
 
       <div className="trip-hero">
 
-        <div className="hero-text-container">
-          <div className="hero-text-title">
-            <h1 className="trip-title">{tripDetails.fields.tripName}</h1>
-          </div>
-          <p className="hero-text"><FontAwesomeIcon icon={faCalendarAlt} className="icon"/>{getDate(tripDetails.fields.tripDate, "long")}</p>
-          <hr className="hero-text style-1"/>
-          <p className="hero-text"><FontAwesomeIcon icon={faMapMarkerAlt} className="icon"/>{tripDetails.fields.tripLocations}</p>
-          <ul className="hero-text no-style-light-blue">
+        <div className="hero-text-area">
+          <h1>{tripDetails.fields.tripName}</h1>
+          <p><FontAwesomeIcon icon={faCalendarAlt} className="icon"/>{getDate(tripDetails.fields.tripDate, "long")}</p>
+          <hr className="style-1"/>
+          <p><FontAwesomeIcon icon={faMapMarkerAlt} className="icon"/>{tripDetails.fields.tripLocations}</p>
+          <ul className="no-style-light-blue">
             {
               tripDetails.fields.countriesVisitedInTrip.map((country, key) => (
                 <li className="hero-inline-list_item" key={key}>
@@ -64,7 +62,7 @@ function Trip(props) {
               ))
             }
           </ul>
-          <p className="hero-text video-button">Watch video <FontAwesomeIcon icon={faPlayCircle} className="icon-after"/></p>
+          <p className="video-button">Watch video <FontAwesomeIcon icon={faPlayCircle} className="icon-after"/></p>
         </div>
 
         {tripDetails.fields.tilePicTrip && <div className="hero-image" style={{backgroundImage: `url(${tripDetails.fields.tilePicTrip.fields.file.url}?fm=jpg&fl=progressive)`}}>
