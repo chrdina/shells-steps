@@ -66,7 +66,6 @@ class App extends React.Component {
 
           <div className={`collapsible-menu ${this.state.menuActive ? 'collapsible-menu-active' : null}` }>
             <ul>
-
               <NavLink to="/" exact={true} activeClassName="nav-active-collapsible" onClick={this.toggleMenu}>
                 <li>Home</li>
               </NavLink>
@@ -82,7 +81,6 @@ class App extends React.Component {
               <NavLink to="/map" activeClassName="nav-active-collapsible" onClick={this.toggleMenu}>
                 <li>Map</li>
               </NavLink>
-
             </ul>
           </div>
 
