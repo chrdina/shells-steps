@@ -36,7 +36,7 @@ class App extends React.Component {
 
           <div className="navbar" >
 
-            <Link id="logo" to="/"></Link>
+            <Link id="logo" to="/" aria-label="Logo to Where's Shell homepage"></Link>
 
             <div className="menu">
               <ul>
