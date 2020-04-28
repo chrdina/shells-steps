@@ -26,9 +26,11 @@ class CustomCarousel extends React.Component {
           value={this.state.value}
           onChange={this.onChange}
           centered
+          infinite
           arrowLeft={<FontAwesomeIcon className="carousel-arrow" icon="chevron-left"/>}
           arrowRight={<FontAwesomeIcon className="carousel-arrow" icon="chevron-right"/>}
           addArrowClickHandler
+          keepDirectionWhenDragging
 
         >
           {this.props.items && this.props.items.map(
