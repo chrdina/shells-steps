@@ -1,27 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "835ceb5bb0f674f1355c0319bba8abc9",
+    "revision": "41fe36175a8b3ee3a826a54b6b1ab906",
     "url": "/wheres-shell/index.html"
   },
   {
-    "revision": "77bcb1db9a014ee4e2ed",
+    "revision": "eaaff299feaf86e0c31b",
     "url": "/wheres-shell/static/css/2.9b46dffb.chunk.css"
   },
   {
-    "revision": "2af7d99f668141cea029",
-    "url": "/wheres-shell/static/css/main.82773404.chunk.css"
+    "revision": "54365834f264652ec3e7",
+    "url": "/wheres-shell/static/css/main.3036f4ff.chunk.css"
   },
   {
-    "revision": "77bcb1db9a014ee4e2ed",
-    "url": "/wheres-shell/static/js/2.2cc96585.chunk.js"
+    "revision": "eaaff299feaf86e0c31b",
+    "url": "/wheres-shell/static/js/2.7d7f7503.chunk.js"
   },
   {
     "revision": "9a24470fdabe8e8f51d300c7a8d0b776",
-    "url": "/wheres-shell/static/js/2.2cc96585.chunk.js.LICENSE.txt"
+    "url": "/wheres-shell/static/js/2.7d7f7503.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "2af7d99f668141cea029",
-    "url": "/wheres-shell/static/js/main.a7198e14.chunk.js"
+    "revision": "54365834f264652ec3e7",
+    "url": "/wheres-shell/static/js/main.898c04f9.chunk.js"
   },
   {
     "revision": "612ffe98254ed1937475",
