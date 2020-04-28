@@ -8,12 +8,6 @@ import Trip from './pages/trip';
 import Country from './pages/country';
 import Map from './pages/map';
 
-// Font awesome icon setup
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { library } from '@fortawesome/fontawesome-svg-core'
-import { faGlobeAmericas, faCoffee, faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
-library.add(faGlobeAmericas, faCoffee, faChevronLeft, faChevronRight);   // add icons to library
-
 
 class App extends React.Component {
 
@@ -37,33 +31,28 @@ class App extends React.Component {
     return (
       <>
         <Router basename='/'>
+
           <div id="top"></div>
-          <div id="nav-top" >
 
-            <Link to="/">
-              <div id="logo">
-                <FontAwesomeIcon icon="globe-americas" className="icon"/>
+          <div className="navbar" >
 
-              </div>
-            </Link>
+            <Link id="logo" to="/" aria-label="Logo to Where's Shell homepage"></Link>
 
             <div className="menu">
-
-                <ul>
-                  <li>
-                    <NavLink to="/" exact={true} activeClassName="nav-active">Home</NavLink>
-                  </li>
-                  <li>
-                    <NavLink to="/trips" activeClassName="nav-active">Trips</NavLink>
-                  </li>
-                  <li>
-                    <NavLink to="/countries" activeClassName="nav-active">Countries</NavLink>
-                  </li>
-                  <li>
-                    <NavLink to="/map" activeClassName="nav-active">Map</NavLink>
-                  </li>
-                </ul>
-
+              <ul>
+                <li>
+                  <NavLink to="/" exact={true} activeClassName="nav-active">Home</NavLink>
+                </li>
+                <li>
+                  <NavLink to="/trips" activeClassName="nav-active">Trips</NavLink>
+                </li>
+                <li>
+                  <NavLink to="/countries" activeClassName="nav-active">Countries</NavLink>
+                </li>
+                <li>
+                  <NavLink to="/map" activeClassName="nav-active">Map</NavLink>
+                </li>
+              </ul>
             </div>
 
             <div className={`hamburger ${this.state.menuActive ? 'open' : null}`} onClick={this.toggleMenu}>
@@ -71,14 +60,12 @@ class App extends React.Component {
               <span></span>
               <span></span>
               <span></span>
-
             </div>
 
           </div>
 
           <div className={`collapsible-menu ${this.state.menuActive ? 'collapsible-menu-active' : null}` }>
             <ul>
-
               <NavLink to="/" exact={true} activeClassName="nav-active-collapsible" onClick={this.toggleMenu}>
                 <li>Home</li>
               </NavLink>
@@ -94,7 +81,6 @@ class App extends React.Component {
               <NavLink to="/map" activeClassName="nav-active-collapsible" onClick={this.toggleMenu}>
                 <li>Map</li>
               </NavLink>
-
             </ul>
           </div>
 
