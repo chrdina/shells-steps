@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { HashLink as Link } from "react-router-hash-link";
 import client from '../contentfulProvider';
 import ReactMarkdown from 'react-markdown';
 import Tile from '../components/tile';
@@ -75,7 +76,7 @@ function Country(props) {
         </div>
       </div>
       <div id="footer">
-        <a href="/countries">Back to Countries</a>
+        <Link to="/countries">Back to Countries</Link>
       </div>
     </>
   );
