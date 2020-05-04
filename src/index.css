@@ -492,7 +492,6 @@ hr.style-1 {
   bottom: 0;
   justify-content: center;
   background-size: cover;
-  background-position: center;
 }
 .hero-image-main:after {
   width: 100%;
