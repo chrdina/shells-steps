@@ -1,0 +1,42 @@
+import React, { useState } from "react";
+import "../App.css";
+import { Link, NavLink } from "react-router-dom";
+import CollapsibleMenu from "./collapsibleMenu";
+
+function NavBar({ navLinks }) {
+  const [navActive, setNavActive] = useState(false);
+
+  console.log(navLinks);
+
+  return (
+    <div>
+      <div className="navbar">
+        <Link
+          id="logo"
+          to="/"
+          aria-label="Logo to Where's Shell homepage"
+        ></Link>
+
+        <div className="menu">
+          <ul>
+            {navLinks.map((link, key) => (
+              <li>
+                <NavLink
+                  to={"/" + (link === "Home" ? "" : link)}
+                  exact={true}
+                  activeClassName="nav-active"
+                >
+                  {link}
+                </NavLink>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <CollapsibleMenu navLinks={navLinks} />
+      </div>
+    </div>
+  );
+}
+
+export default NavBar;

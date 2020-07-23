@@ -485,6 +485,7 @@ a {
   left: 0;
   bottom: 0;
   justify-content: center;
+  align-items: center;
   background-size: cover;
 }
 .hero-image-main:after {
@@ -495,58 +496,62 @@ a {
   width: 100%;
   height: 100%;
   background-color: black;
-  opacity: 0.5;
+  opacity: 0.9;
 }
 .hero-image-main > * {
-  z-index: 100;
+  z-index: 1;
 }
 
 .title-area {
-  display: block;
   height: 250px;
-  margin-top: 2%;
-  margin-bottom: 60px;
-  padding: 40px;
+  /* margin-bottom: 60px; */
   padding-bottom: 0;
   text-align: center;
+  /* border: 1px solid var(--color-medium-grey); */
 }
 .title-area h1 {
-  font-size: calc(30px + (60 - 30) * ((100vw - 300px) / (1600 - 300)));
+  font-size: calc(30px + (70 - 30) * ((100vw - 300px) / (1600 - 300)));
   font-weight: 300;
+  font-family: var(--font-heading);
+  /* letter-spacing: -2px; */
   color: var(--color-white);
   /* color: var(--color-charcoal); */
-  margin-bottom: 10px;
-  padding-bottom: 0;
+  margin: 0;
+  padding: 10px;
   opacity: 0;
   animation-name: fadeIn;
   animation-duration: 3s;
   animation-fill-mode: forwards;
+  /* background-color: var(--color-light-grey); */
+  /* border-bottom: 1px solid var(--color-medium-grey); */
 }
 .title-area p {
-  flex: 1;
   margin: 0;
+  padding: 10px;
   opacity: 0;
-  /* color: var(--color-dark-grey); */
   color: var(--color-light-grey);
-  font-size: calc(14px + (20 - 14) * ((100vw - 300px) / (1600 - 300)));
+  font-size: calc(14px + (28 - 14) * ((100vw - 300px) / (1600 - 300)));
   font-weight: 200;
   /* font-style: italic; */
   animation-name: fadeIn;
   animation-delay: 2s;
   animation-duration: 3s;
   animation-fill-mode: forwards;
+  /* background-color: var(--color-light-grey); */
 }
 .title-cta {
+  /* flex: 1; */
+  justify-content: center;
+  align-items: center;
   height: 50px;
   width: 200px;
   opacity: 0;
-  margin-top: 60px;
+
   /* color: var(--color-charcoal); */
   color: var(--color-white);
   font-size: 16px;
   /* background: none; */
   background-color: var(--color-light-blue);
-  background-blend-mode: overlay;
   animation-name: fadeIn;
   animation-delay: 2s;
   animation-duration: 3s;
@@ -556,8 +561,9 @@ a {
   border: none;
   border-radius: 5px;
 }
+
 .title-cta:hover {
-  background-color: rgba(0, 0, 0, 0.1);
+  filter: brightness(110%);
   cursor: pointer;
 }
 

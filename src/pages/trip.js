@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { HashLink as Link } from "react-router-hash-link";
 import client from "../contentfulProvider";
 import ReactMarkdown from "react-markdown";
-import CustomCarousel from "../components/carousel";
+import CustomCarousel from "../components/customCarousel";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faPlayCircle,
