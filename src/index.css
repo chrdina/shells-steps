@@ -8,6 +8,8 @@
   --color-blue: #1c2b65;
   --color-light-blue: #50c4fb;
   --color-night-blue: #02234e;
+  --color-white: #fff;
+  --color-light-grey: #f8f8f8;
   --color-medium-grey: #dddddd;
   --color-dark-grey: #666666;
 
@@ -52,6 +54,7 @@ body {
   padding: 0;
   font-family: var(--font-body);
   color: var(--color-charcoal);
+  background-color: var(--color-light-grey);
 }
 
 h1,
@@ -185,7 +188,6 @@ hr.style-1 {
 .content-container {
   margin-left: var(--side-margins);
   margin-right: var(--side-margins);
-
   padding: 0;
 }
 
@@ -249,9 +251,9 @@ hr.style-1 {
   justify-content: center;
   align-items: center;
   font-family: var(--font-heading);
-  background-color: #ffffff;
+  background-color: var(--color-white);
   color: var(--color-dark-grey);
-  border-bottom: 1px solid rgba(80, 80, 80, 0.2);
+  /* border-bottom: 1px solid rgba(80, 80, 80, 0.2); */
 }
 
 #logo {
@@ -621,7 +623,7 @@ a {
 
 .country-hero-text {
   display: flex;
-  color: #ffffff;
+  color: var(--color-white);
   font-size: calc(40px + (80 - 40) * ((100vw - 300px) / (1600 - 300)));
   line-height: 3em;
   text-transform: uppercase;
@@ -652,7 +654,7 @@ a {
   flex: 1;
   justify-content: flex-start;
   padding: 4%;
-  color: #ffffff;
+  color: var(--color-white);
   background-color: var(--color-charcoal);
   font-family: var(--font-heading);
 }
@@ -666,7 +668,7 @@ a {
   font-size: calc(30px + (40 - 20) * ((100vw - 300px) / (1600 - 300)));
 }
 .hero-text-area a:hover {
-  color: #ffffff;
+  color: var(--color-white);
 }
 .hero-text-area ul {
   margin-top: 5%;
@@ -773,7 +775,7 @@ a {
   padding-bottom: 10px;
   align-items: center;
   justify-content: center;
-  background-color: #ffffff;
+  background-color: var(--color-white);
   /* visibility: hidden; */
 }
 
