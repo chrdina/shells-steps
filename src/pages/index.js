@@ -6,13 +6,18 @@ class Index extends React.Component {
   state = { data: "" };
 
   componentDidMount() {
-    client
-      .getAsset("5cSBFkBEFUWmwsUsEWqg4K")
-      .then((asset) =>
-        this.setState({
-          data: `${asset.fields.file.url}?fm=jpg&fl=progressive&q=50`,
-        })
-      );
+    client.getAsset("71TyxViSSevOn2SFzybHtE").then((asset) =>
+      this.setState({
+        data: `${asset.fields.file.url}?fm=jpg&fl=progressive`,
+      })
+    );
+
+    // Tasmania BG
+    // client.getAsset("5cSBFkBEFUWmwsUsEWqg4K").then((asset) =>
+    //   this.setState({
+    //     data: `${asset.fields.file.url}?fm=jpg&fl=progressive&q=50`,
+    //   })
+    // );
   }
 
   render() {
