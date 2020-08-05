@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { HashLink as Link } from "react-router-hash-link";
 import client from "../contentfulProvider";
 import ReactMarkdown from "react-markdown";
-import CustomCarousel from "../components/carousel";
+import CustomCarousel from "../components/customCarousel";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faPlayCircle,
@@ -47,15 +47,17 @@ function Trip(props) {
       <div className="trip-hero">
         <div className="hero-text-area">
           <h1>{tripDetails.fields.tripName}</h1>
-          <p>
-            <FontAwesomeIcon icon={faCalendarAlt} className="icon" />
-            {getDate(tripDetails.fields.tripDate, "long")}
-          </p>
-          <hr className="style-1" />
-          <p>
-            <FontAwesomeIcon icon={faMapMarkerAlt} className="icon" />
-            {tripDetails.fields.tripLocations}
-          </p>
+          <div className="hero-tag-container">
+            <p>
+              <FontAwesomeIcon icon={faCalendarAlt} className="icon" />
+              {getDate(tripDetails.fields.tripDate, "long")}
+            </p>
+            <hr className="style-1" />
+            <p>
+              <FontAwesomeIcon icon={faMapMarkerAlt} className="icon" />
+              {tripDetails.fields.tripLocations}
+            </p>
+          </div>
           <ul className="no-style-light-blue">
             {tripDetails.fields.countriesVisitedInTrip.map((country, key) => (
               <li className="hero-inline-list_item" key={key}>
