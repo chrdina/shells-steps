@@ -434,13 +434,20 @@ a {
   padding-left: 20px;
   height: 35px;
   width: 80px;
+  margin: 0;
+  align-items: center;
+  display: flex;
+}
+
+#side-nav-left li > * {
+  flex: 1;
 }
 
 #side-nav-left li:before {
   content: "";
   background-color: #000000;
   position: absolute;
-  bottom: 0px;
+  bottom: 0;
   top: 0;
   left: 4px;
   width: 2px;
@@ -462,7 +469,7 @@ a {
   background-position: center;
   position: absolute;
   left: 0;
-  top: 34%;
+  top: 40%;
   height: 10px;
   width: 10px;
 }

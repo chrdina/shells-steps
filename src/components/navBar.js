@@ -9,32 +9,26 @@ function NavBar({ navLinks }) {
   console.log(navLinks);
 
   return (
-    <div>
-      <div className="navbar">
-        <Link
-          id="logo"
-          to="/"
-          aria-label="Logo to Where's Shell homepage"
-        ></Link>
+    <div className="navbar">
+      <Link id="logo" to="/" aria-label="Logo to Where's Shell homepage"></Link>
 
-        <div className="menu">
-          <ul>
-            {navLinks.map((link, key) => (
-              <li>
-                <NavLink
-                  to={"/" + (link === "Home" ? "" : link)}
-                  exact={true}
-                  activeClassName="nav-active"
-                >
-                  {link}
-                </NavLink>
-              </li>
-            ))}
-          </ul>
-        </div>
-
-        <CollapsibleMenu navLinks={navLinks} />
+      <div className="menu">
+        <ul>
+          {navLinks.map((link, key) => (
+            <li>
+              <NavLink
+                to={"/" + (link === "Home" ? "" : link)}
+                exact={true}
+                activeClassName="nav-active"
+              >
+                {link}
+              </NavLink>
+            </li>
+          ))}
+        </ul>
       </div>
+
+      <CollapsibleMenu navLinks={navLinks} />
     </div>
   );
 }
