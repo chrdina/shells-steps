@@ -1,39 +1,50 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Tile from "../components/tile";
 import client from "../contentfulProvider";
 import TileSelector from "../components/TileSelector";
 
-class Countries extends React.Component {
-  state = { data: [] };
+function Countries(props) {
+  const [countries, setCountries] = useState();
+  const [isLoading, setIsLoading] = useState(true);
 
-  componentDidMount() {
-    client
-      .getEntries({ content_type: "country", order: "fields.countryName" })
-      .then((response) => this.setState({ data: response.items }));
-  }
+  useEffect(() => {
+    const fetchData = async () => {
+      const response = await client.getEntries({
+        content_type: "country",
+        order: "fields.countryName",
+      });
+      setCountries(response.items);
+      setIsLoading(false);
+    };
+    fetchData();
+  }, []);
 
-  render() {
-    const tileData = this.state.data.map(
-      (country) =>
-        country && {
-          key: country.sys.id,
-          id: country.sys.id,
-          linkTo: `/countries/${country.sys.id}`,
-          text: country.fields.countryName,
-          imageURL: country.fields.tilePicCountry.fields.file.url,
-          filteredOut: false,
-        }
-    );
+  // Data is still not loaded - do not return anything
+  if (isLoading) return false;
 
-    return (
-      <div className="content-container">
-        <div className="page-header">
-          <h1>Countries</h1>
-        </div>
+  console.log(isLoading, countries);
 
-        {this.state.data && <TileSelector items={tileData} />}
+  const tileData = countries.map(
+    (country, key) =>
+      country && {
+        key: key,
+        id: country.sys.id,
+        linkTo: `/countries/${country.sys.id}`,
+        imageURL: country.fields.tilePicCountry.fields.file.url,
+        text: country.fields.countryName,
+      }
+  );
+
+  // Return jsx using loaded data
+  return (
+    <div className="content-container">
+      <div className="page-header">
+        <h1>Countries</h1>
       </div>
-    );
-  }
+
+      <TileSelector items={tileData} />
+    </div>
+  );
 }
+
 export default Countries;
