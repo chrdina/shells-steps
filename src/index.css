@@ -46,7 +46,7 @@
   }
 }
 
-/******  General Styles ********/
+/******  GENERAL STYLES  *****/
 
 body {
   height: 100%;
@@ -68,10 +68,6 @@ h1 {
   font-size: 42px;
   font-weight: 500;
   padding: 5% 0 5% 0;
-}
-
-h1.trip-title {
-  /* padding: 0; */
 }
 
 h2 {
@@ -96,10 +92,10 @@ p {
   margin-bottom: 10;
   padding: 0;
 }
-p.hero-text {
+.hero-text {
   color: var(--color-medium-grey);
 }
-p.video-button {
+.video-button {
   display: none;
   padding: 20px;
   text-align: center;
@@ -111,32 +107,10 @@ ul {
   padding: 0;
   padding-left: 20px;
 }
-ul.no-style {
-  padding: 0;
-  list-style: none;
-}
-ul.active-style {
-  padding: 0;
-  list-style: disc;
-}
-ul.no-style-light-blue {
-  padding: 0;
-  color: var(--color-light-blue);
-  list-style: none;
-}
 
 li {
   line-height: 1.5em;
   margin-top: 10px;
-}
-li.hero-inline-list_item {
-  display: inline;
-}
-li.hero-inline-list_item:after {
-  content: "   |   ";
-}
-li.hero-inline-list_item:last-child:after {
-  content: "";
 }
 
 a {
@@ -155,7 +129,7 @@ a:active!important {
   color: var(--color-blue);
   text-decoration: underline;
 }
-a.country-link {
+.country-link {
   text-decoration: underline;
 }
 
@@ -176,7 +150,32 @@ hr.style-1 {
   border-width: thin;
 }
 
-/***** Base Layout Styles *******/
+/*****  UTILITIES  *****/
+
+.no-style {
+  padding: 0;
+  list-style: none;
+}
+.active-style {
+  padding: 0;
+  list-style: disc;
+}
+.no-style-light-blue {
+  padding: 0;
+  color: var(--color-light-blue);
+  list-style: none;
+}
+.hero-inline-list_item {
+  display: inline;
+}
+.hero-inline-list_item:after {
+  content: "   |   ";
+}
+.hero-inline-list_item:last-child:after {
+  content: "";
+}
+
+/*****  BASE LAYOUT  *******/
 
 #top {
   position: absolute;
@@ -616,14 +615,14 @@ a {
 .tile:hover {
   background-color: rgba(0, 0, 0, 0.1);
   background-blend-mode: hue;
-  transition-duration: 200ms;
+  transition-duration: 250ms;
 }
 
 .filtered {
   filter: contrast(30%);
 }
 
-.tile .tile-text {
+.tile-text {
   color: inherit;
   height: 100%;
   width: 100%;
@@ -635,12 +634,13 @@ a {
   /* visibility:hidden; */
 }
 
-.tile .tile-text h2 {
+.tile-text h2 {
   margin: 0;
   padding: 10px;
   font-size: 26px;
   font-weight: 400;
-  color: inherit;
+  color: white;
+  /* color: inherit; */
 }
 
 /****** Country Style ********/

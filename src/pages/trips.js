@@ -3,6 +3,7 @@ import Tile from "../components/tile";
 import client from "../contentfulProvider";
 import AnchorNav from "../components/anchorNav";
 import { HashLink as Link } from "react-router-hash-link";
+import TileSelector from "../components/TileSelector";
 
 class Trips extends React.Component {
   constructor(props) {
@@ -22,6 +23,7 @@ class Trips extends React.Component {
   }
 
   handleDateSelect(year) {
+    //  If the selected year is already selected, deselect and disable filter
     if (year === this.state.selectedYear) {
       this.setState({ selectedYear: "" });
       this.setState({ filterActive: false });
@@ -34,6 +36,19 @@ class Trips extends React.Component {
   render() {
     const selectedYear = this.state.selectedYear;
     const filterActive = this.state.filterActive;
+
+    const tileData = this.state.data.map(
+      (trip) =>
+        trip && {
+          key: trip.sys.id,
+          id: trip.sys.id,
+          linkTo: `/trips/${trip.sys.id}`,
+          text: trip.fields.tripName,
+          imageURL: trip.fields.tilePicTrip.fields.file.url,
+          filteredOut:
+            filterActive && selectedYear !== trip.fields.tripDate.split("-")[0],
+        }
+    );
 
     return (
       <>
@@ -49,27 +64,8 @@ class Trips extends React.Component {
           <div className="page-header">
             <h1>Trips</h1>
           </div>
-          <div className="tiles">
-            {this.state.data &&
-              this.state.data.map((trip) => (
-                <Tile
-                  key={trip.sys.id}
-                  id={trip.sys.id}
-                  to={`/trips/${trip.sys.id}`}
-                  text={trip.fields.tripName}
-                  imgSrc={
-                    trip.fields.tilePicTrip &&
-                    trip.fields.tilePicTrip.fields !== null
-                      ? trip.fields.tilePicTrip.fields.file.url
-                      : undefined
-                  }
-                  filteredOut={
-                    filterActive &&
-                    selectedYear !== trip.fields.tripDate.split("-")[0]
-                  }
-                />
-              ))}
-          </div>
+
+          <TileSelector items={tileData} />
         </div>
 
         <div id="footer">

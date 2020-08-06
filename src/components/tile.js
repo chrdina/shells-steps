@@ -1,24 +1,23 @@
-import React from 'react';
+import React from "react";
 import { Link } from "react-router-dom";
 
-function Tile(props) {
-
-  const toObject = {
-    pathname: props.to,
-    data: props.data
-  };
-
+function Tile({ id, filteredOut = false, image, text, linkTo }) {
   return (
-    <div>
-      <Link className="below-fixed-header" id={props.id} to={toObject}>
-        <div className={`tile ${props.filteredOut && "filtered"}`} style={{backgroundImage:`url(${props.imgSrc}?fm=jpg&w=600&fl=progressive)`}}>
-          <div className='tile-text'>
-            <h2>{props.text}</h2>
+    <>
+      <Link className="below-fixed-header" id={id} to={linkTo}>
+        <div
+          className={`tile ${filteredOut && "filtered"}`}
+          style={{
+            backgroundImage: `url(${image}?fm=jpg&fl=progressive&q=10)`,
+          }}
+        >
+          <div className="tile-text">
+            <h2>{text}</h2>
           </div>
         </div>
       </Link>
-    </div>
-  )
+    </>
+  );
 }
 
 export default Tile;
