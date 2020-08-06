@@ -3,12 +3,12 @@ import { Link } from "react-router-dom";
 
 function Tile({ id, filteredOut = false, image, text, linkTo }) {
   return (
-    <>
+    <div>
       <Link className="below-fixed-header" id={id} to={linkTo}>
         <div
           className={`tile ${filteredOut && "filtered"}`}
           style={{
-            backgroundImage: `url(${image}?fm=jpg&fl=progressive&q=10)`,
+            backgroundImage: `url(${image}?fm=jpg&w=600&fl=progressive)`,
           }}
         >
           <div className="tile-text">
@@ -16,7 +16,7 @@ function Tile({ id, filteredOut = false, image, text, linkTo }) {
           </div>
         </div>
       </Link>
-    </>
+    </div>
   );
 }
 
