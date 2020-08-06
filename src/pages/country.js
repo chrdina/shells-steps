@@ -3,6 +3,7 @@ import { HashLink as Link } from "react-router-hash-link";
 import client from "../contentfulProvider";
 import ReactMarkdown from "react-markdown";
 import Tile from "../components/tile";
+import TileSelector from "../components/TileSelector";
 
 function Country(props) {
   // this is just a way of getting state inside functions which... don't have state (does not work on classes)
@@ -39,22 +40,16 @@ function Country(props) {
   const tripsInCountry = countryDetails.fields.tripsInThisCountry;
 
   // Generate trip tiles and store in variable
-  const tripTiles = tripsInCountry.length ? (
+  const tileData = tripsInCountry.length ? (
     tripsInCountry.map(
       (trip) =>
-        console.info("trip", trip) || (
-          <Tile
-            key={trip.sys.id}
-            to={`/trips/${trip.sys.id}`}
-            text={trip.fields.tripName}
-            imgSrc={
-              trip.fields.tilePicTrip && trip.fields.tilePicTrip.fields != null
-                ? trip.fields.tilePicTrip.fields.file.url
-                : undefined
-            }
-            data={trip}
-          />
-        )
+        trip && {
+          key: trip.sys.id,
+          id: trip.sys.id,
+          linkTo: `/trips/${trip.sys.id}`,
+          text: trip.fields.tripName,
+          imageURL: trip.fields.tilePicTrip.fields.file.url,
+        }
     )
   ) : (
     <></>
@@ -90,8 +85,8 @@ function Country(props) {
 
         <div className="content-section">
           <h2> Trips in {countryDetails.fields.countryName} </h2>
-          <div className="tiles">{tripTiles}</div>
         </div>
+        <TileSelector items={tileData} />
       </div>
       <div id="footer">
         <Link to="/countries">Back to Countries</Link>
