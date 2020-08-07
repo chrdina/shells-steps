@@ -567,7 +567,7 @@ a {
   color: var(--color-white);
   font-size: 18px;
   /* background: none; */
-  background-color: #886055;
+  background-color: var(--color-dark-grey);
   animation-name: fadeIn;
   animation-delay: 2s;
   animation-duration: 3s;
