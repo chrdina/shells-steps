@@ -1,5 +1,4 @@
 import React from "react";
-import Tile from "../components/tile";
 import client from "../contentfulProvider";
 import AnchorNav from "../components/anchorNav";
 import { HashLink as Link } from "react-router-hash-link";

@@ -4,8 +4,6 @@ import { Link, NavLink } from "react-router-dom";
 import CollapsibleMenu from "./collapsibleMenu";
 
 function NavBar({ navLinks }) {
-  const [navActive, setNavActive] = useState(false);
-
   console.log(navLinks);
 
   return (

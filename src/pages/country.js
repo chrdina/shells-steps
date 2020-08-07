@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { HashLink as Link } from "react-router-hash-link";
 import client from "../contentfulProvider";
 import ReactMarkdown from "react-markdown";
-import Tile from "../components/tile";
 import TileSelector from "../components/TileSelector";
 
 function Country(props) {

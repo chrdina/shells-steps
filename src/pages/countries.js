@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import Tile from "../components/tile";
 import client from "../contentfulProvider";
 import TileSelector from "../components/TileSelector";
 
