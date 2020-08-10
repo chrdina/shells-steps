@@ -658,7 +658,7 @@ a {
   width: 100%;
   height: 85vh;
   min-height: 500px;
-  margin-bottom: 20px;
+  margin-bottom: 80px;
   justify-content: center;
   align-items: center;
   background-color: var(--color-charcoal);
@@ -667,10 +667,12 @@ a {
   background-position: center;
   background-repeat: no-repeat;
 }
-.country-hero:before {
+.country-hero:after {
   position: absolute;
   content: "";
   top: var(--nav-height);
+  min-height: 500px;
+
   left: 0;
   width: 100%;
   height: 85vh;
