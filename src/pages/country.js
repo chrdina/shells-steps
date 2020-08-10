@@ -80,6 +80,8 @@ function Country(props) {
           <ReactMarkdown>
             {countryDetails.fields.countryHighlights}
           </ReactMarkdown>
+        </div>
+        <div className="content-section">
           <ReactMarkdown>{countryDetails.fields.countryTips}</ReactMarkdown>
         </div>
         <div className="content-section">
@@ -93,9 +95,9 @@ function Country(props) {
           <div className="tiles">{tripTiles}</div>
         </div>
       </div>
-      <div id="footer">
+      {/* <div id="footer">
         <Link to="/countries">Back to Countries</Link>
-      </div>
+      </div> */}
     </>
   );
 }

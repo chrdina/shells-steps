@@ -106,9 +106,9 @@ function Trip(props) {
         </div>
       </div>
 
-      <div id="footer">
+      {/* <div id="footer">
         <Link to="/trips">Back to Trips</Link>
-      </div>
+      </div> */}
     </>
   );
 }

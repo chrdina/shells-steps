@@ -28,7 +28,7 @@ class Index extends React.Component {
           style={{ backgroundImage: `url(${this.state.data})` }}
         >
           <div className="title-area">
-            <h1>Where's Shell?</h1>
+            <h1>Shell's Steps</h1>
             <p>My travel tales from around the world.</p>
             <Link to="/trips/">
               <button className="title-cta">View my trips</button>
