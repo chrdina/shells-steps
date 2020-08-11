@@ -175,9 +175,9 @@ hr.style-1 {
   border: 0;
   height: 0 !important;
   max-height: 2px;
-  margin-top: 30px;
+  /* margin-top: 30px; */
   width: 100%;
-  margin-bottom: 30px;
+  /* margin-bottom: 30px; */
   border-top: 1px solid rgba(0, 0, 0, 0.1);
   border-bottom: 1px solid rgba(255, 255, 255, 0.3);
 }
@@ -690,7 +690,8 @@ a {
   /* flex-direction: row; */
   width: 100%;
   height: var(--body-height);
-  max-height: var(--body-height);
+  min-height: 500px;
+  /* max-height: var(--body-height); */
   margin-bottom: 6vh;
 }
 .hero-text-area {
@@ -699,7 +700,7 @@ a {
   flex-direction: column;
   flex: 1;
   justify-content: flex-start;
-  padding: 4%;
+  padding: 40px;
   color: var(--color-white);
   background-color: var(--color-charcoal);
   font-family: var(--font-heading);
@@ -848,26 +849,30 @@ a {
     padding: 30px;
     max-width: none;
   }
-  .hero-text-area > * {
-    padding: 0;
-    margin: 10px;
-  }
-  .hero-text-area h1 {
+  .hero-title h1 {
     padding: 0;
     margin: 0;
-    margin-bottom: 20px;
+  }
+  .hero-text-area > * {
+    padding: 0;
+    margin: 10px 0 10px 0;
+  }
+  .hero-text-area > ul {
+    /* margin: 0; */
+    padding: 0;
   }
   .hero-text-area hr {
     display: none;
   }
-  .hero-tag-container {
-    flex: 1;
+  .hero-tags {
+    display: flex;
     flex-direction: row;
     justify-content: flex-start;
     align-items: flex-start;
   }
-  .hero-tag-container > p {
-    /* width: 20%; */
+  .tag {
+    /* flex: 1; */
+    margin-right: 30px;
   }
 
   .content-section {

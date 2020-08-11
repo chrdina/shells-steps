@@ -46,17 +46,20 @@ function Trip(props) {
     <>
       <div className="trip-hero">
         <div className="hero-text-area">
-          <h1>{tripDetails.fields.tripName}</h1>
-          <div className="hero-tag-container">
-            <p>
+          <div className="hero-title">
+            <h1>{tripDetails.fields.tripName}</h1>
+          </div>
+          <hr className="style-1" />
+          <div className="hero-tags">
+            <div className="tag">
               <FontAwesomeIcon icon={faCalendarAlt} className="icon" />
               {getDate(tripDetails.fields.tripDate, "long")}
-            </p>
-            <hr className="style-1" />
-            <p>
+            </div>
+
+            <div className="tag">
               <FontAwesomeIcon icon={faMapMarkerAlt} className="icon" />
               {tripDetails.fields.tripLocations}
-            </p>
+            </div>
           </div>
           <ul className="no-style-light-blue">
             {tripDetails.fields.countriesVisitedInTrip.map((country, key) => (
