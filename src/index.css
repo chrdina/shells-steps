@@ -270,16 +270,11 @@ hr.style-1 {
   position: absolute;
   left: 0;
   top: 10px;
-  /* bottom: 20px; */
   height: 100%;
   width: 120px;
   margin-left: 30px;
-  /* margin-right: 20px; */
-  /* font-weight: 500; */
-  /* font-size: 20px; */
   background: url(./assets/shellssteps-merienda.svg);
   background-repeat: no-repeat;
-  /* background-position: center; */
   background-size: contain;
 }
 
@@ -306,7 +301,7 @@ a {
   color: var(--color-blue);
   font-weight: 500;
 }
-.menu .nav-active {
+.nav-active {
   color: var(--color-blue) !important;
   font-weight: 600;
 }
@@ -423,10 +418,8 @@ a {
   top: 200px;
   left: 0;
   padding: 0;
-
   width: var(--side-margins);
   max-height: 80%;
-  /* padding: 40px; */
   justify-content: center;
   color: var(--color-dark-grey);
   overflow-y: auto;
@@ -566,9 +559,6 @@ a {
   /* background-color: var(--color-light-grey); */
 }
 .title-cta {
-  /* flex: 1; */
-
-  /* height: 50px; */
   opacity: 0;
   margin-top: 20px;
   color: var(--color-charcoal);
@@ -579,8 +569,6 @@ a {
   animation-delay: 2s;
   animation-duration: 3s;
   animation-fill-mode: forwards;
-  /* box-shadow: 0 1px 0; */
-  /* border: 1px solid var(--color-blue); */
   border-radius: 8px;
 }
 
@@ -596,7 +584,7 @@ a {
   width: 100%;
   margin-top: 20px;
   margin-bottom: 20px;
-  grid-gap: 10px;
+  grid-gap: 5px;
   grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
 }
 
