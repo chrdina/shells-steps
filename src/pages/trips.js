@@ -72,11 +72,11 @@ class Trips extends React.Component {
           </div>
         </div>
 
-        <div id="footer">
+        {/* <div id="footer">
           <Link smooth to="#top">
             Back to top
           </Link>
-        </div>
+        </div> */}
       </>
     );
   }
