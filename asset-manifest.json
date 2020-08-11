@@ -1,26 +1,26 @@
 {
   "files": {
-    "main.css": "/wheres-shell/static/css/main.3036f4ff.chunk.css",
-    "main.js": "/wheres-shell/static/js/main.898c04f9.chunk.js",
-    "main.js.map": "/wheres-shell/static/js/main.898c04f9.chunk.js.map",
-    "runtime-main.js": "/wheres-shell/static/js/runtime-main.59e2e656.js",
-    "runtime-main.js.map": "/wheres-shell/static/js/runtime-main.59e2e656.js.map",
-    "static/css/2.9b46dffb.chunk.css": "/wheres-shell/static/css/2.9b46dffb.chunk.css",
-    "static/js/2.7d7f7503.chunk.js": "/wheres-shell/static/js/2.7d7f7503.chunk.js",
-    "static/js/2.7d7f7503.chunk.js.map": "/wheres-shell/static/js/2.7d7f7503.chunk.js.map",
-    "index.html": "/wheres-shell/index.html",
-    "precache-manifest.46ed2d5eb39463bfb985ab269880c733.js": "/wheres-shell/precache-manifest.46ed2d5eb39463bfb985ab269880c733.js",
-    "service-worker.js": "/wheres-shell/service-worker.js",
-    "static/css/2.9b46dffb.chunk.css.map": "/wheres-shell/static/css/2.9b46dffb.chunk.css.map",
-    "static/css/main.3036f4ff.chunk.css.map": "/wheres-shell/static/css/main.3036f4ff.chunk.css.map",
-    "static/js/2.7d7f7503.chunk.js.LICENSE.txt": "/wheres-shell/static/js/2.7d7f7503.chunk.js.LICENSE.txt",
-    "static/media/index.css": "/wheres-shell/static/media/ws-logo.14444a8a.svg"
+    "main.css": "/shells-steps/static/css/main.e1e01e72.chunk.css",
+    "main.js": "/shells-steps/static/js/main.71cba8b0.chunk.js",
+    "main.js.map": "/shells-steps/static/js/main.71cba8b0.chunk.js.map",
+    "runtime-main.js": "/shells-steps/static/js/runtime-main.ea81a21e.js",
+    "runtime-main.js.map": "/shells-steps/static/js/runtime-main.ea81a21e.js.map",
+    "static/css/2.9b46dffb.chunk.css": "/shells-steps/static/css/2.9b46dffb.chunk.css",
+    "static/js/2.4c83bb48.chunk.js": "/shells-steps/static/js/2.4c83bb48.chunk.js",
+    "static/js/2.4c83bb48.chunk.js.map": "/shells-steps/static/js/2.4c83bb48.chunk.js.map",
+    "index.html": "/shells-steps/index.html",
+    "precache-manifest.4a55ff192bfae555a81c38a9b6ed0c55.js": "/shells-steps/precache-manifest.4a55ff192bfae555a81c38a9b6ed0c55.js",
+    "service-worker.js": "/shells-steps/service-worker.js",
+    "static/css/2.9b46dffb.chunk.css.map": "/shells-steps/static/css/2.9b46dffb.chunk.css.map",
+    "static/css/main.e1e01e72.chunk.css.map": "/shells-steps/static/css/main.e1e01e72.chunk.css.map",
+    "static/js/2.4c83bb48.chunk.js.LICENSE.txt": "/shells-steps/static/js/2.4c83bb48.chunk.js.LICENSE.txt",
+    "static/media/index.css": "/shells-steps/static/media/shellssteps-merienda.71e907b6.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.59e2e656.js",
+    "static/js/runtime-main.ea81a21e.js",
     "static/css/2.9b46dffb.chunk.css",
-    "static/js/2.7d7f7503.chunk.js",
-    "static/css/main.3036f4ff.chunk.css",
-    "static/js/main.898c04f9.chunk.js"
+    "static/js/2.4c83bb48.chunk.js",
+    "static/css/main.e1e01e72.chunk.css",
+    "static/js/main.71cba8b0.chunk.js"
   ]
 }
