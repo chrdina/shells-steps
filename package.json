@@ -1,8 +1,8 @@
 {
-  "name": "wheres-shell",
+  "name": "shells-steps",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://chrdina.github.io/wheres-shell",
+  "homepage": "http://chrdina.github.io/shells-steps",
   "dependencies": {
     "@brainhubeu/react-carousel": "^1.10.57-alpha",
     "@fortawesome/fontawesome-svg-core": "^1.2.27",
