@@ -31,7 +31,9 @@ class Index extends React.Component {
             <h1>Shell's Steps</h1>
             <p>My travel tales from around the world.</p>
             <Link to="/trips/">
-              <button className="title-cta">View my trips</button>
+              <button aria-label="View my trips" className="title-cta">
+                View my trips
+              </button>
             </Link>
           </div>
         </div>
