@@ -6,7 +6,7 @@ function CollapsibleMenu({ navLinks }) {
   console.log(navLinks);
 
   return (
-    <div>
+    <div className="collapsible-menu-container">
       <div
         className={`hamburger ${menuOpened ? "open" : null}`}
         onClick={() => setMenuOpened(!menuOpened)}

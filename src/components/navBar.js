@@ -10,20 +10,22 @@ function NavBar({ navLinks }) {
 
   return (
     <div className="navbar">
-      <Link id="logo" to="/" aria-label="Logo to Where's Shell homepage"></Link>
+      <Link
+        id="logo"
+        to="/"
+        aria-label="Logo linking to Shell's Steps homepage"
+      ></Link>
 
       <div className="menu">
         <ul>
           {navLinks.map((link, key) => (
-            <li>
-              <NavLink
-                to={"/" + (link === "Home" ? "" : link)}
-                exact={true}
-                activeClassName="nav-active"
-              >
-                {link}
-              </NavLink>
-            </li>
+            <NavLink
+              to={"/" + (link === "Home" ? "" : link)}
+              exact={true}
+              activeClassName="nav-active"
+            >
+              <li> {link} </li>
+            </NavLink>
           ))}
         </ul>
       </div>
