@@ -306,6 +306,10 @@ a {
   font-weight: 600;
 }
 
+.collapsible-menu-container {
+  display: none;
+}
+
 .hamburger {
   position: absolute;
   top: 25px;
@@ -313,7 +317,6 @@ a {
   right: 10vw;
   display: flex;
   width: 30px;
-  visibility: hidden;
 }
 
 /* For Hamburger animation */
@@ -831,11 +834,11 @@ a {
   :root {
     --side-margins: 0;
   }
-  .hamburger {
-    visibility: visible;
-  }
   .menu {
     display: none;
+  }
+  .collapsible-menu-container {
+    display: flex;
   }
 }
 
