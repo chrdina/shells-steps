@@ -687,16 +687,14 @@ a {
 
 .trip-hero {
   display: flex;
-  /* flex-direction: row; */
   width: 100%;
   height: var(--body-height);
   min-height: 500px;
-  /* max-height: var(--body-height); */
   margin-bottom: 6vh;
 }
+
 .hero-text-area {
   display: flex;
-  /* height: 100%; */
   flex-direction: column;
   flex: 1;
   justify-content: flex-start;
@@ -707,20 +705,20 @@ a {
 }
 .hero-text-area > * {
   font-size: calc(18px + (20 - 18) * ((100vw - 300px) / (1600 - 300)));
-  /* margin: 0; */
-  /* margin-top: 20px; */
 }
 .hero-text-area h1 {
-  /* padding: 0; */
-  margin-bottom: 4vh;
+  padding: 0;
+  margin-bottom: 20px;
   font-size: calc(30px + (40 - 20) * ((100vw - 300px) / (1600 - 300)));
 }
 .hero-text-area a:hover {
   color: var(--color-white);
 }
-.hero-text-area ul {
-  margin-top: 6%;
+
+.tag {
+  margin: 15px 0 15px 0;
 }
+
 .country-link {
   color: inherit;
 }
