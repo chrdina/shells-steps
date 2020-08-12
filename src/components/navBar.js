@@ -10,7 +10,11 @@ function NavBar({ navLinks }) {
 
   return (
     <div className="navbar">
-      <Link id="logo" to="/" aria-label="Logo to Where's Shell homepage"></Link>
+      <Link
+        id="logo"
+        to="/"
+        aria-label="Logo linking to Shell's Steps homepage"
+      ></Link>
 
       <div className="menu">
         <ul>
