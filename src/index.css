@@ -72,8 +72,9 @@ h1 {
 h2 {
   margin-top: 20px;
   margin-bottom: 10px;
-  font-size: 28px;
-  font-weight: 500;
+  font-family: var(--font-body);
+  font-size: 24px;
+  font-weight: 700;
   color: var(--color-blue);
   text-transform: uppercase;
 }
@@ -629,6 +630,7 @@ hr.style-1 {
 .tile-text h2 {
   margin: 0;
   padding: 10px;
+  font-family: var(--font-heading);
   font-size: 26px;
   font-weight: 400;
   color: inherit;
@@ -872,6 +874,10 @@ hr.style-1 {
     margin-right: 10vw;
     width: 80% !important;
   }
+  .content-section h2 {
+    font-size: 30px;
+  }
+
   .tiles {
     width: 100%;
     grid-gap: 3px !important;
