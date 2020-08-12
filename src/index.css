@@ -842,7 +842,9 @@ a {
     align-items: flex-start;
   }
   .tag {
-    margin-right: 30px;
+    display: flex;
+    margin-right: 20px;
+    min-width: 250px;
   }
 
   .content-section {

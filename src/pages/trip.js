@@ -3,13 +3,13 @@ import { HashLink as Link } from "react-router-hash-link";
 import client from "../contentfulProvider";
 import ReactMarkdown from "react-markdown";
 import CustomCarousel from "../components/customCarousel";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faPlayCircle,
   faMapMarkerAlt,
   faCalendarAlt,
 } from "@fortawesome/free-solid-svg-icons";
 import getDate from "../components/dateFormatter";
+import Tag from "../components/Tag";
 
 function Trip(props) {
   // this is just a way of getting state inside functions which... don't have state (does not work on classes)
@@ -51,15 +51,14 @@ function Trip(props) {
           </div>
           <hr className="style-1" />
           <div className="hero-tags">
-            <div className="tag">
-              <FontAwesomeIcon icon={faCalendarAlt} className="icon" />
-              {getDate(tripDetails.fields.tripDate, "long")}
-            </div>
-
-            <div className="tag">
-              <FontAwesomeIcon icon={faMapMarkerAlt} className="icon" />
-              {tripDetails.fields.tripLocations}
-            </div>
+            <Tag
+              icon={faCalendarAlt}
+              text={getDate(tripDetails.fields.tripDate, "long")}
+            />
+            <Tag
+              icon={faMapMarkerAlt}
+              text={tripDetails.fields.tripLocations}
+            />
           </div>
           <ul className="no-style-light-blue">
             {tripDetails.fields.countriesVisitedInTrip.map((country, key) => (
@@ -73,10 +72,6 @@ function Trip(props) {
               </li>
             ))}
           </ul>
-          <p className="video-button">
-            Watch video{" "}
-            <FontAwesomeIcon icon={faPlayCircle} className="icon-after" />
-          </p>
         </div>
 
         {tripDetails.fields.tilePicTrip && (
@@ -108,10 +103,6 @@ function Trip(props) {
           </div>
         </div>
       </div>
-
-      {/* <div id="footer">
-        <Link to="/trips">Back to Trips</Link>
-      </div> */}
     </>
   );
 }
