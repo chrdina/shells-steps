@@ -311,7 +311,7 @@ hr.style-1 {
   font-weight: 500;
 }
 .nav-active > li {
-  border-bottom: solid 1px black;
+  border-bottom: solid 1px var(--color-blue);
   box-sizing: border-box;
 }
 
