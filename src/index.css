@@ -274,27 +274,45 @@ hr.style-1 {
   display: none;
 }
 
-.menu ul,
-a {
+.menu {
+  display: flex;
+  height: 100%;
+  align-content: center;
+  align-items: center;
+}
+
+.menu ul {
+  display: flex;
+  height: 100%;
+  align-items: center;
   list-style: none;
   text-decoration: none;
   margin: 0;
   padding: 0;
   color: inherit;
 }
+.menu a {
+  height: 100%;
+}
 .menu li {
-  display: inline;
+  display: flex;
+  height: 100%;
+  align-items: center;
   margin: 0;
   padding-left: 15px;
   padding-right: 15px;
 }
 .menu a:hover {
   color: var(--color-blue);
-  font-weight: 500;
+  background-color: var(--color-medium-grey);
 }
 .nav-active {
   color: var(--color-blue) !important;
-  font-weight: 600;
+  font-weight: 500;
+}
+.nav-active > li {
+  border-bottom: solid 1px black;
+  box-sizing: border-box;
 }
 
 .collapsible-menu-container {
