@@ -16,9 +16,6 @@ function Trip(props) {
   const [isLoading, setIsLoading] = useState(true);
   const [tripDetails, setTripDetails] = useState({});
 
-  console.log("Trip Props: ");
-  console.log(props.location);
-
   // Think of this as kind of a component did mount...
   useEffect(() => {
     const handleDataFetch = async () => {
