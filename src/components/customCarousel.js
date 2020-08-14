@@ -22,9 +22,21 @@ class CustomCarousel extends React.Component {
 
   onChange = (value) => this.setState({ value });
 
+  handleKeyPress = (e) => {
+    console.log("key pressed: " + e.key);
+    if (e.key === "ArrowRight") {
+      this.setState({ value: this.state.value + 1 });
+    } else if (e.key === "ArrowLeft")
+      this.setState({ value: this.state.value - 1 });
+  };
+
   render() {
     return (
-      <div class="carousel">
+      <div
+        class="carousel"
+        tabIndex="0"
+        onKeyDown={(e) => this.handleKeyPress(e)}
+      >
         <Carousel
           value={this.state.value}
           onChange={this.onChange}

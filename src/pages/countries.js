@@ -19,24 +19,21 @@ class Countries extends React.Component {
         </div>
         <div className="tiles">
           {this.state.data &&
-            this.state.data.map(
-              (country) =>
-                console.info("country", country) || (
-                  <Tile
-                    key={country.sys.id}
-                    id={country.sys.id}
-                    to={`/countries/${country.sys.id}`}
-                    text={country.fields.countryName}
-                    imgSrc={
-                      country.fields.tilePicCountry &&
-                      country.fields.tilePicCountry.fields != null
-                        ? country.fields.tilePicCountry.fields.file.url
-                        : undefined
-                    }
-                    data={country}
-                  />
-                )
-            )}
+            this.state.data.map((country) => (
+              <Tile
+                key={country.sys.id}
+                id={country.sys.id}
+                to={`/countries/${country.sys.id}`}
+                text={country.fields.countryName}
+                imgSrc={
+                  country.fields.tilePicCountry &&
+                  country.fields.tilePicCountry.fields != null
+                    ? country.fields.tilePicCountry.fields.file.url
+                    : undefined
+                }
+                data={country}
+              />
+            ))}
         </div>
       </div>
     );
