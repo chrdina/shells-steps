@@ -23,7 +23,18 @@ class App extends React.Component {
     };
   }
 
+  handleFirstTab = (e) => {
+    if (e.keyCode === 9) {
+      // the "I am a keyboard user" key
+      document.body.classList.add("user-is-tabbing");
+      console.log("User is tabbing");
+      window.removeEventListener("keydown", this.handleFirstTab);
+    }
+  };
+
   render() {
+    window.addEventListener("keydown", this.handleFirstTab);
+
     console.log(window.location);
     return (
       <>
