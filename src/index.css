@@ -849,7 +849,6 @@ hr.style-1 {
   }
   .hero-text-area {
     padding: 30px;
-    max-width: none;
   }
   .hero-title h1 {
     padding: 0;
@@ -875,7 +874,6 @@ hr.style-1 {
   .tag {
     display: flex;
     margin-right: 20px;
-    min-width: 250px;
   }
 
   .content-section {
