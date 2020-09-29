@@ -12,6 +12,7 @@ const Trips = () => {
   useEffect(() => {
     const handleFetchData = async () => {
       const response = await client.getEntries({ content_type: "Trip", order: "-fields.tripDate" });
+      console.log("Setting data");
       setData(response.items);
     }
     if (data == null) {
