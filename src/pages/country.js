@@ -66,7 +66,7 @@ function Country(props) {
         <div
           className="country-hero"
           style={{
-            backgroundImage: `url(${countryDetails.fields.tilePicCountry.fields.file.url}?fm=jpg&fl=progressive)`,
+            backgroundImage: `url(${countryDetails.fields.tilePicCountry.fields.file.url}?fm=jpg&q=30)`,
           }}
         >
           <div className="country-hero-text">
