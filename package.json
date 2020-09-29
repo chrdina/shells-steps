@@ -9,11 +9,9 @@
     "@fortawesome/free-solid-svg-icons": "^5.12.1",
     "@fortawesome/react-fontawesome": "^0.1.9",
     "contentful": "^7.6.0",
-    "fsevents": "^2.1.2",
     "gh-pages": "^2.2.0",
     "git-open": "^2.1.0",
     "global": "^4.3.2",
-    "graphql": "^14.3.1",
     "normalize.css": "^8.0.1",
     "react": "^16.8.6",
     "react-carousel": "^4.3.0",
@@ -23,7 +21,7 @@
     "react-router": "^5.0.0",
     "react-router-dom": "^5.0.0",
     "react-router-hash-link": "^1.2.2",
-    "react-scripts": "^3.3.0",
+    "react-scripts": "^3.4.3",
     "simple-react-lightbox": "^2.5.5"
   },
   "scripts": {
