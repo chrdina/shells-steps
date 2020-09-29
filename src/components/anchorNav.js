@@ -1,24 +1,20 @@
 import React from "react";
 import { HashLink as Link } from "react-router-hash-link";
 
-class AnchorNav extends React.Component {
-  constructor(props) {
-    super(props);
-    this.handleClick = this.handleClick.bind(this);
+const AnchorNav = (props) => {
+
+  const anchorData = props.data.map((trip) => ({
+    id: trip.sys.id,
+    date: trip.fields.tripDate.split("-")[0],
+  }));
+
+  const selectedYear = props.selectedYear;
+
+  const handleClick = (e) => {
+    props.onDateSelect(e.target.text);
   }
 
-  handleClick(e) {
-    this.props.onDateSelect(e.target.text);
-  }
-
-  getAnchorData() {
-    return this.props.data.map((trip) => ({
-      id: trip.sys.id,
-      date: trip.fields.tripDate.split("-")[0],
-    }));
-  }
-
-  removeDuplicates(array, propName) {
+  const removeDuplicates = (array, propName) => {
     var arrayOut = [];
     var i = 0;
 
@@ -34,33 +30,28 @@ class AnchorNav extends React.Component {
     return arrayOut;
   }
 
-  render() {
-    const anchorData = this.getAnchorData();
-    const selectedYear = this.props.selectedYear;
-
-    return (
-      <div id="side-nav-left">
-        <ul className="no-style">
-          {this.props.data &&
-            this.removeDuplicates(anchorData, "date").map((listItem) => (
-              <li key={listItem.id}>
-                <Link
-                  key={listItem.id}
-                  to={`#${listItem.id}`}
-                  onClick={this.handleClick}
-                  className={
-                    selectedYear === listItem.date ? "active" : "inactive"
-                  }
-                  smooth
-                >
-                  {listItem.date}
-                </Link>
-              </li>
-            ))}
-        </ul>
-      </div>
-    );
-  }
+  return (
+    <div id="side-nav-left">
+      <ul className="no-style">
+        {props.data &&
+          removeDuplicates(anchorData, "date").map((listItem) => (
+            <li key={listItem.id}>
+              <Link
+                key={listItem.id}
+                to={`#${listItem.id}`}
+                onClick={handleClick}
+                className={
+                  selectedYear === listItem.date ? "active" : "inactive"
+                }
+                smooth
+              >
+                {listItem.date}
+              </Link>
+            </li>
+          ))}
+      </ul>
+    </div>
+  );
 }
 
 export default AnchorNav;

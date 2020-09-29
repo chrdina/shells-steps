@@ -1,31 +1,27 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import client from "../contentfulProvider";
 import { Link } from "react-router-dom";
 
-class Index extends React.Component {
-  state = { data: "" };
+const Index = (props) => {
 
-  componentDidMount() {
-    client.getAsset("71TyxViSSevOn2SFzybHtE").then((asset) =>
-      this.setState({
-        data: `${asset.fields.file.url}?fm=jpg&fl=progressive`,
-      })
-    );
+const [data, setData] = useState(null);
 
-    // Tasmania BG
-    // client.getAsset("5cSBFkBEFUWmwsUsEWqg4K").then((asset) =>
-    //   this.setState({
-    //     data: `${asset.fields.file.url}?fm=jpg&fl=progressive&q=50`,
-    //   })
-    // );
+useEffect(() => {
+  const handleDataFetch = async () => {
+    const response = await client.getAsset("71TyxViSSevOn2SFzybHtE");
+    setData(response.fields.file.url);
   }
+  if (data == null) {
+    handleDataFetch();
+  }
+  
+}, []);
 
-  render() {
-    return (
-      <>
+  return (
+    <>
         <div
           className="hero-image-main"
-          style={{ backgroundImage: `url(${this.state.data})` }}
+          style={{ backgroundImage: `url(${data}?fm=jpg&fl=progressive&q=50)` }}
         >
           <div className="title-area">
             <h1>Shell's Steps</h1>
@@ -38,8 +34,28 @@ class Index extends React.Component {
           </div>
         </div>
       </>
-    );
-  }
+  );
 }
 
 export default Index;
+
+// class Index extends React.Component {
+//   state = { data: "" };
+
+//   componentDidMount() {
+//     client.getAsset("71TyxViSSevOn2SFzybHtE").then((asset) =>
+//       this.setState({
+//         data: `${asset.fields.file.url}?fm=jpg&fl=progressive`,
+//       })
+//     );
+
+//     // Tasmania BG
+//     // client.getAsset("5cSBFkBEFUWmwsUsEWqg4K").then((asset) =>
+//     //   this.setState({
+//     //     data: `${asset.fields.file.url}?fm=jpg&fl=progressive&q=50`,
+//     //   })
+//     // );
+//   }
+// }
+
+

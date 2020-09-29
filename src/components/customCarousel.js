@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Carousel from "@brainhubeu/react-carousel";
 import "@brainhubeu/react-carousel/lib/style.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -12,34 +12,30 @@ import {
 library.add(faCoffee, faChevronLeft, faChevronRight);
 // ...
 
-class CustomCarousel extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      value: 0,
-    };
-  }
 
-  onChange = (value) => this.setState({ value });
+const CustomCarousel = (props) => {
 
-  handleKeyPress = (e) => {
+  const [value, setValue] = useState(0);
+
+  const onChange = (value) => setValue(value);
+
+  const handleKeyPress = (e) => {
     console.log("key pressed: " + e.key);
     if (e.key === "ArrowRight") {
-      this.setState({ value: this.state.value + 1 });
+      setValue(value + 1);
     } else if (e.key === "ArrowLeft")
-      this.setState({ value: this.state.value - 1 });
+      setValue(value - 1);
   };
 
-  render() {
     return (
       <div
-        class="carousel"
+        className="carousel"
         tabIndex="0"
-        onKeyDown={(e) => this.handleKeyPress(e)}
+        onKeyDown={(e) => handleKeyPress(e)}
       >
         <Carousel
-          value={this.state.value}
-          onChange={this.onChange}
+          value={value}
+          onChange={onChange}
           centered
           infinite
           arrowLeft={
@@ -51,8 +47,8 @@ class CustomCarousel extends React.Component {
           addArrowClickHandler
           keepDirectionWhenDragging
         >
-          {this.props.items &&
-            this.props.items.map((image, key) => (
+          {props.items &&
+            props.items.map((image, key) => (
               <img
                 src={`${image.fields.file.url}?fm=jpg&fl=progressive&q=30`}
                 key={key}
@@ -62,7 +58,6 @@ class CustomCarousel extends React.Component {
         </Carousel>
       </div>
     );
-  }
 }
 
 export default CustomCarousel;

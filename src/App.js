@@ -15,48 +15,40 @@ import Country from "./pages/country";
 import Map from "./pages/map";
 import NavBar from "./components/navBar";
 
-class App extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      menuActive: false,
-    };
-  }
+const App = () => {
 
-  handleFirstTab = (e) => {
+  const handleFirstTab = (e) => {
     if (e.keyCode === 9) {
       // the "I am a keyboard user" key
       document.body.classList.add("user-is-tabbing");
       console.log("User is tabbing");
-      window.removeEventListener("keydown", this.handleFirstTab);
+      window.removeEventListener("keydown", handleFirstTab);
     }
   };
 
-  render() {
-    window.addEventListener("keydown", this.handleFirstTab);
+  window.addEventListener("keydown", handleFirstTab);
 
-    console.log(window.location);
-    return (
-      <>
-        <Router basename="/">
-          <div id="top"></div>
+  console.log(window.location);
+  return (
+    <>
+      <Router basename="/">
+        <div id="top"></div>
 
-          <NavBar navLinks={["Home", "Trips", "Countries", "Map"]} />
+        <NavBar navLinks={["Home", "Trips", "Countries", "Map"]} />
 
-          <div className="container-main">
-            <Switch>
-              <Route path="/" exact component={Index} />
-              <Route path="/trips/" exact component={Trips} />
-              <Route path="/trips/:id" component={Trip} />
-              <Route path="/countries/" exact component={Countries} />
-              <Route path="/countries/:id" component={Country} />
-              <Route path="/map" component={Map} />
-            </Switch>
-          </div>
-        </Router>
-      </>
-    );
-  }
+        <div className="container-main">
+          <Switch>
+            <Route path="/" exact component={Index} />
+            <Route path="/trips/" exact component={Trips} />
+            <Route path="/trips/:id" component={Trip} />
+            <Route path="/countries/" exact component={Countries} />
+            <Route path="/countries/:id" component={Country} />
+            <Route path="/map" component={Map} />
+          </Switch>
+        </div>
+      </Router>
+    </>
+  );
 }
 
 export default App;
