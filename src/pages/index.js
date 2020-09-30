@@ -8,7 +8,7 @@ const [data, setData] = useState(null);
 
 useEffect(() => {
   const handleDataFetch = async () => {
-    const response = await client.getAsset("71TyxViSSevOn2SFzybHtE");
+    const response = await client.getAsset("3VHvN2sI1r2yMOxDV6H4za");
     setData(response.fields.file.url);
   }
   if (data == null) {
@@ -21,7 +21,11 @@ useEffect(() => {
     <>
         <div
           className="hero-image-main"
-          style={{ backgroundImage: `url(${data}?fm=jpg&fl=progressive&q=50)` }}
+          style={
+            {backgroundImage: 
+              `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+              url(${data}?w=1400)`}
+          }
         >
           <div className="title-area">
             <h1>Shell's Steps</h1>
