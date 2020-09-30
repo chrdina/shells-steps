@@ -12,7 +12,7 @@
   --color-light-grey: #f8f8f8;
   --color-medium-grey: #dddddd;
   --color-dark-grey: #666666;
-  --color-cta: #d9eaf8;
+  --color-cta: #c0d5e5;
   --color-charcoal: #272727;
 
   --font-heading: "Montserrat", sans-serif;
@@ -172,6 +172,7 @@ button {
   padding: 12px 25px 12px 25px;
   box-shadow: none;
   border: none;
+  display: none;
 }
 
 hr.style-1 {
@@ -530,21 +531,24 @@ hr.style-1 {
   height: 100%;
   background-color: black;
   opacity: 0.5;
+  z-index: -1;
 }
 .hero-image-main > * {
-  z-index: 1;
+  /* z-index: 1; */
 }
 
 .title-area {
-  height: 250px;
   padding-bottom: var(--nav-height);
+  justify-content: center;
+  align-content: center;
   text-align: center;
+  
 }
 .title-area h1 {
   font-size: calc(40px + (70 - 40) * ((100vw - 300px) / (1600 - 300)));
   font-weight: 300;
-  font-family: var(--font-heading);
-  color: var(--color-charcoal);
+  font-family: "Merienda";
+  color: var(--color-white);
   margin-bottom: 10px;
   padding: 0;
   opacity: 0;
@@ -553,9 +557,9 @@ hr.style-1 {
   animation-fill-mode: forwards;
 }
 .title-area p {
-  margin: 10px;
+  margin: 20px;
   opacity: 0;
-  color: var(--color-dark-grey);
+  color: var(--color-white);
   font-size: calc(14px + (25 - 14) * ((100vw - 300px) / (1600 - 300)));
   font-weight: 200;
   animation-name: fadeIn;
@@ -574,6 +578,7 @@ hr.style-1 {
   animation-duration: 3s;
   animation-fill-mode: forwards;
   border-radius: 8px;
+  display: none;
 }
 
 .title-cta:hover {
