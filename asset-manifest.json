@@ -1,26 +1,26 @@
 {
   "files": {
-    "main.css": "/shells-steps/static/css/main.9f7f54d0.chunk.css",
-    "main.js": "/shells-steps/static/js/main.c58f322a.chunk.js",
-    "main.js.map": "/shells-steps/static/js/main.c58f322a.chunk.js.map",
+    "main.css": "/shells-steps/static/css/main.d1cc3b50.chunk.css",
+    "main.js": "/shells-steps/static/js/main.0bd9f75a.chunk.js",
+    "main.js.map": "/shells-steps/static/js/main.0bd9f75a.chunk.js.map",
     "runtime-main.js": "/shells-steps/static/js/runtime-main.7a429e25.js",
     "runtime-main.js.map": "/shells-steps/static/js/runtime-main.7a429e25.js.map",
     "static/css/2.f4bde6ca.chunk.css": "/shells-steps/static/css/2.f4bde6ca.chunk.css",
-    "static/js/2.f356b497.chunk.js": "/shells-steps/static/js/2.f356b497.chunk.js",
-    "static/js/2.f356b497.chunk.js.map": "/shells-steps/static/js/2.f356b497.chunk.js.map",
+    "static/js/2.7f3c30d7.chunk.js": "/shells-steps/static/js/2.7f3c30d7.chunk.js",
+    "static/js/2.7f3c30d7.chunk.js.map": "/shells-steps/static/js/2.7f3c30d7.chunk.js.map",
     "index.html": "/shells-steps/index.html",
-    "precache-manifest.6019447a30c1afe1aae028ccf2189ce9.js": "/shells-steps/precache-manifest.6019447a30c1afe1aae028ccf2189ce9.js",
+    "precache-manifest.5ff64e68b3256c02b5ff7f8d5ee4af88.js": "/shells-steps/precache-manifest.5ff64e68b3256c02b5ff7f8d5ee4af88.js",
     "service-worker.js": "/shells-steps/service-worker.js",
     "static/css/2.f4bde6ca.chunk.css.map": "/shells-steps/static/css/2.f4bde6ca.chunk.css.map",
-    "static/css/main.9f7f54d0.chunk.css.map": "/shells-steps/static/css/main.9f7f54d0.chunk.css.map",
-    "static/js/2.f356b497.chunk.js.LICENSE.txt": "/shells-steps/static/js/2.f356b497.chunk.js.LICENSE.txt",
+    "static/css/main.d1cc3b50.chunk.css.map": "/shells-steps/static/css/main.d1cc3b50.chunk.css.map",
+    "static/js/2.7f3c30d7.chunk.js.LICENSE.txt": "/shells-steps/static/js/2.7f3c30d7.chunk.js.LICENSE.txt",
     "static/media/shellssteps-merienda.c39e23c7.svg": "/shells-steps/static/media/shellssteps-merienda.c39e23c7.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.7a429e25.js",
     "static/css/2.f4bde6ca.chunk.css",
-    "static/js/2.f356b497.chunk.js",
-    "static/css/main.9f7f54d0.chunk.css",
-    "static/js/main.c58f322a.chunk.js"
+    "static/js/2.7f3c30d7.chunk.js",
+    "static/css/main.d1cc3b50.chunk.css",
+    "static/js/main.0bd9f75a.chunk.js"
   ]
 }
