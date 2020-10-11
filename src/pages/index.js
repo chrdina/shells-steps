@@ -24,7 +24,7 @@ useEffect(() => {
           style={
             {backgroundImage: 
               `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
-              url(${data}?w=1400)`}
+              url(${data}?fm=jpg&fl=progressive&w=1600)`}
           }
         >
           <div className="title-area">
@@ -42,24 +42,5 @@ useEffect(() => {
 }
 
 export default Index;
-
-// class Index extends React.Component {
-//   state = { data: "" };
-
-//   componentDidMount() {
-//     client.getAsset("71TyxViSSevOn2SFzybHtE").then((asset) =>
-//       this.setState({
-//         data: `${asset.fields.file.url}?fm=jpg&fl=progressive`,
-//       })
-//     );
-
-//     // Tasmania BG
-//     // client.getAsset("5cSBFkBEFUWmwsUsEWqg4K").then((asset) =>
-//     //   this.setState({
-//     //     data: `${asset.fields.file.url}?fm=jpg&fl=progressive&q=50`,
-//     //   })
-//     // );
-//   }
-// }
 
 
