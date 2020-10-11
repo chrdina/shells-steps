@@ -75,7 +75,7 @@ function Trip(props) {
           <div
             className="hero-image"
             style={{
-              backgroundImage: `url(${tripDetails.fields.tilePicTrip.fields.file.url}?fm=jpg&fl=progressive)`,
+              backgroundImage: `url(${tripDetails.fields.tilePicTrip.fields.file.url}?fm=jpg&fl=progressive&w=1600)`,
             }}
           ></div>
         )}
