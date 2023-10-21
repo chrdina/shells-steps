@@ -54,7 +54,7 @@ function Country(props) {
             }
             data={trip}
           />
-        )
+        ),
     )
   ) : (
     <></>

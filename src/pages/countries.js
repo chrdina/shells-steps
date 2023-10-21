@@ -3,14 +3,16 @@ import Tile from "../components/tile";
 import client from "../contentfulProvider";
 
 const Countries = () => {
-
   const [data, setData] = useState();
 
   useEffect(() => {
     const handleDataFetch = async () => {
-      const response = await client.getEntries({ content_type: "country", order: "fields.countryName" })
+      const response = await client.getEntries({
+        content_type: "country",
+        order: "fields.countryName",
+      });
       setData(response.items);
-    }
+    };
     if (data == null) {
       handleDataFetch();
     }
@@ -41,5 +43,5 @@ const Countries = () => {
       </div>
     </div>
   );
-}
+};
 export default Countries;
