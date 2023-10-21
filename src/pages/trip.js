@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { HashLink as Link } from "react-router-hash-link";
+
+import { useParams } from "react-router-dom";
+
 import client from "../contentfulProvider";
 import ReactMarkdown from "react-markdown";
 import CustomCarousel from "../components/customCarousel";
@@ -11,28 +14,23 @@ import {
 import getDate from "../components/dateFormatter";
 import Tag from "../components/Tag";
 
-function Trip(props) {
-  // this is just a way of getting state inside functions which... don't have state (does not work on classes)
+function Trip() {
   const [isLoading, setIsLoading] = useState(true);
   const [tripDetails, setTripDetails] = useState({});
 
-  // Think of this as kind of a component did mount...
+  const urlParams = useParams();
+
   useEffect(() => {
     const handleDataFetch = async () => {
-      const pageId = props.location.pathname.split("/")[2];
-      // await pattern is the same as using then(), just makes it more streamline
-      const response = await client.getEntry(pageId); // wait for this to resolve, returns response.
+      const pageId = urlParams.id;
+
+      const response = await client.getEntry(pageId);
       setTripDetails(response);
       setIsLoading(false);
     };
 
-    if (props.location.data) {
-      setTripDetails(props.location.data);
-      setIsLoading(false);
-    } else {
-      handleDataFetch();
-    }
-  }, [props.location]);
+    handleDataFetch();
+  }, [urlParams.id]);
 
   // Haven't got the data yet, so hang tight
   if (isLoading) {
