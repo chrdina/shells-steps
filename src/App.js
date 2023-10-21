@@ -1,12 +1,6 @@
 import React from "react";
 import "./App.css";
-import {
-  HashRouter as Router,
-  Route,
-  Switch,
-  Link,
-  NavLink,
-} from "react-router-dom";
+import { HashRouter as Router, Route, Routes } from "react-router-dom";
 import Index from "./pages/index";
 import Countries from "./pages/countries.js";
 import Trips from "./pages/trips";
@@ -36,14 +30,14 @@ const App = () => {
         <NavBar navLinks={["Home", "Trips", "Countries", "Map"]} />
 
         <div className="container-main">
-          <Switch>
-            <Route path="/" exact component={Index} />
-            <Route path="/trips/" exact component={Trips} />
-            <Route path="/trips/:id" component={Trip} />
-            <Route path="/countries/" exact component={Countries} />
-            <Route path="/countries/:id" component={Country} />
-            <Route path="/map" component={Map} />
-          </Switch>
+          <Routes>
+            <Route path="/" end element={<Index />} />
+            <Route path="/trips/" end element={<Trips />} />
+            <Route path="/trips/:id" element={<Trip />} />
+            <Route path="/countries/" end element={<Countries />} />
+            <Route path="/countries/:id" element={<Country />} />
+            <Route path="/map" element={<Map />} />
+          </Routes>
         </div>
       </Router>
     </>

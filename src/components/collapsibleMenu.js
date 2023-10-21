@@ -23,12 +23,14 @@ function CollapsibleMenu({ navLinks }) {
         }`}
       >
         <ul>
-          {navLinks.map((link, key) => (
+          {navLinks.map((link) => (
             <NavLink
-              key={key}
+              key={link}
               to={"/" + (link === "Home" ? "" : link)}
-              exact={true}
-              activeClassName="nav-active-collapsible"
+              end
+              className={({ isActive }) =>
+                isActive ? "nav-active-collapsible" : ""
+              }
               onClick={() => setMenuOpened(false)}
             >
               <li>{link}</li>
