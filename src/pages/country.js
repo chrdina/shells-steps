@@ -1,44 +1,33 @@
 import React, { useEffect, useState } from "react";
-import { HashLink as Link } from "react-router-hash-link";
+import { useParams } from "react-router-dom";
+
 import client from "../contentfulProvider";
 import ReactMarkdown from "react-markdown";
 import Tile from "../components/tile";
 
-function Country(props) {
-  // this is just a way of getting state inside functions which... don't have state (does not work on classes)
+function Country() {
   const [isLoading, setIsLoading] = useState(true);
   const [countryDetails, setCountryDetails] = useState({});
 
-  console.log("Country Props: ");
-  console.log(props.location);
+  const urlParams = useParams();
 
-  // Think of this as kind of a component did mount...
+  const handleDataFetch = async () => {
+    const pageId = urlParams.id;
+
+    const response = await client.getEntry(pageId);
+    setCountryDetails(response);
+    setIsLoading(false);
+  };
   useEffect(() => {
-    const handleDataFetch = async () => {
-      const pageId = props.location.pathname.split("/")[2];
-      // await pattern is the same as using then(), just makes it more streamline
-      const response = await client.getEntry(pageId); // wait for this to resolve, returns response.
-      setCountryDetails(response);
-      setIsLoading(false);
-    };
+    handleDataFetch();
+  }, [urlParams.id]);
 
-    if (props.location.data) {
-      setCountryDetails(props.location.data);
-      setIsLoading(false);
-    } else {
-      handleDataFetch();
-    }
-  }, [props.location]);
-
-  // Haven't got the data yet, so hang tight
   if (isLoading) {
     return <></>;
   }
 
-  // Get all trips in this country
   const tripsInCountry = countryDetails.fields.tripsInThisCountry;
 
-  // Generate trip tiles and store in variable
   const tripTiles = tripsInCountry.length ? (
     tripsInCountry.map(
       (trip) =>
@@ -52,7 +41,6 @@ function Country(props) {
                 ? trip.fields.tilePicTrip.fields.file.url
                 : undefined
             }
-            data={trip}
           />
         ),
     )
