@@ -2,7 +2,6 @@ import React from "react";
 import { HashLink as Link } from "react-router-hash-link";
 
 const AnchorNav = (props) => {
-
   const anchorData = props.data.map((trip) => ({
     id: trip.sys.id,
     date: trip.fields.tripDate.split("-")[0],
@@ -12,7 +11,7 @@ const AnchorNav = (props) => {
 
   const handleClick = (e) => {
     props.onDateSelect(e.target.text);
-  }
+  };
 
   const removeDuplicates = (array, propName) => {
     var arrayOut = [];
@@ -28,7 +27,7 @@ const AnchorNav = (props) => {
       i++;
     }
     return arrayOut;
-  }
+  };
 
   return (
     <div id="side-nav-left">
@@ -52,6 +51,6 @@ const AnchorNav = (props) => {
       </ul>
     </div>
   );
-}
+};
 
 export default AnchorNav;

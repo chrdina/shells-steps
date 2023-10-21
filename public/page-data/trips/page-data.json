@@ -1,1 +1,5 @@
-{"componentChunkName":"component---src-pages-trips-js","path":"/trips/","result":{"pageContext":{"isCreatedByStatefulCreatePages":true}}}
+{
+  "componentChunkName": "component---src-pages-trips-js",
+  "path": "/trips/",
+  "result": { "pageContext": { "isCreatedByStatefulCreatePages": true } }
+}

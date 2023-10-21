@@ -4,21 +4,23 @@ import client from "../contentfulProvider";
 import AnchorNav from "../components/anchorNav";
 
 const Trips = () => {
-
   const [selectedYear, setSelectedYear] = useState();
   const [filterActive, setFilterActive] = useState();
   const [data, setData] = useState();
 
   useEffect(() => {
     const handleFetchData = async () => {
-      const response = await client.getEntries({ content_type: "Trip", order: "-fields.tripDate" });
+      const response = await client.getEntries({
+        content_type: "Trip",
+        order: "-fields.tripDate",
+      });
       console.log("Setting data");
       setData(response.items);
-    }
+    };
     if (data == null) {
       handleFetchData();
     }
-  }, [])
+  }, []);
 
   const handleDateSelect = (year) => {
     if (year === selectedYear) {
@@ -28,7 +30,7 @@ const Trips = () => {
       setSelectedYear(year);
       setFilterActive(true);
     }
-  }
+  };
 
   return (
     <>
@@ -66,8 +68,7 @@ const Trips = () => {
             ))}
         </div>
       </div>
-
     </>
   );
-}
+};
 export default Trips;
