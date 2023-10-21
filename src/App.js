@@ -16,7 +16,6 @@ import Map from "./pages/map";
 import NavBar from "./components/navBar";
 
 const App = () => {
-
   const handleFirstTab = (e) => {
     if (e.keyCode === 9) {
       // the "I am a keyboard user" key
@@ -49,6 +48,6 @@ const App = () => {
       </Router>
     </>
   );
-}
+};
 
 export default App;

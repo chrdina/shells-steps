@@ -94,7 +94,7 @@ function Trip(props) {
             <ReactMarkdown>
               {tripDetails.fields.tripDetails.replace(
                 /.JPG/gi,
-                ".JPG?fl=progressive"
+                ".JPG?fl=progressive",
               )}
             </ReactMarkdown>
           </div>
