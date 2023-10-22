@@ -163,6 +163,12 @@ a:active!important {
 a.country-link {
   text-decoration: underline;
 }
+a.anchor-top {
+  display: block;
+  position: relative;
+  top: calc(0px - var(--nav-height)); /* negative fixed header height */
+  visibility: hidden;
+}
 
 button {
   box-sizing: content-box;
@@ -608,13 +614,6 @@ hr.style-1 {
   background-repeat: no-repeat;
   background-size: cover;
   background-blend-mode: hue;
-}
-.below-fixed-header::before {
-  content: " ";
-  display: block;
-  height: var(--nav-height); /* fixed header height*/
-  margin: calc(0px - var(--nav-height)) 0 0; /* negative fixed header height */
-  visibility: hidden;
 }
 .tile:hover {
   background-color: rgba(0, 0, 0, 0.1);

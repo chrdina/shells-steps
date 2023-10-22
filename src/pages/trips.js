@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import Tile from "../components/tile";
 import client from "../contentfulProvider";
-import AnchorNav from "../components/anchorNav";
+import { TimelineNavAnchor } from "../components/TimelineNav/TimlineNavAnchor";
+import { TimelineNav } from "../components/TimelineNav/TimelineNav";
 
 const Trips = () => {
   const [selectedYear, setSelectedYear] = useState();
@@ -35,7 +36,7 @@ const Trips = () => {
   return (
     <>
       {data && (
-        <AnchorNav
+        <TimelineNav
           data={data}
           selectedYear={selectedYear}
           onDateSelect={handleDateSelect}
@@ -48,24 +49,30 @@ const Trips = () => {
         </div>
         <div className="tiles">
           {data &&
-            data.map((trip) => (
-              <Tile
-                key={trip.sys.id}
-                id={trip.sys.id}
-                to={`/trips/${trip.sys.id}`}
-                text={trip.fields.tripName}
-                imgSrc={
-                  trip.fields.tilePicTrip &&
-                  trip.fields.tilePicTrip.fields !== null
-                    ? trip.fields.tilePicTrip.fields.file.url
-                    : undefined
-                }
-                filteredOut={
-                  filterActive &&
-                  selectedYear !== trip.fields.tripDate.split("-")[0]
-                }
-              />
-            ))}
+            data.map((trip) => {
+              const tripId = trip.sys.id;
+              return (
+                <div key={tripId}>
+                  <TimelineNavAnchor id={tripId} />
+                  <Tile
+                    key={tripId}
+                    id={tripId}
+                    to={`/trips/${tripId}`}
+                    text={trip.fields.tripName}
+                    imgSrc={
+                      trip.fields.tilePicTrip &&
+                      trip.fields.tilePicTrip.fields !== null
+                        ? trip.fields.tilePicTrip.fields.file.url
+                        : undefined
+                    }
+                    filteredOut={
+                      filterActive &&
+                      selectedYear !== trip.fields.tripDate.split("-")[0]
+                    }
+                  />
+                </div>
+              );
+            })}
         </div>
       </div>
     </>
