@@ -1,6 +1,8 @@
 # This is a basic workflow that is manually triggered
 
 name: Build to gh-pages and deploy
+env:
+  CI: false
 
 # Controls when the action will run. Workflow runs when manually triggered using the UI
 # or API.
