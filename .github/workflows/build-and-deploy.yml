@@ -19,7 +19,5 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
     # Runs a single command using the runners shell
-    - name: Build
-      run: echo "Building to gh-pages branch"
-    - name: Deploy
-      run: echo "Kicking off deployment from gh-pages branch"
+    - name: Build to gh-pages branch
+      run: yarn deploy
