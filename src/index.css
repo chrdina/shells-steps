@@ -156,9 +156,9 @@ a:hover {
   color: var(--color-blue);
   transition-duration: 200ms;
 }
-a:active!important {
-  color: var(--color-blue);
-  text-decoration: underline;
+a:active {
+  color: var(--color-blue) !important;
+  text-decoration: underline !important;
 }
 a.country-link {
   text-decoration: underline;
