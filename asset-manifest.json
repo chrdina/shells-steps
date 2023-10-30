@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/shells-steps/static/css/main.0a1cb465.css",
-    "main.js": "/shells-steps/static/js/main.2c1f8d34.js",
+    "main.css": "/shells-steps/static/css/main.797aad1b.css",
+    "main.js": "/shells-steps/static/js/main.9c2e49f8.js",
     "static/media/shellssteps-merienda.svg": "/shells-steps/static/media/shellssteps-merienda.566cf505dc5903f9f2ae3a19b5fffa47.svg",
     "index.html": "/shells-steps/index.html",
-    "main.0a1cb465.css.map": "/shells-steps/static/css/main.0a1cb465.css.map",
-    "main.2c1f8d34.js.map": "/shells-steps/static/js/main.2c1f8d34.js.map"
+    "main.797aad1b.css.map": "/shells-steps/static/css/main.797aad1b.css.map",
+    "main.9c2e49f8.js.map": "/shells-steps/static/js/main.9c2e49f8.js.map"
   },
   "entrypoints": [
-    "static/css/main.0a1cb465.css",
-    "static/js/main.2c1f8d34.js"
+    "static/css/main.797aad1b.css",
+    "static/js/main.9c2e49f8.js"
   ]
 }
