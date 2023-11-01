@@ -65,27 +65,29 @@ function Country() {
 
       <div className="content-container">
         <div className="content-section">
+          <h2>Highlights</h2>
           <ReactMarkdown>
             {countryDetails.fields.countryHighlights}
           </ReactMarkdown>
         </div>
+
+        {countryDetails.fields.countryTips && (
+          <div className="content-section">
+            <h2>Tips</h2>
+            <ReactMarkdown>{countryDetails.fields.countryTips}</ReactMarkdown>
+          </div>
+        )}
+
         <div className="content-section">
-          <ReactMarkdown>{countryDetails.fields.countryTips}</ReactMarkdown>
-        </div>
-        <div className="content-section">
+          <h2>Places Visited</h2>
           <ReactMarkdown>
             {countryDetails.fields.countryLocations}
           </ReactMarkdown>
         </div>
 
-        <div className="content-section">
-          <h2> Trips in {countryDetails.fields.countryName} </h2>
-          <div className="tiles">{tripTiles}</div>
-        </div>
+        <h2> Trips in {countryDetails.fields.countryName} </h2>
+        <div className="tiles">{tripTiles}</div>
       </div>
-      {/* <div id="footer">
-        <Link to="/countries">Back to Countries</Link>
-      </div> */}
     </>
   );
 }
