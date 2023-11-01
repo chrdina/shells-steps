@@ -18,6 +18,7 @@ function Country() {
     setCountryDetails(response);
     setIsLoading(false);
   };
+
   useEffect(() => {
     handleDataFetch();
   }, [urlParams.id]);
@@ -26,67 +27,73 @@ function Country() {
     return <></>;
   }
 
-  const tripsInCountry = countryDetails.fields.tripsInThisCountry;
+  const {
+    tilePicCountry,
+    tripsInThisCountry: trips,
+    countryName,
+    countryHighlights: highlights,
+    countryTips: tips,
+    countryLocations: locations,
+  } = countryDetails.fields;
 
-  const tripTiles = tripsInCountry.length ? (
-    tripsInCountry.map(
-      (trip) =>
-        console.info("trip", trip) || (
-          <Tile
-            key={trip.sys.id}
-            to={`/trips/${trip.sys.id}`}
-            text={trip.fields.tripName}
-            imgSrc={
-              trip.fields.tilePicTrip && trip.fields.tilePicTrip.fields != null
-                ? trip.fields.tilePicTrip.fields.file.url
-                : undefined
-            }
-          />
-        ),
-    )
+  const tripTiles = trips?.length ? (
+    trips.map(({ sys: { id }, fields: { tilePicTrip, tripName } }) => (
+      <Tile
+        key={id}
+        to={`/trips/${id}`}
+        text={tripName}
+        imgSrc={
+          tilePicTrip && tilePicTrip.fields != null
+            ? tilePicTrip.fields.file.url
+            : undefined
+        }
+      />
+    ))
   ) : (
     <></>
   );
 
   return (
     <>
-      {countryDetails.fields.tilePicCountry && (
-        <div
-          className="country-hero"
-          style={{
-            backgroundImage: `url(${countryDetails.fields.tilePicCountry.fields.file.url}?fm=jpg&fl=progressive&w=1600)`,
-          }}
-        >
-          <div className="country-hero-text">
-            {countryDetails.fields.countryName}
-          </div>
-        </div>
-      )}
+      <div
+        className="country-hero"
+        style={{
+          backgroundImage: tilePicCountry
+            ? `url(${tilePicCountry.fields.file.url}?fm=jpg&fl=progressive&w=1600)`
+            : undefined,
+        }}
+      >
+        <div className="country-hero-text">{countryName}</div>
+      </div>
 
       <div className="content-container">
-        <div className="content-section">
-          <h2>Highlights</h2>
-          <ReactMarkdown>
-            {countryDetails.fields.countryHighlights}
-          </ReactMarkdown>
-        </div>
-
-        {countryDetails.fields.countryTips && (
+        {highlights && (
           <div className="content-section">
-            <h2>Tips</h2>
-            <ReactMarkdown>{countryDetails.fields.countryTips}</ReactMarkdown>
+            <h2>Highlights</h2>
+            <ReactMarkdown>{highlights}</ReactMarkdown>
           </div>
         )}
 
-        <div className="content-section">
-          <h2>Places Visited</h2>
-          <ReactMarkdown>
-            {countryDetails.fields.countryLocations}
-          </ReactMarkdown>
-        </div>
+        {tips && (
+          <div className="content-section">
+            <h2>Tips</h2>
+            <ReactMarkdown>{tips}</ReactMarkdown>
+          </div>
+        )}
 
-        <h2> Trips in {countryDetails.fields.countryName} </h2>
-        <div className="tiles">{tripTiles}</div>
+        {locations && (
+          <div className="content-section">
+            <h2>Places Visited</h2>
+            <ReactMarkdown>{locations}</ReactMarkdown>
+          </div>
+        )}
+
+        {tripTiles?.length && (
+          <div>
+            <h2> Trips in {countryName} </h2>
+            <div className="tiles">{tripTiles}</div>
+          </div>
+        )}
       </div>
     </>
   );
