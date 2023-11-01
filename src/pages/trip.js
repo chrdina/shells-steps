@@ -89,12 +89,7 @@ function Trip() {
 
         <div className="content-section">
           <div className="blog">
-            <ReactMarkdown>
-              {tripDetails.fields.tripDetails.replace(
-                /.JPG/gi,
-                ".JPG?fl=progressive",
-              )}
-            </ReactMarkdown>
+            <ReactMarkdown>{tripDetails.fields.tripDetails}</ReactMarkdown>
           </div>
         </div>
       </div>
