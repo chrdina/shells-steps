@@ -1,6 +1,6 @@
-var contentful = require("contentful");
+import { createClient } from "contentful";
 
-var client = contentful.createClient({
+var client = createClient({
   space: "r1wogzr4p3xm",
   accessToken: `${process.env.REACT_APP_API_KEY}`,
 });
