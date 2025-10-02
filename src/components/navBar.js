@@ -20,11 +20,12 @@ function NavBar({ navLinks }) {
 
       <div className="menu">
         <ul>
-          {navLinks.map((link, key) => (
+          {navLinks.map((link) => (
             <NavLink
+              key={link}
               to={"/" + (link === "Home" ? "" : link)}
-              exact={true}
-              activeClassName="nav-active"
+              end
+              className={({ isActive }) => (isActive ? "nav-active" : "")}
             >
               <li> {link} </li>
             </NavLink>

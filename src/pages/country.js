@@ -1,103 +1,100 @@
 import React, { useEffect, useState } from "react";
-import { HashLink as Link } from "react-router-hash-link";
+import { useParams } from "react-router-dom";
+
 import client from "../contentfulProvider";
 import ReactMarkdown from "react-markdown";
 import Tile from "../components/tile";
 
-function Country(props) {
-  // this is just a way of getting state inside functions which... don't have state (does not work on classes)
+function Country() {
   const [isLoading, setIsLoading] = useState(true);
   const [countryDetails, setCountryDetails] = useState({});
 
-  console.log("Country Props: ");
-  console.log(props.location);
+  const urlParams = useParams();
 
-  // Think of this as kind of a component did mount...
+  const handleDataFetch = async () => {
+    const pageId = urlParams.id;
+
+    const response = await client.getEntry(pageId);
+    setCountryDetails(response);
+    setIsLoading(false);
+  };
+
   useEffect(() => {
-    const handleDataFetch = async () => {
-      const pageId = props.location.pathname.split("/")[2];
-      // await pattern is the same as using then(), just makes it more streamline
-      const response = await client.getEntry(pageId); // wait for this to resolve, returns response.
-      setCountryDetails(response);
-      setIsLoading(false);
-    };
+    handleDataFetch();
+  }, [urlParams.id]);
 
-    if (props.location.data) {
-      setCountryDetails(props.location.data);
-      setIsLoading(false);
-    } else {
-      handleDataFetch();
-    }
-  }, [props.location]);
-
-  // Haven't got the data yet, so hang tight
   if (isLoading) {
     return <></>;
   }
 
-  // Get all trips in this country
-  const tripsInCountry = countryDetails.fields.tripsInThisCountry;
+  const {
+    tilePicCountry,
+    tripsInThisCountry: trips,
+    countryName,
+    countryHighlights: highlights,
+    countryTips: tips,
+    countryLocations: locations,
+  } = countryDetails.fields;
 
-  // Generate trip tiles and store in variable
-  const tripTiles = tripsInCountry.length ? (
-    tripsInCountry.map(
-      (trip) =>
-        console.info("trip", trip) || (
-          <Tile
-            key={trip.sys.id}
-            to={`/trips/${trip.sys.id}`}
-            text={trip.fields.tripName}
-            imgSrc={
-              trip.fields.tilePicTrip && trip.fields.tilePicTrip.fields != null
-                ? trip.fields.tilePicTrip.fields.file.url
-                : undefined
-            }
-            data={trip}
-          />
-        ),
-    )
+  const tripTiles = trips?.length ? (
+    trips.map(({ sys: { id }, fields: { tilePicTrip, tripName } }) => (
+      <Tile
+        key={id}
+        to={`/trips/${id}`}
+        text={tripName}
+        imgSrc={
+          tilePicTrip && tilePicTrip.fields != null
+            ? tilePicTrip.fields.file.url
+            : undefined
+        }
+      />
+    ))
   ) : (
     <></>
   );
 
   return (
     <>
-      {countryDetails.fields.tilePicCountry && (
-        <div
-          className="country-hero"
-          style={{
-            backgroundImage: `url(${countryDetails.fields.tilePicCountry.fields.file.url}?fm=jpg&fl=progressive&w=1600)`,
-          }}
-        >
-          <div className="country-hero-text">
-            {countryDetails.fields.countryName}
-          </div>
-        </div>
-      )}
+      <div
+        className="country-hero"
+        style={{
+          backgroundImage: tilePicCountry
+            ? `url(${tilePicCountry.fields.file.url}?fm=jpg&fl=progressive&w=1600)`
+            : undefined,
+        }}
+      >
+        <div className="country-hero-text">{countryName}</div>
+      </div>
 
       <div className="content-container">
-        <div className="content-section">
-          <ReactMarkdown>
-            {countryDetails.fields.countryHighlights}
-          </ReactMarkdown>
-        </div>
-        <div className="content-section">
-          <ReactMarkdown>{countryDetails.fields.countryTips}</ReactMarkdown>
-        </div>
-        <div className="content-section">
-          <ReactMarkdown>
-            {countryDetails.fields.countryLocations}
-          </ReactMarkdown>
-        </div>
+        {highlights && (
+          <div className="content-section">
+            <h2>Highlights</h2>
+            <ReactMarkdown>{highlights}</ReactMarkdown>
+          </div>
+        )}
 
-        <div className="content-section">
-          <h2> Trips in {countryDetails.fields.countryName} </h2>
-          <div className="tiles">{tripTiles}</div>
-        </div>
+        {tips && (
+          <div className="content-section">
+            <h2>Tips</h2>
+            <ReactMarkdown>{tips}</ReactMarkdown>
+          </div>
+        )}
+
+        {locations && (
+          <div className="content-section">
+            <h2>Places Visited</h2>
+            <ReactMarkdown>{locations}</ReactMarkdown>
+          </div>
+        )}
+
+        {tripTiles?.length && (
+          <div>
+            <h2> Trips in {countryName} </h2>
+            <div className="tiles">{tripTiles}</div>
+          </div>
+        )}
       </div>
-      {/* <div id="footer">
-        <Link to="/countries">Back to Countries</Link>
-      </div> */}
     </>
   );
 }

@@ -1,7 +1,7 @@
 import React from "react";
 import { HashLink as Link } from "react-router-hash-link";
 
-const AnchorNav = (props) => {
+export const TimelineNav = (props) => {
   const anchorData = props.data.map((trip) => ({
     id: trip.sys.id,
     date: trip.fields.tripDate.split("-")[0],
@@ -52,5 +52,3 @@ const AnchorNav = (props) => {
     </div>
   );
 };
-
-export default AnchorNav;

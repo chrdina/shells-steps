@@ -7,7 +7,7 @@ const Index = (props) => {
 
   useEffect(() => {
     const handleDataFetch = async () => {
-      const response = await client.getAsset("3VHvN2sI1r2yMOxDV6H4za");
+      const response = await client.getAsset("7vWiUvvGAKSVtRkLKFzCkl");
       setData(response.fields.file.url);
     };
     if (data == null) {
@@ -20,7 +20,7 @@ const Index = (props) => {
       <div
         className="hero-image-main"
         style={{
-          backgroundImage: `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+          backgroundImage: `linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)),
               url(${data}?fm=jpg&fl=progressive&w=1600)`,
         }}
       >

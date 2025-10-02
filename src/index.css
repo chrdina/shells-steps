@@ -156,12 +156,18 @@ a:hover {
   color: var(--color-blue);
   transition-duration: 200ms;
 }
-a:active!important {
-  color: var(--color-blue);
-  text-decoration: underline;
+a:active {
+  color: var(--color-blue) !important;
+  text-decoration: underline !important;
 }
 a.country-link {
   text-decoration: underline;
+}
+a.anchor-top {
+  display: block;
+  position: relative;
+  top: calc(0px - var(--nav-height)); /* negative fixed header height */
+  visibility: hidden;
 }
 
 button {
@@ -609,13 +615,6 @@ hr.style-1 {
   background-size: cover;
   background-blend-mode: hue;
 }
-.below-fixed-header::before {
-  content: " ";
-  display: block;
-  height: var(--nav-height); /* fixed header height*/
-  margin: calc(0px - var(--nav-height)) 0 0; /* negative fixed header height */
-  visibility: hidden;
-}
 .tile:hover {
   background-color: rgba(0, 0, 0, 0.1);
   background-blend-mode: hue;
@@ -779,10 +778,7 @@ hr.style-1 {
 
 .carousel-arrow {
   font-size: 30px;
-  padding-left: 10px;
-  padding-right: 10px;
-  padding-top: 5px;
-  padding-bottom: 5px;
+  padding: 10px 15px;
   color: white;
   background-color: var(--color-charcoal);
 }
