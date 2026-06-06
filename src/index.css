@@ -440,14 +440,16 @@ hr.style-1 {
 #side-nav-left {
   display: flex;
   position: fixed;
-  top: 200px;
   left: 0;
+  top: 200px;
+  bottom: 0;
   padding: 0;
+  padding-bottom: 40px;
   width: var(--side-margins);
   max-height: 80%;
   justify-content: center;
   color: var(--color-dark-grey);
-  overflow-y: auto;
+  overflow-y: scroll;
 }
 #side-nav-left ul {
   list-style-type: none;
